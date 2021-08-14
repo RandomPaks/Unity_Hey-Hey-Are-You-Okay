@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance { get; private set; }
 
     public GameObject titlePanel, chapter1Panel;
-    List<GameObject> menus = null;
+    List<GameObject> menus = new List<GameObject>();
 
     void Awake()
     {
@@ -24,7 +24,6 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        menus = new List<GameObject>();
         menus.Add(titlePanel);
         menus.Add(chapter1Panel);
     }

@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46b66b66c3d6c04b9a7c26d37d62f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisMenu: 1
+  menu: 1
 --- !u!1 &61303753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 64
   m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1794,7 +1794,7 @@ GameObject:
   - component: {fileID: 228889378}
   - component: {fileID: 228889377}
   m_Layer: 5
-  m_Name: Button
+  m_Name: TrainingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1873,6 +1873,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1768885827}
+        m_MethodName: set_isOn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &228889378
 MonoBehaviour:
@@ -2508,7 +2519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46b66b66c3d6c04b9a7c26d37d62f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisMenu: 0
+  menu: 0
 --- !u!222 &518158391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4303,7 +4314,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 64
   m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4578,7 +4589,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 64
   m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5938,7 +5949,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 64
   m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6164,7 +6175,7 @@ GameObject:
   - component: {fileID: 1768885826}
   - component: {fileID: 1768885827}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: TrainingToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6235,7 +6246,18 @@ MonoBehaviour:
   m_Group: {fileID: 1411332379}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 55923868}
+        m_MethodName: OnClickMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1815414350
 GameObject:
@@ -6367,7 +6389,7 @@ GameObject:
   - component: {fileID: 1890859158}
   - component: {fileID: 1890859159}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: HomeToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6438,7 +6460,18 @@ MonoBehaviour:
   m_Group: {fileID: 1411332379}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 518158390}
+        m_MethodName: OnClickMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1917159130
 GameObject:

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] MenuEnum thisMenu = default;
+    [SerializeField] MenuEnum menu = default;
+    
     public void OnClickMenu()
     {
-        MenuManager.Instance.OpenMenu(thisMenu);
+        MenuManager.Instance.OpenMenu(menu);
     }
 }
