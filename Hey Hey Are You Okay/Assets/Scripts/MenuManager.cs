@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum MenuEnum
 {
@@ -13,6 +14,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject titlePanel, chapter1Panel;
     List<GameObject> menus = new List<GameObject>();
+    string selectedScene = "ThermalBurnsScene";
 
     void Awake()
     {
@@ -39,6 +41,7 @@ public class MenuManager : MonoBehaviour
                 ChangeMenu(chapter1Panel);
                 break;
         }
+        Debug.Log($"Opened: {menu}!");
     }
 
     void ChangeMenu(GameObject menuSelected)
@@ -49,5 +52,21 @@ public class MenuManager : MonoBehaviour
         }
 
         menuSelected.SetActive(true);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void SelectScene(string name)
+    {
+        selectedScene = name;
+        Debug.Log($"Selected: {name}!");
+    }
+
+    public void LoadSelectedScene()
+    {
+        SceneManager.LoadScene(selectedScene);
     }
 }
