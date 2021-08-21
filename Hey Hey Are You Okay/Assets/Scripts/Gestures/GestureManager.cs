@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class GestureManager : MonoBehaviour
@@ -10,6 +9,7 @@ public class GestureManager : MonoBehaviour
     private Vector2 startPoint = Vector2.zero;
     private Vector2 endPoint = Vector2.zero;
     private float gestureTime = 0;
+    public event EventHandler<TapEventArgs> OnTap;
 
     void Awake()
     {
@@ -45,13 +45,23 @@ public class GestureManager : MonoBehaviour
 
                 if (gestureTime <= tapProperty.tapTime && Vector2.Distance(startPoint, endPoint) < (Screen.dpi * tapProperty.tapMaxDistance))
                 {
-                    Debug.Log("tap");
+                    FireTapEvent(startPoint);
                 }
             }
             else
             {
                 gestureTime += Time.deltaTime;
             }
+        }
+    }
+
+    private void FireTapEvent(Vector2 pos)
+    {
+        Debug.Log("Tapped at " + trackedFinger1.position);
+        if(OnTap != null)
+        {
+            TapEventArgs tapArgs = new TapEventArgs(pos);
+            OnTap(this, tapArgs);
         }
     }
 }
