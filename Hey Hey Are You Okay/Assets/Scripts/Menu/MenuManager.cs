@@ -4,17 +4,18 @@ using UnityEngine.SceneManagement;
 
 public enum MenuEnum
 {
-    TITLE,
-    CHAPTER_1
+    MAIN,
+    TRAINING,
+    SELECTION,
 }
 
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance { get; private set; }
 
-    public GameObject titlePanel, chapter1Panel;
+    public GameObject mainPanel, trainingPanel, selectionPanel;
     List<GameObject> menus = new List<GameObject>();
-    string selectedScene = "ThermalBurnsScene";
+    string selectedScene = "CutsScene";
 
     void Awake()
     {
@@ -26,19 +27,23 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        menus.Add(titlePanel);
-        menus.Add(chapter1Panel);
+        menus.Add(mainPanel);
+        menus.Add(trainingPanel);
+        menus.Add(selectionPanel);
     }
 
     public void OpenMenu(MenuEnum menu)
     {
         switch (menu)
         {
-            case MenuEnum.TITLE:
-                ChangeMenu(titlePanel);
+            case MenuEnum.MAIN:
+                ChangeMenu(mainPanel);
                 break;
-            case MenuEnum.CHAPTER_1:
-                ChangeMenu(chapter1Panel);
+            case MenuEnum.TRAINING:
+                ChangeMenu(trainingPanel);
+                break;
+            case MenuEnum.SELECTION:
+                ChangeMenu(selectionPanel);
                 break;
         }
         Debug.Log($"Opened: {menu}!");
