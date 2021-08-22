@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public bool isWashing = false;
+    public bool isWashing = false, isDrying = false, isApplying = false, isBandAiding = false;
     float progress = 0f;
+    float inc = 5f;
     [SerializeField] ProgressBar progressBar;
 
     void Awake()
@@ -21,16 +21,23 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (isWashing)
-            Washing();
+        if (isWashing) FirstAid(100, "BloodyToWater");
+        if (isDrying) FirstAid(100, "WaterToDry");
+        if (isApplying) FirstAid(100, "DryToBandAid");
+        if (isBandAiding) FirstAid(100, "BandAidFinish");
+        progressBar.SetCurrentFill(progress);
     }
 
-    void Washing()
+    void FirstAid(float maxProgress, string name)
     {
-        if(progress < 100)
+        if (progress <= maxProgress)
         {
-            progress += 0.25f;
-            progressBar.SetCurrentFill(progress);
+            progress += inc;
+        }
+        else
+        {
+            EventManager.Instance.PlayEvent(name);
+            progress = 0;
         }
     }
 }

@@ -1,11 +1,10 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum GoalEnum
 {
     BLOOD,
     WATER,
-    TOWEL,
+    DRY,
     IODINE,
     BANDAID
 }
@@ -20,13 +19,27 @@ public class ToolGoal : MonoBehaviour
         switch (goal)
         {
             case GoalEnum.BLOOD:
-                if(toolObject.tool == ToolEnum.FAUCET)
+                if (toolObject.tool == ToolEnum.FAUCET)
                 {
                     GameManager.Instance.isWashing = true;
                 }
-                else
+                break;
+            case GoalEnum.WATER:
+                if (toolObject.tool == ToolEnum.TOWEL)
                 {
-
+                    GameManager.Instance.isDrying = true;
+                }
+                break;
+            case GoalEnum.DRY:
+                if (toolObject.tool == ToolEnum.IODINE)
+                {
+                    GameManager.Instance.isApplying = true;
+                }
+                break;
+            case GoalEnum.IODINE:
+                if (toolObject.tool == ToolEnum.BANDAID)
+                {
+                    GameManager.Instance.isBandAiding = true;
                 }
                 break;
         }
@@ -42,9 +55,23 @@ public class ToolGoal : MonoBehaviour
                 {
                     GameManager.Instance.isWashing = false;
                 }
-                else
+                break;
+            case GoalEnum.WATER:
+                if (toolObject.tool == ToolEnum.TOWEL)
                 {
-
+                    GameManager.Instance.isDrying = false;
+                }
+                break;
+            case GoalEnum.DRY:
+                if (toolObject.tool == ToolEnum.IODINE)
+                {
+                    GameManager.Instance.isApplying = false;
+                }
+                break;
+            case GoalEnum.IODINE:
+                if (toolObject.tool == ToolEnum.BANDAID)
+                {
+                    GameManager.Instance.isBandAiding = false;
                 }
                 break;
         }

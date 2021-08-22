@@ -17,7 +17,6 @@ public class MenuManager : MonoBehaviour
 
     public GameObject mainPanel, optionsPanel, trainingPanel, cutsPanel, lacerationPanel;
     List<GameObject> menus = new List<GameObject>();
-    string selectedScene = "CutsScene";
 
     void Awake()
     {
@@ -74,14 +73,8 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void SelectScene(string name)
+    public void LoadScene(string scene)
     {
-        selectedScene = name;
-        //Debug.Log($"Selected: {name}!");
-    }
-
-    public void LoadSelectedScene()
-    {
-        SceneManager.LoadScene(selectedScene);
+        SceneManager.LoadScene(scene);
     }
 }
