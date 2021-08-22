@@ -55,11 +55,23 @@ public class AudioManager : MonoBehaviour
         a.source.Stop();
     }
 
+    public void SetVolume(string name, float volume)
+    {
+        Audio a = Array.Find(audios, audio => audio.name == name);
+        if (a == null)
+        {
+            Debug.LogWarning("Audio: " + name + " not found!");
+            return;
+        }
+
+        a.source.volume = volume;
+    }
+
     public void ToggleMusic(bool toggle)
     {
         if (toggle)
-            Play("BGM");
+            SetVolume("BGM", 0.35f);
         else
-            Stop("BGM");
+            SetVolume("BGM", 0);
     }
 }

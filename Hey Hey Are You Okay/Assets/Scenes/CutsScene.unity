@@ -1326,6 +1326,7 @@ MonoBehaviour:
   isDrying: 0
   isApplying: 0
   isBandAiding: 0
+  isCalling: 0
   progress: 0
   progressBar: {fileID: 1609717128}
   level: 1
@@ -1372,13 +1373,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39febb4f3298ed44aacb876af4a7bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: DryToBandAid
+  name: DryToIodine
   nextEvent: {fileID: 788560423}
   oldHand: {fileID: 962922934}
   newHand: {fileID: 1231992846}
   oldHitbox: {fileID: 1499729358}
   newHitbox: {fileID: 269172938}
   cancelTextEvent: {fileID: 909808560}
+  soundEvent: WaterDrop
 --- !u!1 &788560421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 585, y: 354}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &961568298
@@ -2063,6 +2065,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 574263643}
   newHitbox: {fileID: 1499729358}
   cancelTextEvent: {fileID: 1330071513}
+  soundEvent: Cloth1
 --- !u!1 &1029341126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,6 +2388,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 269172938}
   newHitbox: {fileID: 0}
   cancelTextEvent: {fileID: 788560421}
+  soundEvent: BandAid
 --- !u!1 &1308865416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +3262,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 378236137}
   newHitbox: {fileID: 574263643}
   cancelTextEvent: {fileID: 0}
+  soundEvent: WaterDrop
 --- !u!1 &1749063635
 GameObject:
   m_ObjectHideFlags: 0

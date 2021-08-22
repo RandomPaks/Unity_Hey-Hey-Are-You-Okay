@@ -306,6 +306,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 1178203927}
   newHitbox: {fileID: 1606651674}
   cancelTextEvent: {fileID: 0}
+  soundEvent: Cloth2
 --- !u!1 &316736602
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +829,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 1522717745}
   newHitbox: {fileID: 1178203927}
   cancelTextEvent: {fileID: 0}
+  soundEvent: Cloth1
 --- !u!1 &529715345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1735,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 2106070744}
   newHitbox: {fileID: 0}
   cancelTextEvent: {fileID: 1042889036}
+  soundEvent: Dial
 --- !u!1 &1017040070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,7 +1941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 585, y: 354}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1117819710
@@ -2412,6 +2415,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 1606651674}
   newHitbox: {fileID: 2106070744}
   cancelTextEvent: {fileID: 621993385}
+  soundEvent: Cloth3
 --- !u!1 &1477654583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,6 +3159,7 @@ MonoBehaviour:
   oldHitbox: {fileID: 937904778}
   newHitbox: {fileID: 1522717745}
   cancelTextEvent: {fileID: 1505389304}
+  soundEvent: Cloth2
 --- !u!4 &1691697534
 Transform:
   m_ObjectHideFlags: 0

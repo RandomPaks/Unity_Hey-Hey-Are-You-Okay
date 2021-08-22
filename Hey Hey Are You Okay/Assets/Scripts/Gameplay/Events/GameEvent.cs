@@ -7,6 +7,7 @@ public class GameEvent : AEventSequence
     [SerializeField] GameObject oldHitbox;
     [SerializeField] GameObject newHitbox;
     [SerializeField] GameObject cancelTextEvent;
+    [SerializeField] string soundEvent;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class GameEvent : AEventSequence
     {
         if(cancelTextEvent != null)
             cancelTextEvent.SetActive(false);
+        AudioManager.Instance.Play(soundEvent);
         base.OnFinishEvent();
     }
 }

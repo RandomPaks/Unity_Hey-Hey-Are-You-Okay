@@ -15,7 +15,7 @@ public class IodineGoal : MonoBehaviour
         {
             goals[0].SetActive(false);
             goals[1].SetActive(false);
-            GameManager.Instance.FinishedSwipeEvent("DryToBandAid");
+            GameManager.Instance.FinishedSwipeEvent("DryToIodine");
         }
     }
 }
