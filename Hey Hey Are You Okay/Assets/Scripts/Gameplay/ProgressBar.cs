@@ -36,4 +36,9 @@ public class ProgressBar : MonoBehaviour
     {
         current = progress;
     }
+
+    public void SetMaxOffset(float maxProgress)
+    {
+        maximum = maxProgress;
+    }
 }

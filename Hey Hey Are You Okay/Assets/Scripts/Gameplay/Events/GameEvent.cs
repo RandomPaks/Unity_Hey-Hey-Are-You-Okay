@@ -6,6 +6,7 @@ public class GameEvent : AEventSequence
     [SerializeField] GameObject newHand;
     [SerializeField] GameObject oldHitbox;
     [SerializeField] GameObject newHitbox;
+    [SerializeField] GameObject cancelTextEvent;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class GameEvent : AEventSequence
 
     public override void OnFinishEvent()
     {
+        if(cancelTextEvent != null)
+            cancelTextEvent.SetActive(false);
         base.OnFinishEvent();
     }
 }

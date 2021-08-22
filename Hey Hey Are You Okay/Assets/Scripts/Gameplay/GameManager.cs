@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public bool isWashing = false, isDrying = false, isApplying = false, isBandAiding = false;
-    float progress = 0f;
-    float inc = 0.5f;
+
+    public float progress = 0f;
     [SerializeField] ProgressBar progressBar;
 
+    public int level = 0;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -21,23 +22,34 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (isWashing) FirstAid(100, "BloodyToWater");
-        if (isDrying) FirstAid(100, "WaterToDry");
-        if (isApplying) FirstAid(100, "DryToBandAid");
-        if (isBandAiding) FirstAid(100, "BandAidFinish");
+        if(level == 1)
+        { 
+            if (isWashing) FirstAid("BloodyToWater", 0.25f);
+            if (isBandAiding) FirstAid("BandAidFinish");
+        }
+        else if(level == 2)
+        {
+            if (isDrying) FirstAid("BloodToDry", 10.0f);
+        }
         progressBar.SetCurrentFill(progress);
     }
 
-    void FirstAid(float maxProgress, string name)
+    void FirstAid(string name, float increment = 0.5f)
     {
-        if (progress <= maxProgress)
+        if (progress <= 100)
         {
-            progress += inc;
+            progress += increment;
         }
         else
         {
             EventManager.Instance.PlayEvent(name);
             progress = 0;
         }
+    }
+
+    public void FinishedSwipeEvent(string name)
+    {
+        EventManager.Instance.PlayEvent(name);
+        progress = 0;
     }
 }
