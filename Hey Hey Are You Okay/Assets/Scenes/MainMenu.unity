@@ -3475,11 +3475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce11891a6fab9242be8efb7c28ed1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicToggle: {fileID: 427660304}
   audios:
   - name: BGM
     clip: {fileID: 8300000, guid: 5b8338ff4091904458feb2af89f80c65, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     loop: 1
     source: {fileID: 0}

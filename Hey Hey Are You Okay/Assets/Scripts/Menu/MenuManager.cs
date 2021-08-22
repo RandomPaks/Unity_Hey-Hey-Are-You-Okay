@@ -56,7 +56,7 @@ public class MenuManager : MonoBehaviour
                 ChangeMenu(lacerationPanel);
                 break;
         }
-        Debug.Log($"Opened: {menu}!");
+        //Debug.Log($"Opened: {menu}!");
     }
 
     void ChangeMenu(GameObject menuSelected)
@@ -77,7 +77,7 @@ public class MenuManager : MonoBehaviour
     public void SelectScene(string name)
     {
         selectedScene = name;
-        Debug.Log($"Selected: {name}!");
+        //Debug.Log($"Selected: {name}!");
     }
 
     public void LoadSelectedScene()

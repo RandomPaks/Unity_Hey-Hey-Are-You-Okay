@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9a55a0993db436e4490db3939b5fa23a
   - enabled: 1
-    path: Assets/Scenes/ThermalBurnsScene.unity
-    guid: 496845ad080cdfd43bae954931853238
+    path: Assets/Scenes/CutsScene.unity
+    guid: 8ed0d34fa7880434fa4287dd3e3c8875
   m_configObjects: {}

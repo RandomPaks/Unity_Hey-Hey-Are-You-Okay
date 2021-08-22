@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    public Toggle musicToggle;
     public Audio[] audios;
 
     void Awake()
