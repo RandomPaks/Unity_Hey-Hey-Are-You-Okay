@@ -17,7 +17,8 @@ public class GameEvent : AEventSequence
     {
         oldHand.SetActive(false);
         newHand.SetActive(true);
-        oldHitbox.SetActive(false);
+        if (oldHitbox != null)
+            oldHitbox.SetActive(false);
         if(newHitbox != null)
             newHitbox.SetActive(true);
         OnFinishEvent();

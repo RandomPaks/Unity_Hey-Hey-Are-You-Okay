@@ -9,6 +9,10 @@ public class BloodGoal : AGoal
         {
             GameManager.Instance.isWashing = true;
         }
+        else if(toolObject.tool == ToolEnum.TOWEL)
+        {
+            GameManager.Instance.isDrying = true;
+        }
     }
     public override void OnTriggerExit2D(Collider2D other)
     {
@@ -16,6 +20,10 @@ public class BloodGoal : AGoal
         if (toolObject.tool == ToolEnum.FAUCET)
         {
             GameManager.Instance.isWashing = false;
+        }
+        else if (toolObject.tool == ToolEnum.TOWEL)
+        {
+            GameManager.Instance.isDrying = false;
         }
     }
 }

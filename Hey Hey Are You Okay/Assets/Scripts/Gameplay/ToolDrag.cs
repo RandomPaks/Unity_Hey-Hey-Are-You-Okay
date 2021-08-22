@@ -6,7 +6,9 @@ public enum ToolEnum
     FAUCET,
     TOWEL,
     IODINE,
-    BANDAID
+    BANDAID,
+    BANDAGE,
+    PHONE
 }
 
 public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler
