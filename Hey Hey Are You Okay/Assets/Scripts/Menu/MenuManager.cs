@@ -55,7 +55,7 @@ public class MenuManager : MonoBehaviour
                 ChangeMenu(lacerationPanel);
                 break;
         }
-        //Debug.Log($"Opened: {menu}!");
+        Debug.Log($"Opened: {menu}!");
     }
 
     void ChangeMenu(GameObject menuSelected)

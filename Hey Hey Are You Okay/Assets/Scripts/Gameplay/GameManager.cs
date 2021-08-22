@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public bool isWashing = false, isDrying = false, isApplying = false, isBandAiding = false;
     float progress = 0f;
-    float inc = 5f;
+    float inc = 0.5f;
     [SerializeField] ProgressBar progressBar;
 
     void Awake()
