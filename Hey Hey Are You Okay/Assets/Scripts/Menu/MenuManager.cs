@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public enum MenuEnum
 {
     MAIN,
+    OPTIONS,
     TRAINING,
     CUTS,
     LACERATION
@@ -14,7 +15,7 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance { get; private set; }
 
-    public GameObject mainPanel, trainingPanel, cutsPanel, lacerationPanel;
+    public GameObject mainPanel, optionsPanel, trainingPanel, cutsPanel, lacerationPanel;
     List<GameObject> menus = new List<GameObject>();
     string selectedScene = "CutsScene";
 
@@ -29,6 +30,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         menus.Add(mainPanel);
+        menus.Add(optionsPanel);
         menus.Add(trainingPanel);
         menus.Add(cutsPanel);
         menus.Add(lacerationPanel);
@@ -40,6 +42,9 @@ public class MenuManager : MonoBehaviour
         {
             case MenuEnum.MAIN:
                 ChangeMenu(mainPanel);
+                break;
+            case MenuEnum.OPTIONS:
+                ChangeMenu(optionsPanel);
                 break;
             case MenuEnum.TRAINING:
                 ChangeMenu(trainingPanel);
