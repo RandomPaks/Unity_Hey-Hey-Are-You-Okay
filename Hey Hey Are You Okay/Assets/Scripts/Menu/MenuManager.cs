@@ -6,14 +6,15 @@ public enum MenuEnum
 {
     MAIN,
     TRAINING,
-    SELECTION,
+    CUTS,
+    LACERATION
 }
 
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance { get; private set; }
 
-    public GameObject mainPanel, trainingPanel, selectionPanel;
+    public GameObject mainPanel, trainingPanel, cutsPanel, lacerationPanel;
     List<GameObject> menus = new List<GameObject>();
     string selectedScene = "CutsScene";
 
@@ -29,7 +30,8 @@ public class MenuManager : MonoBehaviour
     {
         menus.Add(mainPanel);
         menus.Add(trainingPanel);
-        menus.Add(selectionPanel);
+        menus.Add(cutsPanel);
+        menus.Add(lacerationPanel);
     }
 
     public void OpenMenu(MenuEnum menu)
@@ -42,8 +44,11 @@ public class MenuManager : MonoBehaviour
             case MenuEnum.TRAINING:
                 ChangeMenu(trainingPanel);
                 break;
-            case MenuEnum.SELECTION:
-                ChangeMenu(selectionPanel);
+            case MenuEnum.CUTS:
+                ChangeMenu(cutsPanel);
+                break;
+            case MenuEnum.LACERATION:
+                ChangeMenu(lacerationPanel);
                 break;
         }
         Debug.Log($"Opened: {menu}!");
