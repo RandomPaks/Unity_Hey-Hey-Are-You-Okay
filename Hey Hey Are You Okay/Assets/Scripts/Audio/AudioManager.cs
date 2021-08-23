@@ -70,8 +70,21 @@ public class AudioManager : MonoBehaviour
     public void ToggleMusic(bool toggle)
     {
         if (toggle)
-            SetVolume("BGM", 0.35f);
+            Play("BGM");
         else
-            SetVolume("BGM", 0);
+            Stop("BGM");
+    }
+
+    public bool IsPlaying(string name)
+    {
+        Audio a = Array.Find(audios, audio => audio.name == name);
+        if (a == null)
+        {
+            Debug.LogWarning("Audio: " + name + " not found!");
+            return false;
+        }
+
+        if (a.source.isPlaying) return true;
+        else return false;
     }
 }

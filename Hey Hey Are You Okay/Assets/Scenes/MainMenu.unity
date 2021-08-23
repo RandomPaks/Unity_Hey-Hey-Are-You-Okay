@@ -1690,7 +1690,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1472970223}
+      - m_Target: {fileID: 2058445941}
         m_MethodName: ToggleMusic
         m_Mode: 0
         m_Arguments:
@@ -4900,6 +4900,7 @@ GameObject:
   - component: {fileID: 2058445938}
   - component: {fileID: 2058445940}
   - component: {fileID: 2058445939}
+  - component: {fileID: 2058445941}
   m_Layer: 5
   m_Name: OptionsPanel
   m_TagString: Untagged
@@ -4950,6 +4951,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058445937}
   m_CullTransparentMesh: 0
+--- !u!114 &2058445941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058445937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb1f209a45745f4ab10d9b8066d4885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 427660304}
 --- !u!1 &2099416752
 GameObject:
   m_ObjectHideFlags: 0
