@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public enum MenuEnum
@@ -7,16 +8,19 @@ public enum MenuEnum
     MAIN,
     OPTIONS,
     TRAINING,
-    CUTS,
-    LACERATION
+    BACKSTORY
 }
 
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance { get; private set; }
 
-    public GameObject mainPanel, optionsPanel, trainingPanel, cutsPanel, lacerationPanel;
+    public GameObject mainPanel, optionsPanel, trainingPanel, backstoryPanel;
     List<GameObject> menus = new List<GameObject>();
+
+    //Backstory Panel Stuff
+    RawImage backdrop;
+    string sceneToLoad;
 
     void Awake()
     {
@@ -31,8 +35,9 @@ public class MenuManager : MonoBehaviour
         menus.Add(mainPanel);
         menus.Add(optionsPanel);
         menus.Add(trainingPanel);
-        menus.Add(cutsPanel);
-        menus.Add(lacerationPanel);
+        menus.Add(backstoryPanel);
+
+        backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
     }
 
     public void OpenMenu(MenuEnum menu)
@@ -48,11 +53,9 @@ public class MenuManager : MonoBehaviour
             case MenuEnum.TRAINING:
                 ChangeMenu(trainingPanel);
                 break;
-            case MenuEnum.CUTS:
-                ChangeMenu(cutsPanel);
-                break;
-            case MenuEnum.LACERATION:
-                ChangeMenu(lacerationPanel);
+            case MenuEnum.BACKSTORY:
+                ChangeMenu(backstoryPanel);
+                
                 break;
         }
         Debug.Log($"Opened: {menu}!");
@@ -73,8 +76,14 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadScene(string scene)
+    public void LoadSymptomScene()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
+    public void OnClickSymptomScene(BackstoryScriptableObject backstory)
+    {
+        backdrop.texture = backstory.backdrop.texture;
+        sceneToLoad = backstory.name + "Scene";
     }
 }
