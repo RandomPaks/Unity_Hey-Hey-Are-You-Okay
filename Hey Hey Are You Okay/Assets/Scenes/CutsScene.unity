@@ -443,7 +443,6 @@ GameObject:
   - component: {fileID: 378236139}
   - component: {fileID: 378236141}
   - component: {fileID: 378236144}
-  - component: {fileID: 378236142}
   m_Layer: 5
   m_Name: Blood
   m_TagString: Untagged
@@ -520,19 +519,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 50
---- !u!114 &378236142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378236137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2e3c900de744d46ad8347bc88b670a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mult: 1
 --- !u!114 &378236144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81450bfd165990479861a56f984d8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseMult: 2
+  isDecreaseSize: 1
 --- !u!1 &409955643
 GameObject:
   m_ObjectHideFlags: 0

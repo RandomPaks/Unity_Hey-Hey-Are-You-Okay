@@ -2,8 +2,8 @@
 
 public class WaterGoal : MonoBehaviour
 {
-    public GameObject[] goals;
-    public GameObject towel;
+    [SerializeField] GameObject[] goals;
+    [SerializeField] GameObject towel;
 
     void Update()
     {
