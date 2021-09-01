@@ -16,7 +16,6 @@ public class SwipeGoal : MonoBehaviour
         toolCol = tool.GetComponent<Collider2D>();
     }
 
-
     void Update()
     {
         for(int i = 0; i < goals.Length; i++)
