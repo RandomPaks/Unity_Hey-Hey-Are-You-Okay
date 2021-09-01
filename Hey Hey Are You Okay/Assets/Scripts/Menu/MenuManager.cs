@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
 
     //Setting the backstories
     RawImage backdrop;
-    string sceneToLoad;
+    string sceneToLoad = "CutsScene";
 
     void Awake()
     {
