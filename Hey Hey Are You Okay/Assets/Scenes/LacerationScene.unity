@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1637,8 +1637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: 0
   eventToPlay: 
-  decreaseMult: 2
   isDecreaseSize: 0
+  decreaseMult: 2
 --- !u!58 &937904782
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2078,6 +2078,7 @@ GameObject:
   - component: {fileID: 1178203931}
   - component: {fileID: 1178203930}
   - component: {fileID: 1178203929}
+  - component: {fileID: 1178203933}
   m_Layer: 5
   m_Name: Bandage 2
   m_TagString: Untagged
@@ -2185,6 +2186,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178203927}
   m_CullTransparentMesh: 0
+--- !u!114 &1178203933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178203927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f3a9b3164009340bdd9f0bbc4159bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalTool: 4
+  tool: {fileID: 91637907}
+  goals:
+  - {fileID: 2065030053}
+  - {fileID: 1017040070}
+  - {fileID: 1761144278}
+  eventToPlay: 1ToBandage2
 --- !u!1 &1206930248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,7 +2766,7 @@ GameObject:
   - component: {fileID: 1522717750}
   - component: {fileID: 1522717749}
   - component: {fileID: 1522717748}
-  - component: {fileID: 1522717747}
+  - component: {fileID: 1522717751}
   m_Layer: 5
   m_Name: Bandage
   m_TagString: Untagged
@@ -2776,24 +2796,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1, y: 105}
   m_SizeDelta: {x: 560, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1522717747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522717745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62706138594a8c942bdb5bf2fef7ae08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goals:
-  - {fileID: 354121135}
-  - {fileID: 1606365315}
-  - {fileID: 1804640837}
-  bandage: {fileID: 91637907}
-  eventToPlay: TowelToBandage1
 --- !u!61 &1522717748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2854,6 +2856,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522717745}
   m_CullTransparentMesh: 0
+--- !u!114 &1522717751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522717745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f3a9b3164009340bdd9f0bbc4159bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalTool: 4
+  tool: {fileID: 91637907}
+  goals:
+  - {fileID: 354121135}
+  - {fileID: 1606365315}
+  - {fileID: 1804640837}
+  eventToPlay: TowelToBandage1
 --- !u!1 &1606365315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3793,7 +3814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4230,8 +4251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: 2
   eventToPlay: Bandage3ToPhone
-  decreaseMult: 2
   isDecreaseSize: 0
+  decreaseMult: 2
 --- !u!58 &2106070747
 CircleCollider2D:
   m_ObjectHideFlags: 0

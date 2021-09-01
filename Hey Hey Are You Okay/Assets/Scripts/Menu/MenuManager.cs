@@ -28,6 +28,12 @@ public class MenuManager : MonoBehaviour
             Destroy(gameObject);
         else
             Instance = this;
+
+#if UNITY_ANDROID
+        Screen.SetResolution(1080, 1920, false);
+#else
+        Screen.SetResolution(540, 960, false);
+#endif
     }
 
     void Start()

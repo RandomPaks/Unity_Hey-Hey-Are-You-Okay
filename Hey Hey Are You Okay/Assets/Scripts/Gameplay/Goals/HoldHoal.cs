@@ -1,12 +1,5 @@
 ﻿using UnityEngine;
 
-public enum GoalEnum
-{
-    BLOOD,
-    BANDAID,
-    PHONE
-}
-
 public class HoldHoal : AGoal
 {
     [SerializeField] GoalEnum goal;
@@ -16,7 +9,8 @@ public class HoldHoal : AGoal
     CircleCollider2D col;
     [Header("Size Decrease")]
     [SerializeField] bool isDecreaseSize = false;
-    [SerializeField][Range(2, 5)] float decreaseMult = 2;
+    [Range(2, 5)]
+    [SerializeField] float decreaseMult = 2;
 
     void Awake()
     {
