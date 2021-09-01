@@ -18,7 +18,12 @@ public class MenuManager : MonoBehaviour
     public GameObject mainPanel, optionsPanel, trainingPanel, backstoryPanel;
     List<GameObject> menus = new List<GameObject>();
 
-    //Backstory Panel Stuff
+    int isTutorialDone;
+    [Header("Setting up the Tutorial")]
+    [SerializeField] GameObject playButton;
+    [SerializeField] GameObject tutorialButton;
+
+    //Setting the backstories
     RawImage backdrop;
     string sceneToLoad;
 
@@ -38,6 +43,23 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        if (!PlayerPrefs.HasKey("TutorialMenus"))
+        {
+            PlayerPrefs.SetInt("TutorialMenus", 0);
+        }
+        isTutorialDone = PlayerPrefs.GetInt("TutorialMenus");
+
+        if(isTutorialDone == 0)
+        {
+            tutorialButton.SetActive(true);
+            playButton.SetActive(false);
+        }
+        else
+        {
+            tutorialButton.SetActive(false);
+            playButton.SetActive(true);
+        }
+        
         menus.Add(mainPanel);
         menus.Add(optionsPanel);
         menus.Add(trainingPanel);
@@ -91,5 +113,10 @@ public class MenuManager : MonoBehaviour
     {
         backdrop.texture = backstory.backdrop.texture;
         sceneToLoad = backstory.name + "Scene";
+    }
+
+    public void OnFinishTutorial()
+    {
+        PlayerPrefs.SetInt("TutorialMenus", 1);
     }
 }

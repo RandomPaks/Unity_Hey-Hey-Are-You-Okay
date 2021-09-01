@@ -3,18 +3,20 @@ using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
-    [SerializeField] Toggle music;
+    [SerializeField] Slider bgmSlider;
 
     void Start()
     {
-        if (AudioManager.Instance.IsPlaying("BGM"))
-            music.isOn = true;
-        else
-            music.isOn = false;
+        if (!PlayerPrefs.HasKey("BGMVolume"))
+        {
+            PlayerPrefs.SetFloat("BGMVolume", 0.35f);
+        }
+        bgmSlider.value = PlayerPrefs.GetFloat("BGMVolume");
     }
 
-    public void ToggleMusic(bool toggle)
+    public void ChangeBGMVolume()
     {
-        AudioManager.Instance.ToggleMusic(toggle);
+        AudioManager.Instance.SetVolume("BGM", bgmSlider.value);
+        PlayerPrefs.SetFloat("BGMVolume", bgmSlider.value);
     }
 }

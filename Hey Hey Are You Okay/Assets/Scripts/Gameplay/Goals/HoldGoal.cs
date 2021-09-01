@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
-public class HoldHoal : MonoBehaviour
+public class HoldGoal : MonoBehaviour
 {
     [SerializeField] ToolEnum goalTool;
     [SerializeField] string eventToPlay;
