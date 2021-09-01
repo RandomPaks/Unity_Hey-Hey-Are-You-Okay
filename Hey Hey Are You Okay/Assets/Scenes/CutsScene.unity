@@ -333,10 +333,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81450bfd165990479861a56f984d8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: 1
-  eventToPlay: 
+  goalTool: 3
+  eventToPlay: BandAidFinish
+  progressSpeed: 0.5
   isDecreaseSize: 0
   decreaseMult: 2
+  isProgressing: 0
 --- !u!114 &269172942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,10 +537,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81450bfd165990479861a56f984d8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: 0
-  eventToPlay: 
+  goalTool: 0
+  eventToPlay: BloodyToWater
+  progressSpeed: 0.25
   isDecreaseSize: 1
   decreaseMult: 2
+  isProgressing: 0
 --- !u!1 &409955643
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,10 +892,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f3a9b3164009340bdd9f0bbc4159bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalTool: 1
+  tool: {fileID: 1896868318}
   goals:
   - {fileID: 1344804913}
   - {fileID: 2078164789}
-  tool: {fileID: 1896868318}
   eventToPlay: WaterToDry
 --- !u!114 &574263647
 MonoBehaviour:
@@ -1317,11 +1322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9e2d199192ef542a893b9fc32edbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWashing: 0
-  isDrying: 0
-  isApplying: 0
-  isBandAiding: 0
-  isCalling: 0
   progress: 0
   progressBar: {fileID: 1609717128}
   level: 1
@@ -2961,10 +2961,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f3a9b3164009340bdd9f0bbc4159bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalTool: 2
+  tool: {fileID: 1308865416}
   goals:
   - {fileID: 481556657}
   - {fileID: 1029341126}
-  tool: {fileID: 1308865416}
   eventToPlay: DryToIodine
 --- !u!1 &1609717124
 GameObject:

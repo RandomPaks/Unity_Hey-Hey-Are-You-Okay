@@ -576,11 +576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9e2d199192ef542a893b9fc32edbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWashing: 0
-  isDrying: 0
-  isApplying: 0
-  isBandAiding: 0
-  isCalling: 0
   progress: 0
   progressBar: {fileID: 1731643343}
   level: 2
@@ -1635,10 +1630,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81450bfd165990479861a56f984d8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: 0
-  eventToPlay: 
+  goalTool: 1
+  eventToPlay: BloodToTowel
+  progressSpeed: 0.25
+  isInstant: 0
   isDecreaseSize: 0
   decreaseMult: 2
+  isProgressing: 0
 --- !u!58 &937904782
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2077,7 +2075,6 @@ GameObject:
   - component: {fileID: 1178203932}
   - component: {fileID: 1178203931}
   - component: {fileID: 1178203930}
-  - component: {fileID: 1178203929}
   - component: {fileID: 1178203933}
   m_Layer: 5
   m_Name: Bandage 2
@@ -2108,24 +2105,6 @@ RectTransform:
   m_AnchoredPosition: {x: -21, y: 235}
   m_SizeDelta: {x: 560, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1178203929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178203927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62706138594a8c942bdb5bf2fef7ae08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goals:
-  - {fileID: 2065030053}
-  - {fileID: 1017040070}
-  - {fileID: 1761144278}
-  bandage: {fileID: 91637907}
-  eventToPlay: 1ToBandage2
 --- !u!61 &1178203930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3007,7 +2986,7 @@ GameObject:
   - component: {fileID: 1606651679}
   - component: {fileID: 1606651678}
   - component: {fileID: 1606651677}
-  - component: {fileID: 1606651676}
+  - component: {fileID: 1606651680}
   m_Layer: 5
   m_Name: Bandage 3
   m_TagString: Untagged
@@ -3037,24 +3016,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12, y: 448}
   m_SizeDelta: {x: 560, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1606651676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606651674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62706138594a8c942bdb5bf2fef7ae08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goals:
-  - {fileID: 316736602}
-  - {fileID: 1295254104}
-  - {fileID: 1777828428}
-  bandage: {fileID: 91637907}
-  eventToPlay: 2ToBandage3
 --- !u!61 &1606651677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3115,6 +3076,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606651674}
   m_CullTransparentMesh: 0
+--- !u!114 &1606651680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606651674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f3a9b3164009340bdd9f0bbc4159bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalTool: 4
+  tool: {fileID: 91637907}
+  goals:
+  - {fileID: 316736602}
+  - {fileID: 1295254104}
+  - {fileID: 1777828428}
+  eventToPlay: 2ToBandage3
 --- !u!1 &1630783530
 GameObject:
   m_ObjectHideFlags: 0
@@ -4249,10 +4229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81450bfd165990479861a56f984d8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: 2
+  goalTool: 5
   eventToPlay: Bandage3ToPhone
+  progressSpeed: 0.5
+  isInstant: 1
   isDecreaseSize: 0
   decreaseMult: 2
+  isProgressing: 0
 --- !u!58 &2106070747
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class HoldHoal : AGoal
+public class HoldHoal : MonoBehaviour
 {
-    [SerializeField] GoalEnum goal;
+    [SerializeField] ToolEnum goalTool;
     [SerializeField] string eventToPlay;
+    [SerializeField] float progressSpeed= 0.5f;
+    [SerializeField] bool isInstant = false;
 
     RectTransform rect;
     CircleCollider2D col;
@@ -11,6 +14,8 @@ public class HoldHoal : AGoal
     [SerializeField] bool isDecreaseSize = false;
     [Range(2, 5)]
     [SerializeField] float decreaseMult = 2;
+
+    public bool isProgressing;
 
     void Awake()
     {
@@ -29,42 +34,28 @@ public class HoldHoal : AGoal
             rect.localScale = new Vector3(newScale, newScale, 0);
             col.radius = ((50 * decreaseMult) - GameManager.Instance.progress) / decreaseMult;
         }
+
+        if (isProgressing)
+        {
+            GameManager.Instance.Progress(eventToPlay, progressSpeed);
+        }
     }
 
-    public override void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         other.TryGetComponent<ToolDrag>(out ToolDrag toolObject);
-        if (toolObject.tool == ToolEnum.FAUCET && goal == GoalEnum.BLOOD)
-        {
-            GameManager.Instance.isWashing = true;
-        }
-        else if(toolObject.tool == ToolEnum.TOWEL)
-        {
-            GameManager.Instance.isDrying = true;
-        }
-        else if (toolObject.tool == ToolEnum.BANDAID && goal == GoalEnum.BANDAID)
-        {
-            GameManager.Instance.isBandAiding = true;
-        }
-        else if (toolObject.tool == ToolEnum.PHONE && goal == GoalEnum.PHONE)
+
+        isProgressing = true;
+
+        if (toolObject.tool == goalTool && isInstant)
         {
             EventManager.Instance.PlayEvent(eventToPlay);
         }
     }
-    public override void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         other.TryGetComponent<ToolDrag>(out ToolDrag toolObject);
-        if (toolObject.tool == ToolEnum.FAUCET && goal == GoalEnum.BLOOD)
-        {
-            GameManager.Instance.isWashing = false;
-        }
-        else if (toolObject.tool == ToolEnum.TOWEL)
-        {
-            GameManager.Instance.isDrying = false;
-        }
-        else if (toolObject.tool == ToolEnum.BANDAID && goal == GoalEnum.BANDAID)
-        {
-            GameManager.Instance.isBandAiding = false;
-        }
+
+        isProgressing = false;
     }
 }

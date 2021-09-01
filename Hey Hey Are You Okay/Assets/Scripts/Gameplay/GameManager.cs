@@ -4,8 +4,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public bool isWashing = false, isDrying = false, isApplying = false, isBandAiding = false, isCalling = false;
-
     public float progress = 0f;
     [SerializeField] ProgressBar progressBar;
 
@@ -20,19 +18,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(level == 1)
-        { 
-            if (isWashing) FirstAid("BloodyToWater", 0.25f);
-            if (isBandAiding) FirstAid("BandAidFinish");
-        }
-        else if(level == 2)
-        {
-            if (isDrying) FirstAid("BloodToTowel", 0.25f);
-        }
         progressBar.SetCurrentFill(progress);
     }
 
-    void FirstAid(string name, float increment = 0.5f)
+    public void Progress(string name, float increment = 0.5f)
     {
         if (progress <= 100)
         {
@@ -40,8 +29,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            EventManager.Instance.PlayEvent(name);
             progress = 0;
+            EventManager.Instance.PlayEvent(name);
         }
     }
 
