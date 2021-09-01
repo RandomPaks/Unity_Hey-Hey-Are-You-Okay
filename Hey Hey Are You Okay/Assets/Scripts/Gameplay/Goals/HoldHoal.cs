@@ -1,7 +1,15 @@
 ﻿using UnityEngine;
 
+public enum GoalEnum
+{
+    BLOOD,
+    BANDAID
+}
+
 public class HoldHoal : AGoal
 {
+    [SerializeField] GoalEnum goal;
+
     RectTransform rect;
     CircleCollider2D col;
     [SerializeField] float decreaseMult = 2;
@@ -29,7 +37,7 @@ public class HoldHoal : AGoal
     public override void OnTriggerEnter2D(Collider2D other)
     {
         other.TryGetComponent<ToolDrag>(out ToolDrag toolObject);
-        if (toolObject.tool == ToolEnum.FAUCET)
+        if (toolObject.tool == ToolEnum.FAUCET && goal == GoalEnum.BLOOD)
         {
             GameManager.Instance.isWashing = true;
         }
@@ -37,17 +45,25 @@ public class HoldHoal : AGoal
         {
             GameManager.Instance.isDrying = true;
         }
+        else if (toolObject.tool == ToolEnum.BANDAID && goal == GoalEnum.BANDAID)
+        {
+            GameManager.Instance.isBandAiding = true;
+        }
     }
     public override void OnTriggerExit2D(Collider2D other)
     {
         other.TryGetComponent<ToolDrag>(out ToolDrag toolObject);
-        if (toolObject.tool == ToolEnum.FAUCET)
+        if (toolObject.tool == ToolEnum.FAUCET && goal == GoalEnum.BLOOD)
         {
             GameManager.Instance.isWashing = false;
         }
         else if (toolObject.tool == ToolEnum.TOWEL)
         {
             GameManager.Instance.isDrying = false;
+        }
+        else if (toolObject.tool == ToolEnum.BANDAID && goal == GoalEnum.BANDAID)
+        {
+            GameManager.Instance.isBandAiding = false;
         }
     }
 }
