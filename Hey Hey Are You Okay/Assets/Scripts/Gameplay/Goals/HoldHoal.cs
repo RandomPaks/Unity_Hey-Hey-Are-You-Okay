@@ -3,17 +3,20 @@
 public enum GoalEnum
 {
     BLOOD,
-    BANDAID
+    BANDAID,
+    PHONE
 }
 
 public class HoldHoal : AGoal
 {
     [SerializeField] GoalEnum goal;
+    [SerializeField] string eventToPlay;
 
     RectTransform rect;
     CircleCollider2D col;
-    [SerializeField] float decreaseMult = 2;
+    [Header("Size Decrease")]
     [SerializeField] bool isDecreaseSize = false;
+    [SerializeField][Range(2, 5)] float decreaseMult = 2;
 
     void Awake()
     {
@@ -48,6 +51,10 @@ public class HoldHoal : AGoal
         else if (toolObject.tool == ToolEnum.BANDAID && goal == GoalEnum.BANDAID)
         {
             GameManager.Instance.isBandAiding = true;
+        }
+        else if (toolObject.tool == ToolEnum.PHONE && goal == GoalEnum.PHONE)
+        {
+            EventManager.Instance.PlayEvent(eventToPlay);
         }
     }
     public override void OnTriggerExit2D(Collider2D other)

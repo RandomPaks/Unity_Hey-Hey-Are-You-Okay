@@ -334,8 +334,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: 1
-  decreaseMult: 2
+  eventToPlay: 
   isDecreaseSize: 0
+  decreaseMult: 2
 --- !u!114 &269172942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,8 +536,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: 0
-  decreaseMult: 2
+  eventToPlay: 
   isDecreaseSize: 1
+  decreaseMult: 2
 --- !u!1 &409955643
 GameObject:
   m_ObjectHideFlags: 0

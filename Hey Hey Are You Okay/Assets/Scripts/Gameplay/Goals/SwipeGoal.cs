@@ -2,8 +2,8 @@
 
 public class SwipeGoal : MonoBehaviour
 {
-    [SerializeField] GameObject[] goals;
     [SerializeField] GameObject tool;
+    [SerializeField] GameObject[] goals;
     [SerializeField] string eventToPlay;
 
     void Update()

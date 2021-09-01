@@ -6,7 +6,7 @@ public class BandageGoal : MonoBehaviour
 {
     [SerializeField] GameObject[] goals;
     [SerializeField] GameObject bandage;
-    [SerializeField] string nextEventName;
+    [SerializeField] string eventToPlay;
 
 
     void Update()
@@ -24,7 +24,7 @@ public class BandageGoal : MonoBehaviour
             goals[0].SetActive(false);
             goals[1].SetActive(false);
             goals[2].SetActive(false);
-            GameManager.Instance.FinishedSwipeEvent(nextEventName);
+            GameManager.Instance.FinishedSwipeEvent(eventToPlay);
         }
     }
 }

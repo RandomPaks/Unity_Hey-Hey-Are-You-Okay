@@ -1636,6 +1636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: 0
+  eventToPlay: 
   decreaseMult: 2
   isDecreaseSize: 0
 --- !u!58 &937904782
@@ -2123,7 +2124,7 @@ MonoBehaviour:
   - {fileID: 1017040070}
   - {fileID: 1761144278}
   bandage: {fileID: 91637907}
-  nextEventName: 1ToBandage2
+  eventToPlay: 1ToBandage2
 --- !u!61 &1178203930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2792,7 +2793,7 @@ MonoBehaviour:
   - {fileID: 1606365315}
   - {fileID: 1804640837}
   bandage: {fileID: 91637907}
-  nextEventName: TowelToBandage1
+  eventToPlay: TowelToBandage1
 --- !u!61 &1522717748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3032,7 +3033,7 @@ MonoBehaviour:
   - {fileID: 1295254104}
   - {fileID: 1777828428}
   bandage: {fileID: 91637907}
-  nextEventName: 2ToBandage3
+  eventToPlay: 2ToBandage3
 --- !u!61 &1606651677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4224,9 +4225,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2106070744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b977318dd76eb46bfba63f92040d79, type: 3}
+  m_Script: {fileID: 11500000, guid: a81450bfd165990479861a56f984d8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goal: 2
+  eventToPlay: Bandage3ToPhone
+  decreaseMult: 2
+  isDecreaseSize: 0
 --- !u!58 &2106070747
 CircleCollider2D:
   m_ObjectHideFlags: 0
