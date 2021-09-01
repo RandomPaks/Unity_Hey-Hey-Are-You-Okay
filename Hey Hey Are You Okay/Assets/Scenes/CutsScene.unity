@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 269172940}
   - component: {fileID: 269172941}
   m_Layer: 5
-  m_Name: Iodine
+  m_Name: BandAid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 574263645}
   - component: {fileID: 574263646}
   m_Layer: 5
-  m_Name: Water
+  m_Name: Dry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,7 +885,8 @@ MonoBehaviour:
   goals:
   - {fileID: 1344804913}
   - {fileID: 2078164789}
-  towel: {fileID: 1896868318}
+  tool: {fileID: 1896868318}
+  eventToPlay: WaterToDry
 --- !u!114 &574263647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2853,9 +2854,9 @@ GameObject:
   - component: {fileID: 1499729362}
   - component: {fileID: 1499729361}
   - component: {fileID: 1499729359}
-  - component: {fileID: 1499729360}
+  - component: {fileID: 1499729364}
   m_Layer: 5
-  m_Name: Dry
+  m_Name: Iodine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2887,22 +2888,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 130.0321, y: 94.03528}
   m_EdgeRadius: 0
---- !u!114 &1499729360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499729358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5284258436fcb4fb1512e36acdf7ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goals:
-  - {fileID: 481556657}
-  - {fileID: 1029341126}
-  iodine: {fileID: 1308865416}
 --- !u!114 &1499729361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2958,6 +2943,23 @@ RectTransform:
   m_AnchoredPosition: {x: 19, y: 204}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1499729364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499729358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f3a9b3164009340bdd9f0bbc4159bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goals:
+  - {fileID: 481556657}
+  - {fileID: 1029341126}
+  tool: {fileID: 1308865416}
+  eventToPlay: DryToIodine
 --- !u!1 &1609717124
 GameObject:
   m_ObjectHideFlags: 0
