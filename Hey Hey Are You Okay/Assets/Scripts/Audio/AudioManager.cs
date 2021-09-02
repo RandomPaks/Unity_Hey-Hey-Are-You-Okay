@@ -29,6 +29,12 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play("BGM");
+
+        if (!PlayerPrefs.HasKey("BGMVolume"))
+        {
+            PlayerPrefs.SetFloat("BGMVolume", GetAudio("BGM").volume);
+        }
+        SetVolume("BGM", PlayerPrefs.GetFloat("BGMVolume"));
     }
 
     public void Play(string name)
@@ -65,6 +71,17 @@ public class AudioManager : MonoBehaviour
         }
 
         a.source.volume = volume;
+    }
+
+    Audio GetAudio(string name)
+    {
+        Audio a = Array.Find(audios, audio => audio.name == name);
+        if (a == null)
+        {
+            Debug.LogWarning("Audio: " + name + " not found!");
+            return null;
+        }
+        return a;
     }
 
     public void ToggleMusic(bool toggle)

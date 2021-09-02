@@ -44,17 +44,25 @@ public class HoldGoal : MonoBehaviour
     {
         other.TryGetComponent<ToolDrag>(out ToolDrag toolObject);
 
-        isProgressing = true;
-
-        if (toolObject.tool == goalTool && isInstant)
+        if (toolObject.tool == goalTool)
         {
-            EventManager.Instance.PlayEvent(eventToPlay);
+            if (!isInstant)
+            {
+                isProgressing = true;
+            }
+            else
+            {
+                EventManager.Instance.PlayEvent(eventToPlay);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
         other.TryGetComponent<ToolDrag>(out ToolDrag toolObject);
 
-        isProgressing = false;
+        if (toolObject.tool == goalTool)
+        {
+            isProgressing = false;
+        }
     }
 }

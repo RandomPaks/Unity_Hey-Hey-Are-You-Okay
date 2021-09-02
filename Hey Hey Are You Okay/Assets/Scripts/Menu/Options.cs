@@ -7,10 +7,6 @@ public class Options : MonoBehaviour
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("BGMVolume"))
-        {
-            PlayerPrefs.SetFloat("BGMVolume", 0.35f);
-        }
         bgmSlider.value = PlayerPrefs.GetFloat("BGMVolume");
     }
 
@@ -18,5 +14,6 @@ public class Options : MonoBehaviour
     {
         AudioManager.Instance.SetVolume("BGM", bgmSlider.value);
         PlayerPrefs.SetFloat("BGMVolume", bgmSlider.value);
+        PlayerPrefs.Save();
     }
 }
