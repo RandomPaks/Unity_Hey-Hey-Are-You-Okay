@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class EndEvent : AEventSequence
 {
-    [SerializeField] Image bg;
-    [SerializeField] Image backButton;
+    [SerializeField] GameObject endPanel;
 
     void Start()
     {
@@ -14,8 +13,8 @@ public class EndEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
-        bg.gameObject.SetActive(true);
         StartCoroutine(FadeInBG());
+        endPanel.SetActive(true);
     }
 
     public override void OnFinishEvent()
@@ -24,12 +23,15 @@ public class EndEvent : AEventSequence
     }
     IEnumerator FadeInBG()
     {
-        Color curColor = bg.color;
+        Color curColor = endPanel.GetComponent<Image>().color;
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
-            bg.color = curColor;
-            backButton.color = curColor;
+            endPanel.GetComponent<Image>().color = curColor;
+            foreach (Transform child in endPanel.transform)
+            {
+                child.GetComponent<Image>().color = curColor;
+            }
             yield return null;
         }
     }

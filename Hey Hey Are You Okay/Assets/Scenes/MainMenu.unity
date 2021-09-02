@@ -7815,8 +7815,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -135.5, y: 312}
-  m_SizeDelta: {x: -495, y: -214.71558}
+  m_AnchoredPosition: {x: -135, y: 312}
+  m_SizeDelta: {x: -494, y: -214.71558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &827281255
 MonoBehaviour:
@@ -9738,7 +9738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1146502756
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12183,7 +12183,7 @@ MonoBehaviour:
   audios:
   - name: BGM
     clip: {fileID: 8300000, guid: 5b8338ff4091904458feb2af89f80c65, type: 3}
-    volume: 0.15
+    volume: 0.35
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -16644,8 +16644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -206.50195, y: -323.9}
-  m_SizeDelta: {x: 351.0039, y: -637.27484}
+  m_AnchoredPosition: {x: -206, y: -323.9}
+  m_SizeDelta: {x: 352.0039, y: -637.27484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071816206
 MonoBehaviour:
