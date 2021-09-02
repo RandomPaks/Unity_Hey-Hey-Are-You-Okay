@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LacerationScene.unity
     guid: bda7694fb01339346b2f8e5a18f6b6a2
+  - enabled: 1
+    path: Assets/Scenes/BurnsScene.unity
+    guid: 6cc9beda813326c4cbffcb9d66167493
   m_configObjects: {}

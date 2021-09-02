@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 [System.Serializable]
 public class Dialogue
-{
+{   
+    [TextArea]
     public string text;
     public float secs;
 }

@@ -3,12 +3,15 @@ using UnityEngine.EventSystems;
 
 public enum ToolEnum
 {
-    FAUCET,
+    WATER,
     TOWEL,
     IODINE,
     BANDAID,
     BANDAGE,
-    PHONE
+    PHONE,
+    WET_TOWEL,
+    BURN_OINTMENT,
+    EMPTY
 }
 
 public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler

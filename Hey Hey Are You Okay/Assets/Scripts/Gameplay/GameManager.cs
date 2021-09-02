@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [HideInInspector]
     public float progress = 0f;
     [SerializeField] ProgressBar progressBar;
 

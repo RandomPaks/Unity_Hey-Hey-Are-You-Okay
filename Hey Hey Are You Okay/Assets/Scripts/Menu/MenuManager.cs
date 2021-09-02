@@ -66,8 +66,6 @@ public class MenuManager : MonoBehaviour
         menus.Add(backstoryPanel);
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
-
-        
     }
 
     public void OpenMenu(MenuEnum menu)
@@ -85,7 +83,6 @@ public class MenuManager : MonoBehaviour
                 break;
             case MenuEnum.BACKSTORY:
                 ChangeMenu(backstoryPanel);
-                
                 break;
         }
         Debug.Log($"Opened: {menu}!");

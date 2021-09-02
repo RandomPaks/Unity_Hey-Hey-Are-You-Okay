@@ -12229,6 +12229,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Ring
+    clip: {fileID: 8300000, guid: cbd0fdf3b9d3b2f4cb5d05ea85e647d3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1475364591
 GameObject:
   m_ObjectHideFlags: 0
@@ -13598,7 +13604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 336, y: -24.179}
+  m_AnchoredPosition: {x: 336, y: -24.178955}
   m_SizeDelta: {x: 0, y: 457.6422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682539903
@@ -16413,7 +16419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 336, y: -24.159973}
+  m_AnchoredPosition: {x: 336, y: -24.160034}
   m_SizeDelta: {x: 0, y: 457.60474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040008457
