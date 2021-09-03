@@ -16,6 +16,9 @@ public class SaveManager : MonoBehaviour
         CheckPlayerKeysExist("TutCutsCompleted");
         CheckPlayerKeysExist("TutLacerationCompleted");
         CheckPlayerKeysExist("TutBurnsCompleted");
+        CheckPlayerKeysExist("TutCutsAltCompleted");
+        CheckPlayerKeysExist("TutLacerationAltCompleted");
+        CheckPlayerKeysExist("TutBurnsAltCompleted");
 
         CheckPlayerProgress();
     }
@@ -24,7 +27,10 @@ public class SaveManager : MonoBehaviour
     {
         if(CheckPlayerKeysDone("TutCutsCompleted") &&
             CheckPlayerKeysDone("TutLacerationCompleted") &&
-            CheckPlayerKeysDone("TutBurnsCompleted"))
+            CheckPlayerKeysDone("TutBurnsCompleted") &&
+            CheckPlayerKeysDone("TutCutsAltCompleted") &&
+            CheckPlayerKeysDone("TutLacerationAltCompleted") &&
+            CheckPlayerKeysDone("TutBurnsAltCompleted"))
         {
             MenuManager.Instance.examButton.interactable = true;
         }

@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(LateStart(5f));
+        StartCoroutine(LateStart(1f));
     }
 
     IEnumerator LateStart(float waitTime)
