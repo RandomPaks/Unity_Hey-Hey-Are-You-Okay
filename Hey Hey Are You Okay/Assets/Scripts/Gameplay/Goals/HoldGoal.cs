@@ -58,6 +58,11 @@ public class HoldGoal : MonoBehaviour
                 EventManager.Instance.PlayEvent(eventToPlay);
             }
         }
+        else if (toolObject.tool != goalTool)
+        {
+            toolObject.GetComponent<ToolDrag>().OnForceEndDrag();
+            ExamManager.Instance.ReduceStars();
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {

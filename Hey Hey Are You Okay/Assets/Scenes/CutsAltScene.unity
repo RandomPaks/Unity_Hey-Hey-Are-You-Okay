@@ -278,7 +278,6 @@ GameObject:
   - component: {fileID: 106140294}
   - component: {fileID: 106140293}
   - component: {fileID: 106140292}
-  - component: {fileID: 106140291}
   m_Layer: 5
   m_Name: Replay
   m_TagString: Untagged
@@ -305,18 +304,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -500}
   m_SizeDelta: {x: 307.66666, y: 134.66675}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &106140291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106140289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &106140292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,8 +360,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 106140291}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 735594289}
+        m_MethodName: OnRestartLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1252,6 +1239,7 @@ GameObject:
   - component: {fileID: 481556661}
   - component: {fileID: 481556660}
   - component: {fileID: 481556659}
+  - component: {fileID: 481556663}
   m_Layer: 5
   m_Name: Collider1
   m_TagString: Untagged
@@ -1359,6 +1347,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481556657}
   m_CullTransparentMesh: 0
+--- !u!114 &481556663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481556657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c3796de43293e4fa523903c37ab654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalTool: 2
 --- !u!1 &516676107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,6 +2780,7 @@ GameObject:
   - component: {fileID: 1029341130}
   - component: {fileID: 1029341129}
   - component: {fileID: 1029341128}
+  - component: {fileID: 1029341132}
   m_Layer: 5
   m_Name: Collider2
   m_TagString: Untagged
@@ -2886,6 +2888,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029341126}
   m_CullTransparentMesh: 0
+--- !u!114 &1029341132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029341126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c3796de43293e4fa523903c37ab654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalTool: 2
 --- !u!1 &1130013508
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,6 +3680,7 @@ GameObject:
   - component: {fileID: 1344804915}
   - component: {fileID: 1344804918}
   - component: {fileID: 1344804917}
+  - component: {fileID: 1344804919}
   m_Layer: 5
   m_Name: Collider1
   m_TagString: Untagged
@@ -3772,6 +3788,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1344804919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344804913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c3796de43293e4fa523903c37ab654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalTool: 1
 --- !u!1 &1369260950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4581,7 +4610,6 @@ GameObject:
   - component: {fileID: 1874785797}
   - component: {fileID: 1874785796}
   - component: {fileID: 1874785795}
-  - component: {fileID: 1874785794}
   m_Layer: 5
   m_Name: Replay
   m_TagString: Untagged
@@ -4608,18 +4636,6 @@ RectTransform:
   m_AnchoredPosition: {x: -160, y: 170}
   m_SizeDelta: {x: 307.66666, y: 134.66669}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1874785794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874785792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1874785795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4676,8 +4692,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1874785794}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 735594289}
+        m_MethodName: OnRestartLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4910,6 +4926,7 @@ GameObject:
   - component: {fileID: 2078164793}
   - component: {fileID: 2078164792}
   - component: {fileID: 2078164791}
+  - component: {fileID: 2078164795}
   m_Layer: 5
   m_Name: Collider2
   m_TagString: Untagged
@@ -5017,6 +5034,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078164789}
   m_CullTransparentMesh: 0
+--- !u!114 &2078164795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078164789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c3796de43293e4fa523903c37ab654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalTool: 1
 --- !u!1 &2108542570
 GameObject:
   m_ObjectHideFlags: 0

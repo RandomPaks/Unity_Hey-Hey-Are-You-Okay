@@ -21,5 +21,10 @@ public class MergeGoal : MonoBehaviour
             toolMerger.tool = setTool;
             EventManager.Instance.PlayEvent(eventToPlay);
         }
+        else if (other.GetComponent<ToolDrag>().tool != goalTool)
+        {
+            other.GetComponent<ToolDrag>().OnForceEndDrag();
+            ExamManager.Instance.ReduceStars();
+        }
     }
 }

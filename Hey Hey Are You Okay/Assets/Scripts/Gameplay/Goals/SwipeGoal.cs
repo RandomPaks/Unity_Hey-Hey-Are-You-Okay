@@ -10,7 +10,6 @@ public class SwipeGoal : MonoBehaviour
     [SerializeField] string eventToPlay;
     [SerializeField] bool isLast = false;
 
-
     void Awake()
     {
         toolDragger = tool.GetComponent<ToolDrag>();

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,5 +61,18 @@ public class GameManager : MonoBehaviour
     public void OnExitExams()
     {
         ExamManager.Instance.ResetExams();
+    }
+
+    public void OnRestartLevel(string scene)
+    {
+        if (ExamManager.Instance.isExam)
+        {
+            ExamManager.Instance.ResetExams();
+            ExamManager.Instance.StartExams();
+        }
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
     }
 }
