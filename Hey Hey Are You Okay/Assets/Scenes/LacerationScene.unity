@@ -2559,6 +2559,7 @@ MonoBehaviour:
   - {fileID: 1017040070}
   - {fileID: 1761144278}
   eventToPlay: 1ToBandage2
+  isLast: 0
 --- !u!1 &1206930248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,6 +3384,7 @@ MonoBehaviour:
   - {fileID: 1606365315}
   - {fileID: 1804640837}
   eventToPlay: TowelToBandage1
+  isLast: 0
 --- !u!1 &1547785647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +3782,7 @@ MonoBehaviour:
   - {fileID: 1295254104}
   - {fileID: 1777828428}
   eventToPlay: 2ToBandage3
+  isLast: 1
 --- !u!1 &1630783530
 GameObject:
   m_ObjectHideFlags: 0

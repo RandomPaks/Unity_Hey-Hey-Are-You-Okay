@@ -17,6 +17,7 @@ public enum ToolEnum
 public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public ToolEnum tool;
+    PointerEventData lastPointerData;
 
     Vector3 startPosition;
     void Start()
@@ -26,11 +27,25 @@ public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        lastPointerData = eventData;
+
         gameObject.transform.position += (Vector3)eventData.delta;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        lastPointerData = null;
+
         gameObject.transform.position = startPosition;
+    }
+
+    public void OnForceEndDrag()
+    {
+        if (lastPointerData != null)
+        {
+            lastPointerData.pointerDrag = null;
+
+            gameObject.transform.position = startPosition;
+        }
     }
 }

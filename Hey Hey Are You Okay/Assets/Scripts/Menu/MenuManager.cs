@@ -33,6 +33,8 @@ public class MenuManager : MonoBehaviour
     //Setting the backstories
     RawImage backdrop;
     string sceneToLoad = "CutsScene";
+    BackstoryScriptableObject backstoryA;
+    BackstoryScriptableObject backstoryB;
 
     void Awake()
     {
@@ -124,6 +126,27 @@ public class MenuManager : MonoBehaviour
     {
         backdrop.texture = backstory.backdrop.texture;
         sceneToLoad = backstory.name + "Scene";
+
+        backstoryA = backstory;
+    }
+
+    public void OnClickSymptomSceneB(BackstoryScriptableObject backstory)
+    {
+        backstoryB = backstory;
+    }
+
+    public void OnClickSymptomAltered(string ver)
+    {
+        if(ver == "A")
+        {
+            backdrop.texture = backstoryA.backdrop.texture;
+            sceneToLoad = backstoryA.name + "Scene";
+        }
+        else
+        {
+            backdrop.texture = backstoryB.backdrop.texture;
+            sceneToLoad = backstoryB.name + "Scene";
+        }
     }
 
     public void OnFinishTutorial()

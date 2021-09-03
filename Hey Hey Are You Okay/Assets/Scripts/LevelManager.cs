@@ -5,6 +5,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
     public bool isPlaying = false;
+    public bool isPlayTutorial = false;
 
     void Awake()
     {

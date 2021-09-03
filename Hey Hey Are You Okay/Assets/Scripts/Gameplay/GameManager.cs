@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         progressBar.SetCurrentFill(progress);
     }
 
-    public void Progress(string name, float increment = 0.5f)
+    public void Progress(string name, ToolDrag tool, float increment = 0.5f)
     {
         if (progress <= 100)
         {
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         else
         {
             progress = 0;
+            tool.OnForceEndDrag();
             EventManager.Instance.PlayEvent(name);
         }
     }

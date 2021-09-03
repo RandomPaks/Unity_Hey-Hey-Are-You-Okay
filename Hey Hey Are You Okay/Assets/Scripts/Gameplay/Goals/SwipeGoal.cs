@@ -4,15 +4,16 @@ public class SwipeGoal : MonoBehaviour
 {
     [SerializeField] ToolEnum goalTool;
     [SerializeField] GameObject tool;
-    ToolDrag toolObject;
+    ToolDrag toolDragger;
     Collider2D toolCol;
     [SerializeField] GameObject[] goals;
     [SerializeField] string eventToPlay;
+    [SerializeField] bool isLast = false;
 
 
     void Awake()
     {
-        toolObject = tool.GetComponent<ToolDrag>();
+        toolDragger = tool.GetComponent<ToolDrag>();
         toolCol = tool.GetComponent<Collider2D>();
     }
 
@@ -20,7 +21,7 @@ public class SwipeGoal : MonoBehaviour
     {
         for (int i = 0; i < goals.Length; i++)
         {
-            if (goals[i].GetComponent<Collider2D>().IsTouching(toolCol) && toolObject.tool == goalTool)
+            if (goals[i].GetComponent<Collider2D>().IsTouching(toolCol) && toolDragger.tool == goalTool)
             {
                 goals[i].SetActive(false);
                 if (i + 1 < goals.Length)
@@ -29,11 +30,13 @@ public class SwipeGoal : MonoBehaviour
                 }
                 else
                 {
-                    for (int j = 0; j < goals.Length; j++)
+                    if (isLast)
                     {
-                        goals[j].SetActive(false);
-                        GameManager.Instance.FinishedSwipeEvent(eventToPlay);
+                        toolDragger.OnForceEndDrag();
                     }
+
+                    goals[i].SetActive(false);
+                    GameManager.Instance.FinishedSwipeEvent(eventToPlay);
                 }
             }
         }
