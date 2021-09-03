@@ -8,4 +8,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void LoadMainMenu()
+    {
+        ExamManager.Instance.ResetExams();
+        SceneManager.LoadScene("MainMenu");
+    }
 }

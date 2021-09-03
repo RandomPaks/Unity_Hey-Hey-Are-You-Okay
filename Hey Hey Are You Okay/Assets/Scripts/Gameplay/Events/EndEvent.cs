@@ -14,10 +14,16 @@ public class EndEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
-        StartCoroutine(FadeInBG());
-        endPanel.SetActive(true);
-
-        SaveManager.Instance.PlayerFinishLevel(key);
+        if (ExamManager.Instance.isExam)
+        {
+            ExamManager.Instance.ContinueExams();
+        }
+        else
+        {
+            StartCoroutine(FadeInBG());
+            endPanel.SetActive(true);
+            SaveManager.Instance.PlayerFinishLevel(key);
+        }
     }
 
     public override void OnFinishEvent()

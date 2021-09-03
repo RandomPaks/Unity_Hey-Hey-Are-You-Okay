@@ -5,35 +5,36 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
+    [SerializeField] string[] playerKeys;
 
-    void Start()
+    void Awake()
     {
         if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
             Instance = this;
+    }
 
-        CheckPlayerKeysExist("TutCutsCompleted");
-        CheckPlayerKeysExist("TutLacerationCompleted");
-        CheckPlayerKeysExist("TutBurnsCompleted");
-        CheckPlayerKeysExist("TutCutsAltCompleted");
-        CheckPlayerKeysExist("TutLacerationAltCompleted");
-        CheckPlayerKeysExist("TutBurnsAltCompleted");
+    void Start()
+    {
+        foreach (string key in playerKeys)
+        {
+            CheckPlayerKeysExist(key);
+        }
 
         CheckPlayerProgress();
     }
 
-    public void CheckPlayerProgress()
+    public bool CheckPlayerProgress()
     {
-        if(CheckPlayerKeysDone("TutCutsCompleted") &&
-            CheckPlayerKeysDone("TutLacerationCompleted") &&
-            CheckPlayerKeysDone("TutBurnsCompleted") &&
-            CheckPlayerKeysDone("TutCutsAltCompleted") &&
-            CheckPlayerKeysDone("TutLacerationAltCompleted") &&
-            CheckPlayerKeysDone("TutBurnsAltCompleted"))
+        bool result;
+        foreach (string key in playerKeys)
         {
-            MenuManager.Instance.examButton.interactable = true;
+            result = CheckPlayerKeysDone(key);
+            if (!result) return false;
         }
+        MenuManager.Instance.examButton.interactable = true;
+        return true;
     }
 
     void CheckPlayerKeysExist(string key)

@@ -2072,7 +2072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progress: 0
   progressBar: {fileID: 1609717128}
-  level: 1
+  helpText: {fileID: 1749063635}
 --- !u!1 &738562190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,6 +2460,7 @@ MonoBehaviour:
   - {fileID: 664360495}
   - {fileID: 18758926}
   eventToPlay: TowelToOintment
+  isLast: 0
 --- !u!61 &877424562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2777,8 +2778,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1013102160}
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4304,7 +4305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1749063636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5018,8 +5019,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2047197184}
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

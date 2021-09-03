@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,14 +8,28 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float progress = 0f;
     [SerializeField] ProgressBar progressBar;
+    [SerializeField] GameObject helpText;
 
-    public int level = 0;
     void Awake()
     {
         if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
             Instance = this;
+    }
+
+    void Start()
+    {
+        StartCoroutine(LateStart(0.1f));   
+    }
+
+    IEnumerator LateStart(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        if (ExamManager.Instance.isTutorial)
+        {
+            helpText.SetActive(true);
+        }
     }
 
     void Update()
@@ -38,7 +53,12 @@ public class GameManager : MonoBehaviour
 
     public void FinishedSwipeEvent(string name)
     {
-        EventManager.Instance.PlayEvent(name);
         progress = 0;
+        EventManager.Instance.PlayEvent(name);
+    }
+
+    public void OnExitExams()
+    {
+        ExamManager.Instance.ResetExams();
     }
 }

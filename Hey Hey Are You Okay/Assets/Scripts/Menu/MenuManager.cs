@@ -76,7 +76,7 @@ public class MenuManager : MonoBehaviour
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
 
-        if (LevelManager.Instance.isPlaying)
+        if (ExamManager.Instance.isPlaying)
         {
             OpenMainMenu();
         }
@@ -161,5 +161,10 @@ public class MenuManager : MonoBehaviour
         bgPanel.SetActive(true);
         mainPanel.SetActive(true);
         bottomPanel.SetActive(true);
+    }
+
+    public void OnLoadExams()
+    {
+        ExamManager.Instance.StartExams();
     }
 }
