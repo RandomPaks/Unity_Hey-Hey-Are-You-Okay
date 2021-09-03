@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,10 @@ public class MenuManager : MonoBehaviour
     [Header("Setting up the Tutorial")]
     [SerializeField] GameObject playButton;
     [SerializeField] GameObject tutorialButton;
+
+    [Header("Opening Main Menu")]
+    [SerializeField] GameObject titlePanel;
+    [SerializeField] GameObject bgPanel, bottomPanel;
 
     public Button examButton, survivalButton;
 
@@ -68,6 +73,11 @@ public class MenuManager : MonoBehaviour
         menus.Add(backstoryPanel);
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
+
+        if (LevelManager.Instance.isPlaying)
+        {
+            OpenMainMenu();
+        }
     }
 
     public void OpenMenu(MenuEnum menu)
@@ -120,5 +130,13 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("TutorialMenus", 1);
         PlayerPrefs.Save();
+    }
+
+    public void OpenMainMenu()
+    {
+        titlePanel.SetActive(false);
+        bgPanel.SetActive(true);
+        mainPanel.SetActive(true);
+        bottomPanel.SetActive(true);
     }
 }
