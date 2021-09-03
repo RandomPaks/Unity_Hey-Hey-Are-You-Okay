@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class EndEvent : AEventSequence
 {
     [SerializeField] GameObject endPanel;
+    [SerializeField] string key;
 
     void Start()
     {
@@ -15,6 +16,8 @@ public class EndEvent : AEventSequence
     {
         StartCoroutine(FadeInBG());
         endPanel.SetActive(true);
+
+        SaveManager.Instance.PlayerFinishLevel(key);
     }
 
     public override void OnFinishEvent()

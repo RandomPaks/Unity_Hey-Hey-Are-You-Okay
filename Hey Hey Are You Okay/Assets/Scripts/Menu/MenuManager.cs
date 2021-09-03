@@ -23,6 +23,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject playButton;
     [SerializeField] GameObject tutorialButton;
 
+    public Button examButton, survivalButton;
+
     //Setting the backstories
     RawImage backdrop;
     string sceneToLoad = "CutsScene";

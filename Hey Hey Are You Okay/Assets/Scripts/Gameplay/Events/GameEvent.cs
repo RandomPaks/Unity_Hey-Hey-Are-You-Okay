@@ -16,8 +16,14 @@ public class GameEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
-        oldHand.SetActive(false);
-        newHand.SetActive(true);
+        if(oldHand != null)
+        {
+            oldHand.SetActive(false);
+        }
+        if (newHand != null)
+        {
+            newHand.SetActive(true);
+        }
         if (oldHitbox != null)
             oldHitbox.SetActive(false);
         if(newHitbox != null)

@@ -102,6 +102,6 @@ public class AudioManager : MonoBehaviour
         }
 
         if (a.source.isPlaying) return true;
-        else return false;
+        return false;
     }
 }

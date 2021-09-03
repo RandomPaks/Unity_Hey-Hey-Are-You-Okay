@@ -18,7 +18,7 @@ public class SwipeGoal : MonoBehaviour
 
     void Update()
     {
-        for(int i = 0; i < goals.Length; i++)
+        for (int i = 0; i < goals.Length; i++)
         {
             if (goals[i].GetComponent<Collider2D>().IsTouching(toolCol) && toolObject.tool == goalTool)
             {
@@ -29,7 +29,7 @@ public class SwipeGoal : MonoBehaviour
                 }
                 else
                 {
-                    for(int j = 0; j < goals.Length; j++)
+                    for (int j = 0; j < goals.Length; j++)
                     {
                         goals[j].SetActive(false);
                         GameManager.Instance.FinishedSwipeEvent(eventToPlay);
