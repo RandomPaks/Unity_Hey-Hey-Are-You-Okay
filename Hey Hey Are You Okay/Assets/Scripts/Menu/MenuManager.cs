@@ -99,7 +99,6 @@ public class MenuManager : MonoBehaviour
                 ChangeMenu(backstoryPanel);
                 break;
         }
-        Debug.Log($"Opened: {menu}!");
     }
 
     void ChangeMenu(GameObject menuSelected)
