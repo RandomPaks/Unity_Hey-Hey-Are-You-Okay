@@ -25,6 +25,7 @@ public class MergeGoal : MonoBehaviour
         {
             other.GetComponent<ToolDrag>().OnForceEndDrag();
             ExamManager.Instance.ReduceStars();
+            Debug.Log("MISTAKE");
         }
     }
 }

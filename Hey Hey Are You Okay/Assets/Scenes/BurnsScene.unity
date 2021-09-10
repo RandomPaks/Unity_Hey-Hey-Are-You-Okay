@@ -3389,7 +3389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  nextEvent: {fileID: 409955645}
+  nextEvent: {fileID: 0}
   textBox: {fileID: 1749063637}
   dialogues:
   - text: Call for medical assistance.

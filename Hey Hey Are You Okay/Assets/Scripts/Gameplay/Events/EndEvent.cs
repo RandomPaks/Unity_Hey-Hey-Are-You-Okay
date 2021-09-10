@@ -15,7 +15,6 @@ public class EndEvent : AEventSequence
     public override void OnPlayEvent()
     {
         ExamManager.Instance.examsPassed++;
-        Debug.Log(ExamManager.Instance.examsPassed);
 
         if (ExamManager.Instance.isExam)
         {

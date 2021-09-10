@@ -33,8 +33,8 @@ public class MenuManager : MonoBehaviour
     //Setting the backstories
     RawImage backdrop;
     string sceneToLoad = "CutsScene";
-    BackstoryScriptableObject backstoryA;
-    BackstoryScriptableObject backstoryB;
+    [SerializeField] BackstoryScriptableObject backstoryA;
+    [SerializeField] BackstoryScriptableObject backstoryB;
 
     void Awake()
     {

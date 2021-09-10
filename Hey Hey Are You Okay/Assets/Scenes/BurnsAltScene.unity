@@ -3051,7 +3051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  nextEvent: {fileID: 409955645}
+  nextEvent: {fileID: 0}
   textBox: {fileID: 1749063637}
   dialogues:
   - text: Call for medical assistance.
@@ -3410,7 +3410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -34.59}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: -538}
+  m_AnchoredPosition: {x: -113, y: -538}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237486241
@@ -3697,8 +3697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142, y: 103}
-  m_SizeDelta: {x: 320, y: 120}
+  m_AnchoredPosition: {x: -78, y: 103}
+  m_SizeDelta: {x: 225.13, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1330835228
 MonoBehaviour:

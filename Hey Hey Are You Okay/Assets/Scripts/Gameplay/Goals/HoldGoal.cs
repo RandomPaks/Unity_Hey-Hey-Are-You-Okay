@@ -62,6 +62,7 @@ public class HoldGoal : MonoBehaviour
         {
             toolObject.GetComponent<ToolDrag>().OnForceEndDrag();
             ExamManager.Instance.ReduceStars();
+            Debug.Log("MISTAKE");
         }
     }
     void OnTriggerExit2D(Collider2D other)

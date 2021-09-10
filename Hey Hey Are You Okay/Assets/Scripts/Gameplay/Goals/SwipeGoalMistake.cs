@@ -8,10 +8,11 @@ public class SwipeGoalMistake : MonoBehaviour
     {
         other.TryGetComponent<ToolDrag>(out ToolDrag toolObject);
 
-        if (toolObject.tool != goalTool)
+        if (toolObject != null && toolObject.tool != goalTool)
         {
             toolObject.GetComponent<ToolDrag>().OnForceEndDrag();
             ExamManager.Instance.ReduceStars();
+            Debug.Log("MISTAKE");
         }
     }
 }
