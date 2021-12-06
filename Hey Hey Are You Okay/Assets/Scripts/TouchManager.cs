@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class TouchManager : MonoBehaviour
 {
-    public GameObject gameObject;
+    public GameObject tool;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetButtonUp("Fire1"))
+        {
+            GameManager.Instance.currentTool = null;
+            tool.transform.position = new Vector3(100, 100, 100);
+        }
     }
 
     void FixedUpdate()
@@ -34,7 +32,7 @@ public class TouchManager : MonoBehaviour
                 Vector3 collide = Vector3.Normalize(far - near) * hit.distance;
                 Debug.DrawRay(near, collide, Color.green);
 
-                gameObject.transform.position = hit.point;
+                tool.transform.position = hit.point;
             }
             else
             {

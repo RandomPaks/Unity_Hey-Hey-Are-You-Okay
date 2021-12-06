@@ -27,6 +27,7 @@ public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        GameManager.Instance.currentTool = this;
         lastPointerData = eventData;
 
         gameObject.transform.position += (Vector3)eventData.delta;

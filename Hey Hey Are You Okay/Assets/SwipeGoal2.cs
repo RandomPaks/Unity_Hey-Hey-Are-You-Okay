@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BezierSplineObjects : MonoBehaviour
+public class SwipeGoal2 : MonoBehaviour
 {
 	public BezierSpline spline;
 	public int frequency;
@@ -10,7 +10,9 @@ public class BezierSplineObjects : MonoBehaviour
 	public Transform mistake;
 	public List<Transform> references;
 	public float accuracy = 1;
-	public int correctNum = 0, mistakeNum  = 0;
+	public int correctNum = 0, mistakeNum = 0;
+	[SerializeField] ToolEnum goalTool;
+	[SerializeField] string eventToPlay;
 
 	void Awake()
 	{
@@ -41,7 +43,7 @@ public class BezierSplineObjects : MonoBehaviour
 			ReferenceObject referenceObjectMistake2 = item.gameObject.AddComponent<ReferenceObject>();
 			references.Add(item);
 
-			//referenceObjectGoal.splineObjects = referenceObjectMistake.splineObjects = referenceObjectMistake2.splineObjects = this;
+			referenceObjectGoal.splineObjects = referenceObjectMistake.splineObjects = referenceObjectMistake2.splineObjects = this;
 			referenceObjectGoal.goal = referenceObjectMistake.goal = referenceObjectMistake2.goal = referenceObjectGoal;
 			referenceObjectGoal.mistake = referenceObjectMistake.mistake = referenceObjectMistake2.mistake = referenceObjectMistake;
 			referenceObjectGoal.mistake2 = referenceObjectMistake.mistake2 = referenceObjectMistake2.mistake2 = referenceObjectMistake2;
@@ -55,29 +57,32 @@ public class BezierSplineObjects : MonoBehaviour
 		}
 	}
 
-	public void RemoveCurrentObjects()
-    {
-		if(references.Count > 0)
+	public bool RemoveCurrentObjects()
+	{
+		if (GameManager.Instance.currentTool != null && GameManager.Instance.currentTool.tool == goalTool && references.Count > 0)
 		{
 			references.RemoveAt(0);
 			references.RemoveAt(0);
 			references.RemoveAt(0);
+			accuracy = (float)correctNum / (float)frequency * 1;
+			Debug.Log(accuracy);
+			return true;
 		}
-		accuracy = (float)correctNum / (float)frequency * 1;
-		Debug.Log(accuracy); 
+		return false;
 	}
 
 	public void ActivateNextObjects()
 	{
 		if (references.Count > 0)
-        {
+		{
 			references[0].gameObject.SetActive(true);
 			references[1].gameObject.SetActive(true);
 			references[2].gameObject.SetActive(true);
 		}
 		else if (references.Count == 0)
-        {
+		{
 			Debug.Log("Finished!");
-        }
+			GameManager.Instance.FinishedSwipeEvent(eventToPlay);
+		}
 	}
 }

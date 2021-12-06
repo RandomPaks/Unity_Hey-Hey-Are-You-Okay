@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5002017328472867133}
   - component: {fileID: 6941587912927739618}
   - component: {fileID: 3399036751945568667}
-  - component: {fileID: -4461000297510178167}
+  - component: {fileID: -8195155917670404480}
   m_Layer: 0
-  m_Name: Mistake
-  m_TagString: Mistake
+  m_Name: Goal
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7193541596693436967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef20b1f1a985d564d82f8ad0be27047c, type: 2}
+  - {fileID: 2100000, guid: 6db87699faf20d148815b9ea3d50caf4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &-4461000297510178167
+--- !u!135 &-8195155917670404480
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

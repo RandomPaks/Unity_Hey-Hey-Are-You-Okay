@@ -13,7 +13,6 @@ public class HoldGoal : MonoBehaviour
     [SerializeField] bool isDecreaseSize = false;
     [Range(2, 5)]
     [SerializeField] float decreaseMult = 2;
-    ToolDrag toolCheck;
 
     public bool isProgressing;
 
@@ -37,7 +36,7 @@ public class HoldGoal : MonoBehaviour
 
         if (isProgressing)
         {
-            GameManager.Instance.Progress(eventToPlay, toolCheck, progressSpeed);
+            GameManager.Instance.Progress(eventToPlay, progressSpeed);
         }
     }
 
@@ -50,7 +49,6 @@ public class HoldGoal : MonoBehaviour
             if (!isInstant)
             {
                 isProgressing = true;
-                toolCheck = toolObject;
             }
             else
             {

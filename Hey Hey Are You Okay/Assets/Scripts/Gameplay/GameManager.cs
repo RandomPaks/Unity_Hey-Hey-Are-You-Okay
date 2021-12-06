@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public float progress = 0f;
     [SerializeField] ProgressBar progressBar;
     [SerializeField] GameObject helpText;
+    public ToolDrag currentTool;
+    [SerializeField] ToolObject toolObject;
 
     void Awake()
     {
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
         progressBar.SetCurrentFill(progress);
     }
 
-    public void Progress(string name, ToolDrag tool, float increment = 0.5f)
+    public void Progress(string name, float increment = 0.5f)
     {
         if (progress <= 100)
         {
@@ -47,7 +49,8 @@ public class GameManager : MonoBehaviour
         else
         {
             progress = 0;
-            tool.OnForceEndDrag();
+            currentTool.OnForceEndDrag();
+            currentTool = null;
             EventManager.Instance.PlayEvent(name);
         }
     }
