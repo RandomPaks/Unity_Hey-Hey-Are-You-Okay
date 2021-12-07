@@ -76,10 +76,7 @@ public class MenuManager : MonoBehaviour
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
 
-        if (ExamManager.Instance.isPlaying)
-        {
-            OpenMainMenu();
-        }
+        OpenMainMenu();
     }
 
     public void OpenMenu(MenuEnum menu)
@@ -111,16 +108,10 @@ public class MenuManager : MonoBehaviour
         menuSelected.SetActive(true);
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+    public void ExitGame() => Application.Quit();
+    public void LoadSymptomScene() => SceneManager.LoadScene(sceneToLoad);
 
-    public void LoadSymptomScene()
-    {
-        SceneManager.LoadScene(sceneToLoad);
-    }
-
+    //Sets the initial backstory when clicking a symptom
     public void OnClickSymptomScene(BackstoryScriptableObject backstory)
     {
         backdrop.texture = backstory.backdrop.texture;
@@ -134,9 +125,9 @@ public class MenuManager : MonoBehaviour
         backstoryB = backstory;
     }
 
-    public void OnClickSymptomAltered(string ver)
+    public void OnClickSymptomAlternator(bool isSymptomAltered)
     {
-        if(ver == "A")
+        if(!isSymptomAltered)
         {
             backdrop.texture = backstoryA.backdrop.texture;
             sceneToLoad = backstoryA.name + "Scene";
@@ -160,10 +151,5 @@ public class MenuManager : MonoBehaviour
         bgPanel.SetActive(true);
         mainPanel.SetActive(true);
         bottomPanel.SetActive(true);
-    }
-
-    public void OnLoadExams()
-    {
-        ExamManager.Instance.StartExams();
     }
 }

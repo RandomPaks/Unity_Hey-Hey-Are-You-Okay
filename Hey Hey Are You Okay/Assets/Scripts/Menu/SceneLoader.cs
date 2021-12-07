@@ -11,7 +11,6 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        ExamManager.Instance.ResetExams();
         SceneManager.LoadScene("MainMenu");
     }
 }

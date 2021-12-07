@@ -21,7 +21,7 @@ public class ReferenceObject : MonoBehaviour
 
     bool ManageObjects()
     {
-       if(splineObjects.RemoveCurrentObjects())
+       if(splineObjects.RemoveCurrentObjectsFromList())
         {
             Destroy(goal.gameObject);
             Destroy(mistake.gameObject);

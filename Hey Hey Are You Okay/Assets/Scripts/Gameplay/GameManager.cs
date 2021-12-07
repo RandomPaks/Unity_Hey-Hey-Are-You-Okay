@@ -6,12 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [HideInInspector]
-    public float progress = 0f;
+    [HideInInspector] public float progress = 0f;
     [SerializeField] ProgressBar progressBar;
     [SerializeField] GameObject helpText;
     public ToolDrag currentTool;
-    [SerializeField] ToolObject toolObject;
 
     void Awake()
     {
@@ -29,10 +27,7 @@ public class GameManager : MonoBehaviour
     IEnumerator LateStart(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        if (ExamManager.Instance.isTutorial)
-        {
-            helpText.SetActive(true);
-        }
+        helpText.SetActive(true);
     }
 
     void Update()
@@ -40,9 +35,11 @@ public class GameManager : MonoBehaviour
         progressBar.SetCurrentFill(progress);
     }
 
+    bool isTaskDone => progress >= 100;
+
     public void Progress(string name, float increment = 0.5f)
     {
-        if (progress <= 100)
+        if (!isTaskDone)
         {
             progress += increment;
         }
@@ -61,21 +58,8 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.PlayEvent(name);
     }
 
-    public void OnExitExams()
-    {
-        ExamManager.Instance.ResetExams();
-    }
-
     public void OnRestartLevel(string scene)
     {
-        if (ExamManager.Instance.isExam)
-        {
-            ExamManager.Instance.ResetExams();
-            ExamManager.Instance.StartExams();
-        }
-        else
-        {
-            SceneManager.LoadScene(scene);
-        }
+        SceneManager.LoadScene(scene);
     }
 }

@@ -14,25 +14,9 @@ public class EndEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
-        ExamManager.Instance.examsPassed++;
-
-        if (ExamManager.Instance.isExam)
-        {
-            if (ExamManager.Instance.examsPassed >= 5)
-            {
-                ExamManager.Instance.ShowResults();
-            }
-            else
-            {
-                ExamManager.Instance.ContinueExams();
-            }
-        }
-        else
-        {
-            StartCoroutine(FadeInBG());
-            endPanel.SetActive(true);
-            SaveManager.Instance.PlayerFinishLevel(key);
-        }
+        StartCoroutine(FadeInBG());
+        endPanel.SetActive(true);
+        SaveManager.Instance.PlayerFinishLevel(key);
     }
 
     public override void OnFinishEvent()

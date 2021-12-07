@@ -17,13 +17,9 @@ public class GameEvent : AEventSequence
     public override void OnPlayEvent()
     {
         if(oldHand != null)
-        {
             oldHand.SetActive(false);
-        }
         if (newHand != null)
-        {
             newHand.SetActive(true);
-        }
         if (oldHitbox != null)
             oldHitbox.SetActive(false);
         if(newHitbox != null)
@@ -35,7 +31,8 @@ public class GameEvent : AEventSequence
     {
         if(cancelTextEvent != null)
             cancelTextEvent.SetActive(false);
-        AudioManager.Instance.Play(soundEvent);
+        if(AudioManager.Instance != null)
+            AudioManager.Instance.Play(soundEvent);
         base.OnFinishEvent();
     }
 }

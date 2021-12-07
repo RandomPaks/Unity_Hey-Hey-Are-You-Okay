@@ -11,8 +11,6 @@ public class SwipeGoalMistake : MonoBehaviour
         if (toolObject != null && toolObject.tool != goalTool)
         {
             toolObject.GetComponent<ToolDrag>().OnForceEndDrag();
-            ExamManager.Instance.ReduceStars();
-            Debug.Log("MISTAKE");
         }
     }
 }

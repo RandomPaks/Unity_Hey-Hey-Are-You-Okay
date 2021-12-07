@@ -59,8 +59,6 @@ public class HoldGoal : MonoBehaviour
         else if (toolObject.tool != goalTool)
         {
             toolObject.GetComponent<ToolDrag>().OnForceEndDrag();
-            ExamManager.Instance.ReduceStars();
-            Debug.Log("MISTAKE");
         }
     }
     void OnTriggerExit2D(Collider2D other)

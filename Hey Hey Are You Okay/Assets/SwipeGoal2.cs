@@ -57,9 +57,12 @@ public class SwipeGoal2 : MonoBehaviour
 		}
 	}
 
-	public bool RemoveCurrentObjects()
+	bool isCorrectTool => GameManager.Instance.currentTool.tool == goalTool;
+	bool hasReferenceObjects => references.Count > 0;
+	bool isRemoveable => isCorrectTool && hasReferenceObjects;
+	public bool RemoveCurrentObjectsFromList()
 	{
-		if (GameManager.Instance.currentTool != null && GameManager.Instance.currentTool.tool == goalTool && references.Count > 0)
+		if (GameManager.Instance.currentTool != null && isRemoveable)
 		{
 			references.RemoveAt(0);
 			references.RemoveAt(0);
@@ -71,15 +74,16 @@ public class SwipeGoal2 : MonoBehaviour
 		return false;
 	}
 
+	bool emptyReferenceObjects => references.Count == 0;
 	public void ActivateNextObjects()
 	{
-		if (references.Count > 0)
+		if (hasReferenceObjects)
 		{
 			references[0].gameObject.SetActive(true);
 			references[1].gameObject.SetActive(true);
 			references[2].gameObject.SetActive(true);
 		}
-		else if (references.Count == 0)
+		else if (emptyReferenceObjects)
 		{
 			Debug.Log("Finished!");
 			GameManager.Instance.FinishedSwipeEvent(eventToPlay);
