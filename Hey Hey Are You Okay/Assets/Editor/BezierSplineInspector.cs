@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using Lines;
 
 [CustomEditor(typeof(BezierSpline))]
 public class BezierSplineInspector : Editor {

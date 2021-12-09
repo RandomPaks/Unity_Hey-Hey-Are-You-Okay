@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Sound;
 
 public class Options : MonoBehaviour
 {

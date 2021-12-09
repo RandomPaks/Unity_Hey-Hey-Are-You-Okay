@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Sound;
 
 public class GameEvent : AEventSequence
 {
