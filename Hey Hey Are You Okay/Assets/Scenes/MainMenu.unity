@@ -15489,6 +15489,8 @@ MonoBehaviour:
   survivalButton: {fileID: 590725430}
   backstoryA: {fileID: 11400000, guid: 015e4c3e33424f44498722e98ce67b09, type: 2}
   backstoryB: {fileID: 11400000, guid: 79bd26139c2b3d44bb86e2003c17d3fc, type: 2}
+  examManager: {fileID: 4336546709516441957, guid: 52fc23f6573f2ce4b9481749314af48a,
+    type: 3}
 --- !u!1 &1849697836
 GameObject:
   m_ObjectHideFlags: 0
@@ -17921,7 +17923,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1815414352}
-        m_MethodName: OnLoadExams
+        m_MethodName: OnStartExams
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

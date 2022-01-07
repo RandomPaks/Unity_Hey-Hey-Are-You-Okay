@@ -1003,6 +1003,7 @@ GameObject:
   - component: {fileID: 407089458}
   - component: {fileID: 407089460}
   - component: {fileID: 407089459}
+  - component: {fileID: 407089461}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1069,6 +1070,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407089457}
   m_CullTransparentMesh: 0
+--- !u!114 &407089461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407089457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &409848994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,7 +3758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalTool: 0
   eventToPlay: BloodyToWater
-  progressSpeed: 0.5
+  progressSpeed: 2
   isProgressing: 0
 --- !u!135 &1614748507
 SphereCollider:
@@ -4223,8 +4236,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2032538253}
-        m_MethodName: OnRestartLevel
+      - m_Target: {fileID: 407089461}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4479,7 +4492,6 @@ GameObject:
   - component: {fileID: 1879876217}
   - component: {fileID: 1879876216}
   - component: {fileID: 1879876215}
-  - component: {fileID: 1879876214}
   m_Layer: 5
   m_Name: Lobby
   m_TagString: Untagged
@@ -4506,18 +4518,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -750}
   m_SizeDelta: {x: 307.66666, y: 134.66675}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1879876214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879876212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1879876215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4574,7 +4574,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1879876214}
+      - m_Target: {fileID: 407089461}
         m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
@@ -4655,7 +4655,6 @@ MonoBehaviour:
   progressBar: {fileID: 816394080}
   helpText: {fileID: 1658178341}
   currentTool: {fileID: 0}
-  toolObject: {fileID: 104589007}
 --- !u!4 &2032538254
 Transform:
   m_ObjectHideFlags: 0

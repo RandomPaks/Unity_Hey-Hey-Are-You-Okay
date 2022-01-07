@@ -21,7 +21,6 @@ public class SwipeGoal2 : MonoBehaviour
 		{
 			return;
 		}
-
 		float stepSize = 1f / frequency;
 		for (int p = 0; p < frequency; p++)
 		{
@@ -68,9 +67,12 @@ public class SwipeGoal2 : MonoBehaviour
 			references.RemoveAt(0);
 			references.RemoveAt(0);
 			references.RemoveAt(0);
-			accuracy = (float)correctNum / (float)frequency * 1;
-			Debug.Log(accuracy);
 			return true;
+		}
+		else if (GameManager.Instance.currentTool != null && !isCorrectTool)
+        {
+			GameManager.Instance.MakeMistake();
+			return false;
 		}
 		return false;
 	}
@@ -84,10 +86,16 @@ public class SwipeGoal2 : MonoBehaviour
 			references[1].gameObject.SetActive(true);
 			references[2].gameObject.SetActive(true);
 		}
-		else if (emptyReferenceObjects)
+	}
+
+	public void CheckEndGoal()
+    {
+		if (emptyReferenceObjects)
 		{
-			Debug.Log("Finished!");
-			GameManager.Instance.FinishedSwipeEvent(eventToPlay);
+			accuracy = (float)correctNum / (float)frequency * 1;
+			Debug.Log(accuracy);
+
+			GameManager.Instance.FinishSwipeEvent(eventToPlay, accuracy);
 		}
 	}
 }

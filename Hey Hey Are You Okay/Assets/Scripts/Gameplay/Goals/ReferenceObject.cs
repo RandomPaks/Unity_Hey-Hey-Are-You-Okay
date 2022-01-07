@@ -12,16 +12,20 @@ public class ReferenceObject : MonoBehaviour
     public void OnTriggerGoal()
     {
         if (ManageObjects()) splineObjects.correctNum++;
+
+        splineObjects.CheckEndGoal();
     }
 
     public void OnTriggerMistake()
     {
         if(ManageObjects()) splineObjects.mistakeNum++;
+
+        splineObjects.CheckEndGoal();
     }
 
     bool ManageObjects()
     {
-       if(splineObjects.RemoveCurrentObjectsFromList())
+        if (splineObjects.RemoveCurrentObjectsFromList())
         {
             Destroy(goal.gameObject);
             Destroy(mistake.gameObject);

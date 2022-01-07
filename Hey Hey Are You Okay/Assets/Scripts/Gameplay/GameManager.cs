@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] ProgressBar progressBar;
     [SerializeField] GameObject helpText;
     public ToolDrag currentTool;
+    float totalCorrect = 0, totalMistake = 0, totalMoves = 0;
+    public float accuracy = 1;
 
     void Awake()
     {
@@ -48,18 +50,39 @@ public class GameManager : MonoBehaviour
             progress = 0;
             currentTool.OnForceEndDrag();
             currentTool = null;
+
+            totalCorrect++;
+            totalMoves++;
+
+            accuracy = (float)totalCorrect / (float)totalMoves * 1;
+            Debug.Log("Correct: " + totalCorrect);
+
             EventManager.Instance.PlayEvent(name);
         }
     }
 
-    public void FinishedSwipeEvent(string name)
+    public void MakeMistake()
     {
-        progress = 0;
-        EventManager.Instance.PlayEvent(name);
+        currentTool.OnForceEndDrag();
+        currentTool = null;
+
+        totalMistake++;
+        totalMoves++;
+
+        accuracy = (float)totalCorrect / (float)totalMoves * 1;
+        Debug.Log("Mistakes: " + totalMistake);
     }
 
-    public void OnRestartLevel(string scene)
+    public void FinishSwipeEvent(string name, float accuracy)
     {
-        SceneManager.LoadScene(scene);
+        progress = 0; 
+        currentTool.OnForceEndDrag();
+        currentTool = null;
+
+        totalCorrect += accuracy;
+        totalMoves++;
+        Debug.Log("Correct: " + totalCorrect);
+
+        EventManager.Instance.PlayEvent(name);
     }
 }

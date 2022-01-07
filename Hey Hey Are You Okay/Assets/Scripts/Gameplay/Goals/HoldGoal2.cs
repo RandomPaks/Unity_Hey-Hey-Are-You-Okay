@@ -16,5 +16,9 @@ public class HoldGoal2 : MonoBehaviour
         {
             GameManager.Instance.Progress(eventToPlay, progressSpeed);
         }
+        else if (GameManager.Instance.currentTool != null && GameManager.Instance.currentTool.tool != goalTool)
+        {
+            GameManager.Instance.MakeMistake();
+        }
     }
 }

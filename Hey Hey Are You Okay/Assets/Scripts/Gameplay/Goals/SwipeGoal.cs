@@ -35,7 +35,7 @@ public class SwipeGoal : MonoBehaviour
                     }
 
                     goals[i].SetActive(false);
-                    GameManager.Instance.FinishedSwipeEvent(eventToPlay);
+                    GameManager.Instance.FinishSwipeEvent(eventToPlay, 0);
                 }
             }
         }

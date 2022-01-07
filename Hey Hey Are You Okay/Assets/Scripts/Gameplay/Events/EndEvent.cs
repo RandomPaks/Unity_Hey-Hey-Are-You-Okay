@@ -16,6 +16,7 @@ public class EndEvent : AEventSequence
     {
         StartCoroutine(FadeInBG());
         endPanel.SetActive(true);
+        Debug.Log("Accuracy: " + GameManager.Instance.accuracy);
         SaveManager.Instance.PlayerFinishLevel(key);
     }
 
@@ -23,6 +24,7 @@ public class EndEvent : AEventSequence
     {
         base.OnFinishEvent();
     }
+
     IEnumerator FadeInBG()
     {
         Color curColor = endPanel.GetComponent<Image>().color;

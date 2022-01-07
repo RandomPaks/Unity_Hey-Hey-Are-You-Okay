@@ -36,6 +36,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] BackstoryScriptableObject backstoryA;
     [SerializeField] BackstoryScriptableObject backstoryB;
 
+    [Header("Managers")]
+    [SerializeField] GameObject examManager;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -151,5 +154,10 @@ public class MenuManager : MonoBehaviour
         bgPanel.SetActive(true);
         mainPanel.SetActive(true);
         bottomPanel.SetActive(true);
+    }
+
+    public void OnStartExams()
+    {
+        Instantiate(examManager);
     }
 }
