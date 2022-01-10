@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ExamManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class ExamManager : MonoBehaviour
 
     public string[] scenes;
     string[] savedScenes;
+    int procedureCompleted = 0;
+    float totalAccuracy, totalProcedures = 1;
+    [SerializeField] GameObject endPanel, star1, star2, star3;
 
     void Awake()
     {
@@ -33,20 +37,48 @@ public class ExamManager : MonoBehaviour
         {
             savedScenes[i] = string.Copy(scenes[i]);
         }
-        StartExams();
+        StartProcedure();
     }
 
-    void StartExams()
+    public void StartProcedure()
     {
         int rand = UnityEngine.Random.Range(0, scenes.Length);
         SceneManager.LoadScene(scenes[rand]);
         RemoveElement<String>(ref scenes, rand);
     }
 
+    public void RestartExams()
+    {
+        scenes = new string[savedScenes.Length];
+        for(int i = 0; i < savedScenes.Length; i++)
+        {
+            scenes[i] = String.Copy(savedScenes[i]);
+        }
+    }
+
     public void EndExams()
     {
+        endPanel.SetActive(true);
 
+        if(totalAccuracy / totalProcedures >= 1)
+        {
+            star1.SetActive(true);
+            star2.SetActive(true);
+            star3.SetActive(true);
+        }
+        else if(totalAccuracy / totalProcedures >= 0.66)
+        {
+            star1.SetActive(true);
+            star2.SetActive(true);
+        }
+        else if(totalAccuracy / totalProcedures >= 0.33)
+        {
+            star1.SetActive(true);
+        }
+
+        StartCoroutine(FadeInBG());
     }
+
     void RemoveElement<T>(ref T[] arr, int index)
     {
         for (int a = index; a < arr.Length - 1; a++)
@@ -54,5 +86,35 @@ public class ExamManager : MonoBehaviour
             arr[a] = arr[a + 1];
         }
         Array.Resize(ref arr, arr.Length - 1);
+    }
+
+    public void EndProcedure()
+    {
+        procedureCompleted++;
+        totalAccuracy += GameManager.Instance.accuracy;
+        if (procedureCompleted == totalProcedures)
+        {
+            Debug.Log(totalAccuracy / totalProcedures);
+            EndExams();
+        }
+        else
+        {
+            StartProcedure();
+        }
+    }
+
+    IEnumerator FadeInBG()
+    {
+        Color curColor = endPanel.GetComponent<Image>().color;
+        while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
+        {
+            curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
+            endPanel.GetComponent<Image>().color = curColor;
+            foreach (Transform child in endPanel.transform)
+            {
+                child.GetComponent<Image>().color = curColor;
+            }
+            yield return null;
+        }
     }
 }

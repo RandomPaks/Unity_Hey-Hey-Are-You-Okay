@@ -9,7 +9,10 @@ public class EndEvent : AEventSequence
 
     void Start()
     {
-        OnPlayEvent();
+        if (ExamManager.Instance != null)
+            ExamManager.Instance.EndProcedure();
+        else
+            OnPlayEvent();
     }
 
     public override void OnPlayEvent()

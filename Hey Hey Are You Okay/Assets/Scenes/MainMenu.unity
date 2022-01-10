@@ -1576,7 +1576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 768, y: 0}
+  m_AnchoredPosition: {x: 549, y: 0}
   m_SizeDelta: {x: 770, y: 1365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159090370
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a896879d229394aafa04291e286abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xTeleport: 1536
+  xTeleport: 1097
   speed: 50
 --- !u!114 &159090371
 MonoBehaviour:
@@ -1665,7 +1665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1536, y: 0}
+  m_AnchoredPosition: {x: 1097, y: 0}
   m_SizeDelta: {x: 770, y: 1365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174192456
@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a896879d229394aafa04291e286abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xTeleport: 1536
+  xTeleport: 1097
   speed: 50
 --- !u!114 &174192457
 MonoBehaviour:
@@ -2241,7 +2241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a896879d229394aafa04291e286abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xTeleport: 1536
+  xTeleport: 1097
   speed: 50
 --- !u!114 &228767432
 MonoBehaviour:
@@ -10271,7 +10271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1146502756
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15489,7 +15489,7 @@ MonoBehaviour:
   survivalButton: {fileID: 590725430}
   backstoryA: {fileID: 11400000, guid: 015e4c3e33424f44498722e98ce67b09, type: 2}
   backstoryB: {fileID: 11400000, guid: 79bd26139c2b3d44bb86e2003c17d3fc, type: 2}
-  examManager: {fileID: 4336546709516441957, guid: 52fc23f6573f2ce4b9481749314af48a,
+  examManager: {fileID: 4196305200011316010, guid: 2e5198ccfd4c72d41b729c0b671cc1a5,
     type: 3}
 --- !u!1 &1849697836
 GameObject:

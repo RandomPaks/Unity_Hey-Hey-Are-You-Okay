@@ -78,8 +78,6 @@ public class MenuManager : MonoBehaviour
         menus.Add(backstoryPanel);
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
-
-        OpenMainMenu();
     }
 
     public void OpenMenu(MenuEnum menu)

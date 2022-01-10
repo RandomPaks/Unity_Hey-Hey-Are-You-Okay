@@ -17,7 +17,10 @@ public class TextEvent : AEventSequence
 
     void Start()
     {
-        OnPlayEvent();
+        if (ExamManager.Instance == null)
+            OnPlayEvent();
+        else
+            OnFinishEvent();
     }
 
     public override void OnPlayEvent()
