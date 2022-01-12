@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
             totalMoves++;
 
             accuracy = (float)totalCorrect / (float)totalMoves * 1;
-            Debug.Log("Correct: " + totalCorrect);
 
             EventManager.Instance.PlayEvent(name);
         }
@@ -73,11 +72,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("Mistakes: " + totalMistake);
     }
 
-    public void FinishSwipeEvent(string name, float accuracy)
+    public void FinishSwipeEvent(string name, float accuracy, bool isLastSwipe)
     {
-        progress = 0; 
-        currentTool.OnForceEndDrag();
-        currentTool = null;
+        progress = 0;
+
+        if (isLastSwipe)
+        {
+            currentTool.OnForceEndDrag();
+            currentTool = null;
+        }
 
         totalCorrect += accuracy;
         totalMoves++;

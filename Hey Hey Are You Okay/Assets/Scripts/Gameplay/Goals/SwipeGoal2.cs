@@ -14,6 +14,7 @@ public class SwipeGoal2 : MonoBehaviour
 	public int correctNum = 0, mistakeNum = 0;
 	[SerializeField] ToolEnum goalTool;
 	[SerializeField] string eventToPlay;
+	[SerializeField] bool isLastSwipe;
 
 	void Awake()
 	{
@@ -93,9 +94,8 @@ public class SwipeGoal2 : MonoBehaviour
 		if (emptyReferenceObjects)
 		{
 			accuracy = (float)correctNum / (float)frequency * 1;
-			Debug.Log(accuracy);
 
-			GameManager.Instance.FinishSwipeEvent(eventToPlay, accuracy);
+			GameManager.Instance.FinishSwipeEvent(eventToPlay, accuracy, isLastSwipe);
 		}
 	}
 }

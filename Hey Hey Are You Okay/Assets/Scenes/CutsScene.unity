@@ -725,7 +725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &251398169
 GameObject:
@@ -1137,6 +1137,7 @@ MonoBehaviour:
   mistakeNum: 0
   goalTool: 1
   eventToPlay: WaterToDry
+  isLastSwipe: 1
 --- !u!114 &409848997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,7 +1386,7 @@ RectTransform:
   - {fileID: 407089458}
   - {fileID: 158373957}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3278,7 +3279,7 @@ RectTransform:
   m_Children:
   - {fileID: 1740773823}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4391,7 +4392,7 @@ Transform:
   - {fileID: 1584868222}
   - {fileID: 1675702664}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1869622921
 PrefabInstance:
@@ -4655,6 +4656,7 @@ MonoBehaviour:
   progressBar: {fileID: 816394080}
   helpText: {fileID: 1658178341}
   currentTool: {fileID: 0}
+  accuracy: 1
 --- !u!4 &2032538254
 Transform:
   m_ObjectHideFlags: 0

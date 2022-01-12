@@ -19,7 +19,7 @@ public class EndEvent : AEventSequence
     {
         StartCoroutine(FadeInBG());
         endPanel.SetActive(true);
-        Debug.Log("Accuracy: " + GameManager.Instance.accuracy);
+        Debug.Log("Total Accuracy: " + GameManager.Instance.accuracy);
         SaveManager.Instance.PlayerFinishLevel(key);
     }
 
