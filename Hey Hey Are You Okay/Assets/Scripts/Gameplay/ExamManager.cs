@@ -13,6 +13,7 @@ public class ExamManager : MonoBehaviour
     int procedureCompleted = 0;
     float totalAccuracy, totalProcedures = 1;
     [SerializeField] GameObject endPanel, star1, star2, star3;
+    [SerializeField] Text accuracyText;
 
     void Awake()
     {
@@ -94,6 +95,7 @@ public class ExamManager : MonoBehaviour
         totalAccuracy += GameManager.Instance.accuracy;
         if (procedureCompleted == totalProcedures)
         {
+            accuracyText.text = "Carefulness: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
             Debug.Log(totalAccuracy / totalProcedures);
             EndExams();
         }
@@ -110,9 +112,11 @@ public class ExamManager : MonoBehaviour
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
             endPanel.GetComponent<Image>().color = curColor;
+            accuracyText.color = new Vector4(0.2f, 0.2f, 0.2f, curColor.a);
             foreach (Transform child in endPanel.transform)
             {
-                child.GetComponent<Image>().color = curColor;
+                if (child.TryGetComponent<Image>(out Image imageComponent))
+                    imageComponent.color = curColor;
             }
             yield return null;
         }
