@@ -61,18 +61,18 @@ public class ExamManager : MonoBehaviour
     {
         endPanel.SetActive(true);
 
-        if(totalAccuracy / totalProcedures >= 1)
+        if(totalAccuracy / totalProcedures >= 0.9)
         {
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(true);
         }
-        else if(totalAccuracy / totalProcedures >= 0.66)
+        else if(totalAccuracy / totalProcedures >= 0.6)
         {
             star1.SetActive(true);
             star2.SetActive(true);
         }
-        else if(totalAccuracy / totalProcedures >= 0.33)
+        else if(totalAccuracy / totalProcedures >= 0.3)
         {
             star1.SetActive(true);
         }
