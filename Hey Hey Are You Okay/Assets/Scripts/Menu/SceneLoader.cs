@@ -25,6 +25,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        SceneManager.LoadScene("MainMenu");
         if (ExamManager.Instance != null)
         {
             Destroy(ExamManager.Instance.gameObject);
@@ -33,6 +34,5 @@ public class SceneLoader : MonoBehaviour
         {
             Destroy(SurvivalManager.Instance.gameObject);
         }
-        SceneManager.LoadScene("MainMenu");
     }
 }

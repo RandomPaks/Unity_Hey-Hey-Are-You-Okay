@@ -5551,7 +5551,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 590725431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1815414352}
+        m_MethodName: OnStartSurvival
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &590725431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15490,6 +15501,8 @@ MonoBehaviour:
   backstoryA: {fileID: 11400000, guid: 015e4c3e33424f44498722e98ce67b09, type: 2}
   backstoryB: {fileID: 11400000, guid: 79bd26139c2b3d44bb86e2003c17d3fc, type: 2}
   examManager: {fileID: 4196305200011316010, guid: 2e5198ccfd4c72d41b729c0b671cc1a5,
+    type: 3}
+  survivalManager: {fileID: 4196305200011316010, guid: 51784cf63582ff04a88fe6fd917c8205,
     type: 3}
 --- !u!1 &1849697836
 GameObject:
