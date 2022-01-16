@@ -13,7 +13,8 @@ public class SurvivalManager : MonoBehaviour
     int procedureCompleted = 0;
     float totalAccuracy, totalProcedures = 1;
     [SerializeField] GameObject endPanel, star1, star2, star3;
-    [SerializeField] Text accuracyText;
+    [SerializeField] Text accuracyText, timerText;
+    float timer = 30.0f;
 
     void Awake()
     {
@@ -29,6 +30,17 @@ public class SurvivalManager : MonoBehaviour
         StartCoroutine(LateStart(0.1f));
     }
 
+    void Update()
+    {
+        timer -= Time.deltaTime;
+        timerText.text = timer.ToString("F1");
+
+        if(timer <= 0)
+        {
+            EndSurvival();
+        }
+    }
+
     IEnumerator LateStart(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
@@ -39,6 +51,9 @@ public class SurvivalManager : MonoBehaviour
             savedScenes[i] = string.Copy(scenes[i]);
         }
         StartProcedure();
+
+        yield return new WaitForSeconds(waitTime);
+        timerText.gameObject.SetActive(true);
     }
 
     public void StartProcedure()
