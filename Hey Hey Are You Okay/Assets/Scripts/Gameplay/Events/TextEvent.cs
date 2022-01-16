@@ -17,7 +17,7 @@ public class TextEvent : AEventSequence
 
     void Start()
     {
-        if (ExamManager.Instance == null)
+        if (ExamManager.Instance == null && SurvivalManager.Instance == null)
             OnPlayEvent();
         else
             OnFinishEvent();

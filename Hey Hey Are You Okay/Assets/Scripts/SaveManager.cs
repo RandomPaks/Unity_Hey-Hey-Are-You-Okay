@@ -34,6 +34,7 @@ public class SaveManager : MonoBehaviour
             if (!result) return false;
         }
         MenuManager.Instance.examButton.interactable = true;
+        MenuManager.Instance.survivalButton.interactable = true;
         return true;
     }
 

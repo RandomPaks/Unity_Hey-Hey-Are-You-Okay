@@ -11,6 +11,8 @@ public class EndEvent : AEventSequence
     {
         if (ExamManager.Instance != null)
             ExamManager.Instance.EndProcedure();
+        else if (SurvivalManager.Instance != null)
+            SurvivalManager.Instance.EndProcedure();
         else
             OnPlayEvent();
     }

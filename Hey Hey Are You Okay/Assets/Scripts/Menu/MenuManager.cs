@@ -38,6 +38,7 @@ public class MenuManager : MonoBehaviour
 
     [Header("Managers")]
     [SerializeField] GameObject examManager;
+    [SerializeField] GameObject survivalManager;
 
     void Awake()
     {
@@ -154,8 +155,6 @@ public class MenuManager : MonoBehaviour
         bottomPanel.SetActive(true);
     }
 
-    public void OnStartExams()
-    {
-        Instantiate(examManager);
-    }
+    public void OnStartExams() => Instantiate(examManager);
+    public void OnStartSurvival() => Instantiate(survivalManager);
 }
