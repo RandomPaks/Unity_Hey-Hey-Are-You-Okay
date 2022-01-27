@@ -35,6 +35,7 @@ public class MenuManager : MonoBehaviour
     string sceneToLoad = "CutsScene";
     [SerializeField] BackstoryScriptableObject backstoryA;
     [SerializeField] BackstoryScriptableObject backstoryB;
+    [SerializeField] GameObject bButton;
 
     [Header("Managers")]
     [SerializeField] GameObject examManager;
@@ -124,7 +125,15 @@ public class MenuManager : MonoBehaviour
 
     public void OnClickSymptomSceneB(BackstoryScriptableObject backstory)
     {
-        backstoryB = backstory;
+        if (backstory.name == "Null")
+        {
+            bButton.SetActive(false);
+        }
+        else
+        {
+            bButton.SetActive(true);
+            backstoryB = backstory;
+        }
     }
 
     public void OnClickSymptomAlternator(bool isSymptomAltered)
