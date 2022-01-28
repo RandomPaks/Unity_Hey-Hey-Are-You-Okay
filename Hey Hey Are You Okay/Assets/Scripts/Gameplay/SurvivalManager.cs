@@ -11,7 +11,7 @@ public class SurvivalManager : MonoBehaviour
     public string[] scenes;
     string[] savedScenes;
     int procedureCompleted = 0;
-    float totalAccuracy, totalProcedures = 1;
+    float totalAccuracy, totalProcedures = 6;
     [SerializeField] GameObject endPanel, star1, star2, star3;
     [SerializeField] Text accuracyText, timerText;
     float timer = 30.0f;
@@ -32,12 +32,15 @@ public class SurvivalManager : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
-        timerText.text = timer.ToString("F1");
 
         if(timer <= 0)
         {
             EndSurvival();
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+            timerText.text = timer.ToString("F1");
         }
     }
 
@@ -117,6 +120,7 @@ public class SurvivalManager : MonoBehaviour
         else
         {
             StartProcedure();
+            timer = 30.0f;
         }
     }
 

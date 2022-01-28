@@ -125,15 +125,13 @@ public class MenuManager : MonoBehaviour
 
     public void OnClickSymptomSceneB(BackstoryScriptableObject backstory)
     {
-        if (backstory.name == "Null")
-        {
-            bButton.SetActive(false);
-        }
-        else
-        {
-            bButton.SetActive(true);
-            backstoryB = backstory;
-        }
+        bButton.SetActive(true);
+        backstoryB = backstory;
+    }
+
+    public void OnClickSymptomSceneBDeactivate()
+    {
+        bButton.SetActive(false);
     }
 
     public void OnClickSymptomAlternator(bool isSymptomAltered)

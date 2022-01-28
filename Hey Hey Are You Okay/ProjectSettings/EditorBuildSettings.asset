@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BurnsAltScene.unity
     guid: 6cc9beda813326c4cbffcb9d66167493
+  - enabled: 1
+    path: Assets/Scenes/DislocationScene.unity
+    guid: 1370054cd953b8a40aaba76cd7fadf1c
   m_configObjects: {}
