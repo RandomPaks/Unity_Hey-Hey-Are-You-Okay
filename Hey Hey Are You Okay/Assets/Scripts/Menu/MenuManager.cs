@@ -35,6 +35,7 @@ public class MenuManager : MonoBehaviour
     string sceneToLoad = "CutsScene";
     [SerializeField] BackstoryScriptableObject backstoryA;
     [SerializeField] BackstoryScriptableObject backstoryB;
+    [SerializeField] GameObject aButton;
     [SerializeField] GameObject bButton;
 
     [Header("Managers")]
@@ -80,6 +81,12 @@ public class MenuManager : MonoBehaviour
         menus.Add(backstoryPanel);
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
+
+        if (PersistentManager.Instance.isPlaying == true)
+        {
+            PersistentManager.Instance.isPlaying = false;
+            OpenMainMenu();
+        }
     }
 
     public void OpenMenu(MenuEnum menu)
@@ -112,11 +119,17 @@ public class MenuManager : MonoBehaviour
     }
 
     public void ExitGame() => Application.Quit();
-    public void LoadSymptomScene() => SceneManager.LoadScene(sceneToLoad);
+    public void LoadSymptomScene()
+    {
+        PersistentManager.Instance.isPlaying = true;
+        SceneManager.LoadScene(sceneToLoad);
+    }
 
     //Sets the initial backstory when clicking a symptom
     public void OnClickSymptomScene(BackstoryScriptableObject backstory)
     {
+        aButton.SetActive(true);
+        bButton.SetActive(true);
         backdrop.texture = backstory.backdrop.texture;
         sceneToLoad = backstory.name + "Scene";
 
@@ -125,12 +138,12 @@ public class MenuManager : MonoBehaviour
 
     public void OnClickSymptomSceneB(BackstoryScriptableObject backstory)
     {
-        bButton.SetActive(true);
         backstoryB = backstory;
     }
 
-    public void OnClickSymptomSceneBDeactivate()
+    public void OnClickSymptomSceneDeactivate()
     {
+        aButton.SetActive(false);
         bButton.SetActive(false);
     }
 

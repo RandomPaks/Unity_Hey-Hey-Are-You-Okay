@@ -27,17 +27,18 @@ public class SurvivalManager : MonoBehaviour
 
     void Start()
     {
+        PersistentManager.Instance.isSurvival = true;
+        PersistentManager.Instance.isPaused = false;
         StartCoroutine(LateStart(0.1f));
     }
 
     void Update()
     {
-
         if(timer <= 0)
         {
             EndSurvival();
         }
-        else
+        else if (!PersistentManager.Instance.isPaused)
         {
             timer -= Time.deltaTime;
             timerText.text = timer.ToString("F1");
@@ -61,6 +62,7 @@ public class SurvivalManager : MonoBehaviour
 
     public void StartProcedure()
     {
+        timer = 30.0f;
         int rand = UnityEngine.Random.Range(0, scenes.Length);
         SceneManager.LoadScene(scenes[rand]);
         RemoveElement<String>(ref scenes, rand);
@@ -73,6 +75,7 @@ public class SurvivalManager : MonoBehaviour
         {
             scenes[i] = String.Copy(savedScenes[i]);
         }
+        PersistentManager.Instance.isPaused = false;
     }
 
     public void EndSurvival()
@@ -120,7 +123,6 @@ public class SurvivalManager : MonoBehaviour
         else
         {
             StartProcedure();
-            timer = 30.0f;
         }
     }
 

@@ -7,12 +7,12 @@ public class SceneLoader : MonoBehaviour
     //Resolves restart button issues
     public void LoadScene(string scene)
     {
-        if (ExamManager.Instance != null)
+        if (PersistentManager.Instance.isExam)
         {
             ExamManager.Instance.RestartExams();
             ExamManager.Instance.StartProcedure();
         }
-        else if (SurvivalManager.Instance != null)
+        else if (PersistentManager.Instance.isSurvival)
         {
             SurvivalManager.Instance.RestartSurvival();
             SurvivalManager.Instance.StartProcedure();
@@ -26,13 +26,28 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        if (ExamManager.Instance != null)
+        if (PersistentManager.Instance.isExam)
         {
+            PersistentManager.Instance.isExam = false;
             Destroy(ExamManager.Instance.gameObject);
         }
-        else if (SurvivalManager.Instance != null)
+        else if (PersistentManager.Instance.isSurvival)
         {
+            PersistentManager.Instance.isSurvival = false;
             Destroy(SurvivalManager.Instance.gameObject);
         }
+    }
+
+    //Survival Manager
+    public void Pause()
+    {
+        if(PersistentManager.Instance.isSurvival)
+            PersistentManager.Instance.isPaused = true;
+    }
+
+    public void Unpause()
+    {
+        if (PersistentManager.Instance.isSurvival)
+            PersistentManager.Instance.isPaused = false;
     }
 }
