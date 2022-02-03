@@ -11,10 +11,11 @@ public class ExamManager : MonoBehaviour
     public string[] scenes;
     string[] savedScenes;
     int procedureCompleted = 0;
-    float totalAccuracy = 0, totalProcedures = 3, timer;
-    public float totalMistake = 0;
-    [SerializeField] GameObject endPanel, star1, star2, star3;
-    [SerializeField] Text accuracyText;
+    float totalAccuracy = 0, totalProcedures = 1, timer;
+    public float totalMistake = 0, totalMoves = 0;
+    [SerializeField] GameObject endPanel, perfectPanel, successPanel, failPanel;
+    [SerializeField] Image fillStars;
+    [SerializeField] Text accuracyText, timeText, mistakesText, movesText;
 
     void Awake()
     {
@@ -72,23 +73,24 @@ public class ExamManager : MonoBehaviour
     {
         PersistentManager.Instance.isPaused = true;
         accuracyText.text = "Carefulness: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
+        mistakesText.text = "Mistakes: " + totalMistake;
+        movesText.text = "Moves: " + totalMoves;
+        timeText.text = timer.ToString("F2") + "s";
 
         endPanel.SetActive(true);
+        fillStars.fillAmount = (totalAccuracy / totalProcedures);
 
-        if(totalAccuracy / totalProcedures >= 0.9)
+        if (totalAccuracy / totalProcedures >= 0.9)
         {
-            star1.SetActive(true);
-            star2.SetActive(true);
-            star3.SetActive(true);
+            perfectPanel.SetActive(true);
         }
         else if(totalAccuracy / totalProcedures >= 0.6)
         {
-            star1.SetActive(true);
-            star2.SetActive(true);
+            successPanel.SetActive(true);
         }
-        else if(totalAccuracy / totalProcedures >= 0.3)
+        else
         {
-            star1.SetActive(true);
+            failPanel.SetActive(true);
         }
 
         StartCoroutine(FadeInBG());
@@ -123,12 +125,12 @@ public class ExamManager : MonoBehaviour
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
-            endPanel.GetComponent<Image>().color = curColor;
-            accuracyText.color = new Vector4(0.2f, 0.2f, 0.2f, curColor.a);
             foreach (Transform child in endPanel.transform)
             {
                 if (child.TryGetComponent<Image>(out Image imageComponent))
                     imageComponent.color = curColor;
+                if (child.TryGetComponent<Text>(out Text textComponent))
+                    textComponent.color = new Vector4(0, 0, 0, curColor.a);
             }
             yield return null;
         }

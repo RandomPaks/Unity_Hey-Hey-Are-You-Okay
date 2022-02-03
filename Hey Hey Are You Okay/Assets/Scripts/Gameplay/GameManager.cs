@@ -54,6 +54,11 @@ public class GameManager : MonoBehaviour
             totalCorrect++;
             totalMoves++;
 
+            if (ExamManager.Instance != null)
+            {
+                ExamManager.Instance.totalMoves++;
+            }
+
             accuracy = (float)totalCorrect / (float)totalMoves * 1;
 
             EventManager.Instance.PlayEvent(name);
@@ -71,6 +76,7 @@ public class GameManager : MonoBehaviour
         if(ExamManager.Instance != null)
         {
             ExamManager.Instance.totalMistake++;
+            ExamManager.Instance.totalMoves++;
             if (ExamManager.Instance.totalMistake >= 3)
             {
                 ExamManager.Instance.EndExams();
@@ -95,7 +101,11 @@ public class GameManager : MonoBehaviour
 
         totalCorrect += accuracy;
         totalMoves++;
-        Debug.Log("Correct: " + totalCorrect);
+
+        if (ExamManager.Instance != null)
+        {
+            ExamManager.Instance.totalMoves++;
+        }
 
         EventManager.Instance.PlayEvent(name);
     }
