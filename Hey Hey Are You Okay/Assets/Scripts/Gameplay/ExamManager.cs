@@ -11,7 +11,7 @@ public class ExamManager : MonoBehaviour
     public string[] scenes;
     string[] savedScenes;
     int procedureCompleted = 0;
-    float totalAccuracy = 0, totalProcedures = 1, timer;
+    float totalAccuracy = 0, totalProcedures = 3, timer;
     public float totalMistake = 0, totalMoves = 0;
     [SerializeField] GameObject endPanel, perfectPanel, successPanel, failPanel;
     [SerializeField] Image fillStars;
@@ -72,7 +72,7 @@ public class ExamManager : MonoBehaviour
     public void EndExams()
     {
         PersistentManager.Instance.isPaused = true;
-        accuracyText.text = "Carefulness: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
+        accuracyText.text = "Accuracy: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
         mistakesText.text = "Mistakes: " + totalMistake;
         movesText.text = "Moves: " + totalMoves;
         timeText.text = timer.ToString("F2") + "s";
