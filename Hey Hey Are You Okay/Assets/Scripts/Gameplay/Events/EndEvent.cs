@@ -36,10 +36,10 @@ public class EndEvent : AEventSequence
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
-            endPanel.GetComponent<Image>().color = curColor;
             foreach (Transform child in endPanel.transform)
             {
-                child.GetComponent<Image>().color = curColor;
+                if (child.TryGetComponent<Image>(out Image imageComponent))
+                    imageComponent.color = curColor;
             }
             yield return null;
         }
