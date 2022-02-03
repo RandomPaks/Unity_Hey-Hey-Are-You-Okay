@@ -23,7 +23,7 @@ public class MergeGoal : MonoBehaviour
         }
         else if (other.GetComponent<ToolDrag>().tool != goalTool)
         {
-            other.GetComponent<ToolDrag>().OnForceEndDrag();
+            GameManager.Instance.MakeMistake();
         }
     }
 }

@@ -10,7 +10,6 @@ public class SurvivalManager : MonoBehaviour
 
     public string[] scenes;
     string[] savedScenes;
-    int procedureCompleted = 0;
     float totalAccuracy, totalProcedures = 6;
     [SerializeField] GameObject endPanel, star1, star2, star3;
     [SerializeField] Text accuracyText, timerText;
@@ -28,7 +27,6 @@ public class SurvivalManager : MonoBehaviour
     void Start()
     {
         PersistentManager.Instance.isSurvival = true;
-        PersistentManager.Instance.isPaused = false;
         StartCoroutine(LateStart(0.1f));
     }
 
@@ -62,24 +60,17 @@ public class SurvivalManager : MonoBehaviour
 
     public void StartProcedure()
     {
-        timer = 30.0f;
+        PersistentManager.Instance.isPaused = false;
         int rand = UnityEngine.Random.Range(0, scenes.Length);
         SceneManager.LoadScene(scenes[rand]);
-        RemoveElement<String>(ref scenes, rand);
-    }
-
-    public void RestartSurvival()
-    {
-        scenes = new string[savedScenes.Length];
-        for (int i = 0; i < savedScenes.Length; i++)
-        {
-            scenes[i] = String.Copy(savedScenes[i]);
-        }
-        PersistentManager.Instance.isPaused = false;
+        timer = 30.0f;
     }
 
     public void EndSurvival()
     {
+        PersistentManager.Instance.isPaused = true;
+        accuracyText.text = "Carefulness: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
+
         endPanel.SetActive(true);
 
         if (totalAccuracy / totalProcedures >= 0.9)
@@ -101,29 +92,10 @@ public class SurvivalManager : MonoBehaviour
         StartCoroutine(FadeInBG());
     }
 
-    void RemoveElement<T>(ref T[] arr, int index)
-    {
-        for (int a = index; a < arr.Length - 1; a++)
-        {
-            arr[a] = arr[a + 1];
-        }
-        Array.Resize(ref arr, arr.Length - 1);
-    }
-
     public void EndProcedure()
     {
-        procedureCompleted++;
         totalAccuracy += GameManager.Instance.accuracy;
-        if (procedureCompleted == totalProcedures)
-        {
-            accuracyText.text = "Carefulness: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
-            Debug.Log(totalAccuracy / totalProcedures);
-            EndSurvival();
-        }
-        else
-        {
-            StartProcedure();
-        }
+        StartProcedure();
     }
 
     IEnumerator FadeInBG()

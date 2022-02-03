@@ -68,6 +68,17 @@ public class GameManager : MonoBehaviour
         totalMistake++;
         totalMoves++;
 
+        if(ExamManager.Instance != null)
+        {
+            ExamManager.Instance.totalMistake++;
+            if (ExamManager.Instance.totalMistake >= 3)
+            {
+                ExamManager.Instance.EndExams();
+            }
+        }
+        if (SurvivalManager.Instance != null)
+            SurvivalManager.Instance.EndSurvival();
+
         accuracy = (float)totalCorrect / (float)totalMoves * 1;
         Debug.Log("Mistakes: " + totalMistake);
     }

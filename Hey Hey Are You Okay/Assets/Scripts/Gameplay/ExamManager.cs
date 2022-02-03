@@ -11,7 +11,8 @@ public class ExamManager : MonoBehaviour
     public string[] scenes;
     string[] savedScenes;
     int procedureCompleted = 0;
-    float totalAccuracy, totalProcedures = 1;
+    float totalAccuracy = 0, totalProcedures = 3, timer;
+    public float totalMistake = 0;
     [SerializeField] GameObject endPanel, star1, star2, star3;
     [SerializeField] Text accuracyText;
 
@@ -30,6 +31,13 @@ public class ExamManager : MonoBehaviour
         StartCoroutine(LateStart(0.1f));
     }
 
+    void Update()
+    {
+        if(!PersistentManager.Instance.isPaused)
+            timer += Time.deltaTime;
+        Debug.Log(timer);
+    }
+
     IEnumerator LateStart(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
@@ -44,6 +52,7 @@ public class ExamManager : MonoBehaviour
 
     public void StartProcedure()
     {
+        PersistentManager.Instance.isPaused = false;
         int rand = UnityEngine.Random.Range(0, scenes.Length);
         SceneManager.LoadScene(scenes[rand]);
         RemoveElement<String>(ref scenes, rand);
@@ -56,10 +65,14 @@ public class ExamManager : MonoBehaviour
         {
             scenes[i] = String.Copy(savedScenes[i]);
         }
+        timer = 0;
     }
 
     public void EndExams()
     {
+        PersistentManager.Instance.isPaused = true;
+        accuracyText.text = "Carefulness: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
+
         endPanel.SetActive(true);
 
         if(totalAccuracy / totalProcedures >= 0.9)
@@ -96,8 +109,6 @@ public class ExamManager : MonoBehaviour
         totalAccuracy += GameManager.Instance.accuracy;
         if (procedureCompleted == totalProcedures)
         {
-            accuracyText.text = "Carefulness: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
-            Debug.Log(totalAccuracy / totalProcedures);
             EndExams();
         }
         else

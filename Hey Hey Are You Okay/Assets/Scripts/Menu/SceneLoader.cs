@@ -14,7 +14,6 @@ public class SceneLoader : MonoBehaviour
         }
         else if (PersistentManager.Instance.isSurvival)
         {
-            SurvivalManager.Instance.RestartSurvival();
             SurvivalManager.Instance.StartProcedure();
         }
         else
@@ -41,13 +40,11 @@ public class SceneLoader : MonoBehaviour
     //Survival Manager
     public void Pause()
     {
-        if(PersistentManager.Instance.isSurvival)
-            PersistentManager.Instance.isPaused = true;
+        PersistentManager.Instance.isPaused = true;
     }
 
     public void Unpause()
     {
-        if (PersistentManager.Instance.isSurvival)
-            PersistentManager.Instance.isPaused = false;
+        PersistentManager.Instance.isPaused = false;
     }
 }
