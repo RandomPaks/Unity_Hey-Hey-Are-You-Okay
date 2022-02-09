@@ -82,10 +82,16 @@ public class MenuManager : MonoBehaviour
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
 
-        if (PersistentManager.Instance.isPlaying == true)
+        if (PersistentManager.Instance.isExam || PersistentManager.Instance.isSurvival)
+        {
+            PersistentManager.Instance.isExam = false;
+            PersistentManager.Instance.isSurvival = false;
+            OpenMainMenu();
+        }
+        else if (PersistentManager.Instance.isPlaying)
         {
             PersistentManager.Instance.isPlaying = false;
-            OpenMainMenu();
+            OpenTrainingMenu();
         }
     }
 
@@ -121,7 +127,6 @@ public class MenuManager : MonoBehaviour
     public void ExitGame() => Application.Quit();
     public void LoadSymptomScene()
     {
-        PersistentManager.Instance.isPlaying = true;
         SceneManager.LoadScene(sceneToLoad);
     }
 
@@ -172,6 +177,14 @@ public class MenuManager : MonoBehaviour
         titlePanel.SetActive(false);
         bgPanel.SetActive(true);
         mainPanel.SetActive(true);
+        bottomPanel.SetActive(true);
+    }
+
+    public void OpenTrainingMenu()
+    {
+        titlePanel.SetActive(false);
+        bgPanel.SetActive(true);
+        trainingPanel.SetActive(true);
         bottomPanel.SetActive(true);
     }
 

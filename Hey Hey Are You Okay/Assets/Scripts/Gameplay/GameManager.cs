@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(LateStart(0.1f));   
+        PersistentManager.Instance.isPlaying = true;
+        StartCoroutine(LateStart(0.1f));
     }
 
     IEnumerator LateStart(float waitTime)

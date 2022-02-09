@@ -28,6 +28,7 @@ public class ExamManager : MonoBehaviour
 
     void Start()
     {
+        PersistentManager.Instance.isPlaying = true;
         PersistentManager.Instance.isExam = true;
         StartCoroutine(LateStart(0.1f));
     }

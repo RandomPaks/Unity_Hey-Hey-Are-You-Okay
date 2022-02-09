@@ -27,12 +27,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         if (PersistentManager.Instance.isExam)
         {
-            PersistentManager.Instance.isExam = false;
             Destroy(ExamManager.Instance.gameObject);
         }
         else if (PersistentManager.Instance.isSurvival)
         {
-            PersistentManager.Instance.isSurvival = false;
             Destroy(SurvivalManager.Instance.gameObject);
         }
     }

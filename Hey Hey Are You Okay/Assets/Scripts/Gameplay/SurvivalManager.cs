@@ -26,6 +26,7 @@ public class SurvivalManager : MonoBehaviour
 
     void Start()
     {
+        PersistentManager.Instance.isPlaying = true;
         PersistentManager.Instance.isSurvival = true;
         StartCoroutine(LateStart(0.1f));
     }
