@@ -11,7 +11,7 @@ public class ExamManager : MonoBehaviour
     public string[] scenes;
     string[] savedScenes;
     int procedureCompleted = 0;
-    float totalAccuracy = 0, totalProcedures = 3, timer;
+    float totalAccuracy = 0, totalProcedures = 3, timer = 0.0f;
     public float totalMistake = 0, totalMoves = 0;
     [SerializeField] GameObject endPanel, perfectPanel, successPanel, failPanel;
     [SerializeField] Image fillStars;
@@ -37,7 +37,6 @@ public class ExamManager : MonoBehaviour
     {
         if(!PersistentManager.Instance.isPaused)
             timer += Time.deltaTime;
-        Debug.Log(timer);
     }
 
     IEnumerator LateStart(float waitTime)
@@ -60,7 +59,7 @@ public class ExamManager : MonoBehaviour
         RemoveElement<String>(ref scenes, rand);
     }
 
-    public void RestartExams()
+    public void ResetExams()
     {
         scenes = new string[savedScenes.Length];
         for(int i = 0; i < savedScenes.Length; i++)
@@ -68,6 +67,15 @@ public class ExamManager : MonoBehaviour
             scenes[i] = String.Copy(savedScenes[i]);
         }
         timer = 0;
+        procedureCompleted = 0;
+        totalMoves = 0;
+        totalAccuracy = 0;
+        totalMistake = 0;
+
+        failPanel.SetActive(false);
+        successPanel.SetActive(false);
+        perfectPanel.SetActive(false);
+        endPanel.SetActive(false);
     }
 
     public void EndExams()
@@ -123,6 +131,15 @@ public class ExamManager : MonoBehaviour
     IEnumerator FadeInBG()
     {
         Color curColor = endPanel.GetComponent<Image>().color;
+        curColor.a = 0;
+        foreach (Transform child in endPanel.transform)
+        {
+            if (child.TryGetComponent<Image>(out Image imageComponent))
+                imageComponent.color = curColor;
+            if (child.TryGetComponent<Text>(out Text textComponent))
+                textComponent.color = new Vector4(0, 0, 0, curColor.a);
+        }
+
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);

@@ -9,11 +9,12 @@ public class SceneLoader : MonoBehaviour
     {
         if (PersistentManager.Instance.isExam)
         {
-            ExamManager.Instance.RestartExams();
+            ExamManager.Instance.ResetExams();
             ExamManager.Instance.StartProcedure();
         }
         else if (PersistentManager.Instance.isSurvival)
         {
+            SurvivalManager.Instance.ResetSurvival();
             SurvivalManager.Instance.StartProcedure();
         }
         else

@@ -10,10 +10,10 @@ public class SurvivalManager : MonoBehaviour
 
     public string[] scenes;
     string[] savedScenes;
-    float totalAccuracy, proceduresCompleted = 0;
+    int proceduresCompleted = 0;
+    float totalAccuracy, timer = 30.0f, totalTime = 0.0f;
     [SerializeField] GameObject endPanel;
     [SerializeField] Text accuracyText, timerText, totalProceduresText, flawlessText, averageTimeText;
-    float timer = 30.0f, totalTime = 0.0f;
 
     void Awake()
     {
@@ -94,10 +94,28 @@ public class SurvivalManager : MonoBehaviour
         proceduresCompleted++;
         StartProcedure();
     }
+    
+    public void ResetSurvival()
+    {
+        proceduresCompleted = 0;
+        totalAccuracy = 0;
+        totalTime = 0;
+
+        endPanel.SetActive(false);
+    }
 
     IEnumerator FadeInBG()
     {
         Color curColor = endPanel.GetComponent<Image>().color;
+        curColor.a = 0;
+        foreach (Transform child in endPanel.transform)
+        {
+            if (child.TryGetComponent<Image>(out Image imageComponent))
+                imageComponent.color = curColor;
+            if (child.TryGetComponent<Text>(out Text textComponent))
+                textComponent.color = new Vector4(0, 0, 0, curColor.a);
+        }
+
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
