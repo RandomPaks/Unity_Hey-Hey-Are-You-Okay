@@ -140,7 +140,7 @@ public class ExamManager : MonoBehaviour
                 textComponent.color = new Vector4(0, 0, 0, curColor.a);
         }
 
-        while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
+        while (Mathf.Abs(curColor.a - 1.0f) > 0.001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
             foreach (Transform child in endPanel.transform)

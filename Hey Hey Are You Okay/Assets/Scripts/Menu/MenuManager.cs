@@ -9,6 +9,8 @@ public enum MenuEnum
     MAIN,
     OPTIONS,
     TRAINING,
+    EXAM,
+    SURVIVAL,
     BACKSTORY
 }
 
@@ -16,7 +18,7 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance { get; private set; }
 
-    public GameObject mainPanel, optionsPanel, trainingPanel, backstoryPanel;
+    public GameObject mainPanel, optionsPanel, trainingPanel, examPanel, survivalPanel, backstoryPanel;
     List<GameObject> menus = new List<GameObject>();
 
     int isTutorialDone;
@@ -78,6 +80,8 @@ public class MenuManager : MonoBehaviour
         menus.Add(mainPanel);
         menus.Add(optionsPanel);
         menus.Add(trainingPanel);
+        menus.Add(examPanel);
+        menus.Add(survivalPanel);
         menus.Add(backstoryPanel);
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
@@ -107,6 +111,12 @@ public class MenuManager : MonoBehaviour
                 break;
             case MenuEnum.TRAINING:
                 ChangeMenu(trainingPanel);
+                break;
+            case MenuEnum.EXAM:
+                ChangeMenu(examPanel);
+                break;
+            case MenuEnum.SURVIVAL:
+                ChangeMenu(survivalPanel);
                 break;
             case MenuEnum.BACKSTORY:
                 ChangeMenu(backstoryPanel);
