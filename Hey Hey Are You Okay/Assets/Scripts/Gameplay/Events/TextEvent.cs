@@ -14,6 +14,7 @@ public class TextEvent : AEventSequence
 {
     [SerializeField] Text textBox;
     [SerializeField] Dialogue[] dialogues;
+    [SerializeField] GameObject textBG;
 
     void Start()
     {
@@ -25,11 +26,13 @@ public class TextEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
+        textBG.SetActive(true);
         StartCoroutine(SetText());
     }
 
     public override void OnFinishEvent()
     {
+        textBG.SetActive(false);
         base.OnFinishEvent();
     }
 
