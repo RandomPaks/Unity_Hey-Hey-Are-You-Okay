@@ -11,7 +11,12 @@ public enum ToolEnum
     PHONE,
     WET_TOWEL,
     BURN_OINTMENT,
-    HAND
+    HAND,
+    BRANCH,
+    HANDKERCHIEF,
+    ICEPACK,
+    ELEVATE,
+    REST
 }
 
 public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler

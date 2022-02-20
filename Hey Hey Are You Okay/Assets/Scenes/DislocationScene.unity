@@ -3822,7 +3822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864488240}
   m_Layer: 0
-  m_Name: CatchEmLegs
+  m_Name: CatchEmShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4399,6 +4399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_Disloc_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740604635426729109, guid: 0cecf17cf5354e7408ee238212637fe7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cecf17cf5354e7408ee238212637fe7, type: 3}

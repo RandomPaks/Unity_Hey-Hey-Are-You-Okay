@@ -4267,6 +4267,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_Fracture_Leg_3
       objectReference: {fileID: 0}
+    - target: {fileID: 149749119825377590, guid: d545356d05b75d04fb04432f023e9813,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 675492301881877388, guid: d545356d05b75d04fb04432f023e9813,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4417,6 +4422,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_Fracture_Leg_6
       objectReference: {fileID: 0}
+    - target: {fileID: 7054827353360772274, guid: bbc6fec822d4b134690d66f82a778d42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7686545830059669000, guid: bbc6fec822d4b134690d66f82a778d42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4541,6 +4551,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_Fracture_Leg_5
       objectReference: {fileID: 0}
+    - target: {fileID: 2096457749844673211, guid: 8770f1bef826958419b9e60e67064067,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8770f1bef826958419b9e60e67064067, type: 3}
 --- !u!4 &4923293300485226686 stripped
@@ -4560,6 +4575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_Fracture_Leg_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910836840966734624, guid: d6e8de7109705bc44afd0b21f7d1d579,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6434608568559540634, guid: d6e8de7109705bc44afd0b21f7d1d579,
         type: 3}
@@ -4684,6 +4704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_Fracture_Leg_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933648307880321835, guid: 18a57d54741428541bd31a394cc03a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a57d54741428541bd31a394cc03a2a, type: 3}
