@@ -12,7 +12,7 @@ public class SurvivalManager : MonoBehaviour
     public string[] scenes;
     string[] savedScenes;
     int proceduresCompleted = 0;
-    float totalAccuracy, timer = 30.0f, totalTime = 0.0f, tickingVolume = 0.1f;
+    float totalAccuracy, timer = 30.0f, totalTime = 0.0f, tickingVolume = 0.1f, colorValue = 0.0f;
     [SerializeField] GameObject endPanel;
     [SerializeField] Text accuracyText, timerText, totalProceduresText, flawlessText, averageTimeText;
 
@@ -48,6 +48,10 @@ public class SurvivalManager : MonoBehaviour
 
         tickingVolume = 0.6f - (timer / 60);
         AudioManager.Instance.SetVolume("Ticking", tickingVolume);
+
+        colorValue = 1.0f - (timer / 30);
+        if (BackgroundColorSwitch.Instance != null)
+            BackgroundColorSwitch.Instance.SetImageGradient(colorValue);
     }
 
     IEnumerator LateStart(float waitTime)
