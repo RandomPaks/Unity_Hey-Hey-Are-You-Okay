@@ -14094,6 +14094,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Ticking
+    clip: {fileID: 8300000, guid: 4781d2a5fc6cfb5429b2dc2032cc9b6a, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &1475364591
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Sound;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.Stop("BGM");
+        AudioManager.Instance.SetVolume("Ticking", 0.1f);
+        AudioManager.Instance.Play("Ticking");
+
         PersistentManager.Instance.isPlaying = true;
         StartCoroutine(LateStart(0.1f));
     }

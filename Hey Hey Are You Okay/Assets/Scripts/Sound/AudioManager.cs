@@ -30,8 +30,6 @@ namespace Sound
 
         void Start()
         {
-            Play("BGM");
-
             if (!PlayerPrefs.HasKey("BGMVolume"))
             {
                 PlayerPrefs.SetFloat("BGMVolume", GetAudio("BGM").volume);

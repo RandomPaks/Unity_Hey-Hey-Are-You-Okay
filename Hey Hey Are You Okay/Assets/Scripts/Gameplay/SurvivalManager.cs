@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Sound;
 
 public class SurvivalManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class SurvivalManager : MonoBehaviour
     public string[] scenes;
     string[] savedScenes;
     int proceduresCompleted = 0;
-    float totalAccuracy, timer = 30.0f, totalTime = 0.0f;
+    float totalAccuracy, timer = 30.0f, totalTime = 0.0f, tickingVolume = 0.1f;
     [SerializeField] GameObject endPanel;
     [SerializeField] Text accuracyText, timerText, totalProceduresText, flawlessText, averageTimeText;
 
@@ -28,6 +29,7 @@ public class SurvivalManager : MonoBehaviour
     {
         PersistentManager.Instance.isPlaying = true;
         PersistentManager.Instance.isSurvival = true;
+        AudioManager.Instance.Play("Ticking");
         StartCoroutine(LateStart(0.1f));
     }
 
@@ -43,6 +45,9 @@ public class SurvivalManager : MonoBehaviour
             totalTime += Time.deltaTime;
             timerText.text = timer.ToString("F1");
         }
+
+        tickingVolume = 0.6f - (timer / 60);
+        AudioManager.Instance.SetVolume("Ticking", tickingVolume);
     }
 
     IEnumerator LateStart(float waitTime)

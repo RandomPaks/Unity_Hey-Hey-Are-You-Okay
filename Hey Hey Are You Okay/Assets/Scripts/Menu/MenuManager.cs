@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Sound;
 
 public enum MenuEnum
 {
@@ -60,6 +61,9 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.Play("BGM");
+        AudioManager.Instance.Stop("Ticking");
+
         if (!PlayerPrefs.HasKey("TutorialMenus"))
         {
             PlayerPrefs.SetInt("TutorialMenus", 0);

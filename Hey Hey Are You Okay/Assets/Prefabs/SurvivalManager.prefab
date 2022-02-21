@@ -620,6 +620,8 @@ MonoBehaviour:
   - LacerationAltScene
   - BurnsScene
   - BurnsAltScene
+  - FractureScene
+  - FractureAltScene
   endPanel: {fileID: 6002463245605827407}
   accuracyText: {fileID: 6438546227729690567}
   timerText: {fileID: 568420456537528872}
@@ -1000,7 +1002,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2903284350360256280
 MonoBehaviour:
