@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FractureScene.unity
     guid: 471b489b05e827b41b69b6568b4b61db
+  - enabled: 1
+    path: Assets/Scenes/FractureAltScene.unity
+    guid: 647171ea922e13647888994371988887
   m_configObjects: {}

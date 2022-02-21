@@ -4214,7 +4214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06415a3119f613543a85d46bd837078e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 568f03c6145ba5840af62ff58fefcc4a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4936,7 +4936,7 @@ MonoBehaviour:
   dialogues:
   - text: Procedure Success!
     secs: 3
-  textBG: {fileID: 1658178341}
+  textBG: {fileID: 1622111331}
 --- !u!1 &1986385347
 GameObject:
   m_ObjectHideFlags: 0

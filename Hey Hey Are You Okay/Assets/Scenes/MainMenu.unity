@@ -7714,6 +7714,7 @@ MonoBehaviour:
   - TutLacerationCompleted
   - TutLacerationAltCompleted
   - TutFractureCompleted
+  - TutFractureAltCompleted
 --- !u!4 &738174971
 Transform:
   m_ObjectHideFlags: 0
