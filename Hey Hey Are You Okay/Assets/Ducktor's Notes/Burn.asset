@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7dba0c829fcc94f8864eb5903dd03d, type: 3}
+  m_Name: Burn
+  m_EditorClassIdentifier: 
+  text: 'A kind of soft tissue injury due to exposure to extreme heat that may damage
+    only the top layer of skin or deeper in the skin and through the layer of fat,
+    muscle and bone beneath. Burns are classified in severity by their depth: superficial
+    or first degree, partial thickness or second degree and full thickness or third
+    degree.'
