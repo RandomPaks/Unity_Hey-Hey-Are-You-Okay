@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FractureAltScene.unity
     guid: 647171ea922e13647888994371988887
+  - enabled: 1
+    path: Assets/Scenes/StrainScene.unity
+    guid: c2dcc58954744fa4c835fd244c870e2a
+  - enabled: 1
+    path: Assets/Scenes/DislocationScene.unity
+    guid: fe142c8464adb304f938226b69567b97
   m_configObjects: {}
