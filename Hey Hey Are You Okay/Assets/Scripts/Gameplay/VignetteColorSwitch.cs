@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class BackgroundColorSwitch : MonoBehaviour
+public class VignetteColorSwitch : MonoBehaviour
 {
-    public static BackgroundColorSwitch Instance { get; private set; }
+    public static VignetteColorSwitch Instance { get; private set; }
 
-    [SerializeField] Gradient gradient;
     Image bg;
 
     void Awake()
@@ -18,8 +17,10 @@ public class BackgroundColorSwitch : MonoBehaviour
         bg = GetComponent<Image>();
     }
 
-    public void SetImageGradient(float value)
+    public void SetAlphaVignette(float value)
     {
-        bg.color = gradient.Evaluate(value);
+        Color color = Color.white;
+        color.a = value;
+        bg.color = color;
     }
 }
