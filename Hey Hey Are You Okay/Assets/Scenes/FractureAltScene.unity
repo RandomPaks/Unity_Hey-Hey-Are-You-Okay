@@ -394,7 +394,7 @@ MonoBehaviour:
   - text: 'Elevate the injury only if it does not cause more pain.
 
 '
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &101629321
 Transform:
@@ -528,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 104589005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.19, y: 5.29, z: -0.5}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -548,12 +548,12 @@ PrefabInstance:
     - target: {fileID: 2559893649241019527, guid: cbec1f24595e7e34eb4842424243376b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.75
+      value: -3.1069999
       objectReference: {fileID: 0}
     - target: {fileID: 2559893649241019527, guid: cbec1f24595e7e34eb4842424243376b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.16999996
       objectReference: {fileID: 0}
     - target: {fileID: 2559893649241019527, guid: cbec1f24595e7e34eb4842424243376b,
         type: 3}
@@ -656,7 +656,7 @@ MonoBehaviour:
       splint the injury in the way you found it. We can use a metal pipe to splint
       the leg. Since a fracture is a bone injury, align the splint with the joints
       on either side of the bone.\r"
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &227543370
 Transform:
@@ -960,6 +960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 1879876217}
+  lobbyButtonSprite: {fileID: 21300000, guid: d401ce06b20f78f47912fba26f4c89e8, type: 3}
 --- !u!1 &422571792
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422571792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 1.877, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0.52, z: 0.16999996}
   m_LocalScale: {x: 1.4537265, y: 9.667617, z: 1.4537265}
   m_Children: []
   m_Father: {fileID: 1722152251}
@@ -1919,6 +1921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 0}
+  lobbyButtonSprite: {fileID: 0}
 --- !u!114 &848385941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2049,7 +2053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885749419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 2.97, z: -1.07}
+  m_LocalPosition: {x: -1.04, y: 1.613, z: -0.9000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1722152251}
@@ -2124,7 +2128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939412785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16, y: 1.877, z: 0}
+  m_LocalPosition: {x: -0.16, y: 0.52, z: 0.16999996}
   m_LocalScale: {x: 1.4537265, y: 9.667617, z: 1.4537265}
   m_Children: []
   m_Father: {fileID: 1722152251}
@@ -2234,7 +2238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983143255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 5.28, z: 0}
+  m_LocalPosition: {x: -0.07, y: 3.9230003, z: 0.16999996}
   m_LocalScale: {x: 1.4537265, y: 2.5426078, z: 1.4537265}
   m_Children: []
   m_Father: {fileID: 1722152251}
@@ -2549,7 +2553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003240733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: 1.21, z: 0}
+  m_LocalPosition: {x: -0.12, y: -0.14699996, z: 0.16999996}
   m_LocalScale: {x: 1.4537265, y: 2.5426078, z: 1.4537265}
   m_Children: []
   m_Father: {fileID: 1722152251}
@@ -2805,7 +2809,7 @@ MonoBehaviour:
   dialogues:
   - text: "After making sure the splint is secure and the fracture is immobilized,
       use a cold compress if available to reduce swelling and pain.\r"
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &1133915895
 Transform:
@@ -2846,12 +2850,12 @@ PrefabInstance:
     - target: {fileID: 7686545830059669000, guid: bbc6fec822d4b134690d66f82a778d42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.87
+      value: -0.487
       objectReference: {fileID: 0}
     - target: {fileID: 7686545830059669000, guid: bbc6fec822d4b134690d66f82a778d42,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.16999996
       objectReference: {fileID: 0}
     - target: {fileID: 7686545830059669000, guid: bbc6fec822d4b134690d66f82a778d42,
         type: 3}
@@ -3399,6 +3403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 0}
+  lobbyButtonSprite: {fileID: 0}
 --- !u!1 &1551917375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -640}
+  m_AnchoredPosition: {x: 0, y: -610}
   m_SizeDelta: {x: 720, y: 1280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622111333
@@ -3789,7 +3795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662993887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.884, y: 0.16, z: -1.07}
+  m_LocalPosition: {x: -0.884, y: -1.197, z: -0.9000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1722152251}
@@ -4344,7 +4350,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: CutsScene
+          m_StringArgument: FractureAltScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1831038247
@@ -4864,7 +4870,7 @@ MonoBehaviour:
       around each joint on each end of the fractured bone.
 
 '
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &2040324416
 Transform:
@@ -4916,7 +4922,7 @@ MonoBehaviour:
   - text: For injuries to joints, bones, and muscles, always remember the acronym
       R.I.C.E.! R.I.C.E. stands for Rest, Immobilize, Cold, and Elevate! First, make
       sure the patient is at rest and in a safe area for first aid.
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &2069880837
 Transform:
@@ -5093,12 +5099,12 @@ PrefabInstance:
     - target: {fileID: 675492301881877388, guid: d545356d05b75d04fb04432f023e9813,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.75
+      value: -3.1069999
       objectReference: {fileID: 0}
     - target: {fileID: 675492301881877388, guid: d545356d05b75d04fb04432f023e9813,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.16999996
       objectReference: {fileID: 0}
     - target: {fileID: 675492301881877388, guid: d545356d05b75d04fb04432f023e9813,
         type: 3}
@@ -5175,12 +5181,12 @@ PrefabInstance:
     - target: {fileID: 2559893649241019527, guid: cbec1f24595e7e34eb4842424243376b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.45
+      value: 1.093
       objectReference: {fileID: 0}
     - target: {fileID: 2559893649241019527, guid: cbec1f24595e7e34eb4842424243376b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 2559893649241019527, guid: cbec1f24595e7e34eb4842424243376b,
         type: 3}
@@ -5260,12 +5266,12 @@ PrefabInstance:
     - target: {fileID: 7686545830059669000, guid: bbc6fec822d4b134690d66f82a778d42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.75
+      value: -3.1069999
       objectReference: {fileID: 0}
     - target: {fileID: 7686545830059669000, guid: bbc6fec822d4b134690d66f82a778d42,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.16999996
       objectReference: {fileID: 0}
     - target: {fileID: 7686545830059669000, guid: bbc6fec822d4b134690d66f82a778d42,
         type: 3}
@@ -5324,12 +5330,12 @@ PrefabInstance:
     - target: {fileID: 1608855561005897729, guid: 8770f1bef826958419b9e60e67064067,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.75
+      value: -3.1069999
       objectReference: {fileID: 0}
     - target: {fileID: 1608855561005897729, guid: 8770f1bef826958419b9e60e67064067,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.16999996
       objectReference: {fileID: 0}
     - target: {fileID: 1608855561005897729, guid: 8770f1bef826958419b9e60e67064067,
         type: 3}
@@ -5410,12 +5416,12 @@ PrefabInstance:
     - target: {fileID: 8120378673066523025, guid: 18a57d54741428541bd31a394cc03a2a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.75
+      value: -3.1069999
       objectReference: {fileID: 0}
     - target: {fileID: 8120378673066523025, guid: 18a57d54741428541bd31a394cc03a2a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.16999996
       objectReference: {fileID: 0}
     - target: {fileID: 8120378673066523025, guid: 18a57d54741428541bd31a394cc03a2a,
         type: 3}

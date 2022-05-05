@@ -26,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BurnsAltScene.unity
     guid: 6cc9beda813326c4cbffcb9d66167493
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/FractureScene.unity
     guid: 471b489b05e827b41b69b6568b4b61db

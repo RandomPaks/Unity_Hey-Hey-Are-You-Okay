@@ -1,9 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] Image lobbyButtonImage;
+    [SerializeField] Sprite lobbyButtonSprite;
+
+    void Start()
+    {
+        if (PersistentManager.Instance.isExam || PersistentManager.Instance.isSurvival)
+        {
+            lobbyButtonImage.sprite = lobbyButtonSprite;
+        }
+    }
+
     //Resolves restart button issues
     public void LoadScene(string scene)
     {

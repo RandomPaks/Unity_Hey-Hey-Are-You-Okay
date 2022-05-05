@@ -612,7 +612,7 @@ MonoBehaviour:
       area such as a couch.
 
 '
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &224279804
 Transform:
@@ -768,7 +768,7 @@ MonoBehaviour:
   dialogues:
   - text: Make sure the patient is rested and the injury is immobilized, use a cold
       compress if available to reduce swelling and pain.
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!1 &366258393
 GameObject:
@@ -1100,6 +1100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 1879876217}
+  lobbyButtonSprite: {fileID: 21300000, guid: d401ce06b20f78f47912fba26f4c89e8, type: 3}
 --- !u!1 &441478780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,6 +2044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 0}
+  lobbyButtonSprite: {fileID: 0}
 --- !u!114 &848385941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3676,6 +3680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 0}
+  lobbyButtonSprite: {fileID: 0}
 --- !u!1 &1417633780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,7 +3866,7 @@ MonoBehaviour:
   - text: "Only if it does not cause more pain, keep the injury in the way you found
       it and make sure that the injury does not move. Use the bandage carefully to
       secure the cold compress.\r"
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!1 &1551917375
 GameObject:
@@ -4265,7 +4271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -640}
+  m_AnchoredPosition: {x: 0, y: -610}
   m_SizeDelta: {x: 720, y: 1280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622111333
@@ -4511,7 +4517,7 @@ MonoBehaviour:
   - text: 'Elevate the injury only if it does not cause more pain.
 
 '
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!1 &1740773822
 GameObject:
@@ -4859,7 +4865,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: CutsScene
+          m_StringArgument: DislocationScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1831038247
@@ -5479,7 +5485,7 @@ MonoBehaviour:
       help is on the way.
 
 '
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &2131932065
 Transform:

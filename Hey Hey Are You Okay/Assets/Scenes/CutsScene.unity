@@ -389,7 +389,7 @@ MonoBehaviour:
   textBox: {fileID: 1658178342}
   dialogues:
   - text: Run the cut through distilled, moving water and pat it dry.
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &224279804
 Transform:
@@ -440,7 +440,7 @@ MonoBehaviour:
   dialogues:
   - text: Apply a band-aid over the wound, making sure that the cut is covered by
       the central part of the band-aid.
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &242162987
 Transform:
@@ -791,6 +791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 1879876217}
+  lobbyButtonSprite: {fileID: 21300000, guid: d401ce06b20f78f47912fba26f4c89e8, type: 3}
 --- !u!1 &409848994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 0}
+  lobbyButtonSprite: {fileID: 0}
 --- !u!114 &848385941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2049,7 +2053,7 @@ MonoBehaviour:
   textBox: {fileID: 1658178342}
   dialogues:
   - text: Disinfect the cut by applying povidone-iodine.
-    secs: 10
+    secs: 100
   textBG: {fileID: 1622111331}
 --- !u!4 &1013269384
 Transform:
@@ -3088,6 +3092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyButtonImage: {fileID: 0}
+  lobbyButtonSprite: {fileID: 0}
 --- !u!1001 &1440595444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3675,7 +3681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -640}
+  m_AnchoredPosition: {x: 0, y: -610}
   m_SizeDelta: {x: 720, y: 1280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622111333
