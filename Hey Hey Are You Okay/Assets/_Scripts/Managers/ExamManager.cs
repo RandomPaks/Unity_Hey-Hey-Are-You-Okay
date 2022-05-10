@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Sound;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,14 +29,15 @@ public class ExamManager : MonoBehaviour
 
     void Start()
     {
-        PersistentManager.Instance.isPlaying = true;
-        PersistentManager.Instance.isExam = true;
+        GameStateManager.IsPlaying = true;
+        GameStateManager.IsExam = true;
+        AudioManager.Instance.Play("Ticking");
         StartCoroutine(LateStart(0.1f));
     }
 
     void Update()
     {
-        if(!PersistentManager.Instance.isPaused)
+        if(!GameStateManager.IsPaused)
             timer += Time.deltaTime;
     }
 
@@ -53,7 +55,7 @@ public class ExamManager : MonoBehaviour
 
     public void StartProcedure()
     {
-        PersistentManager.Instance.isPaused = false;
+        GameStateManager.IsPaused = false;
         int rand = UnityEngine.Random.Range(0, scenes.Length);
         SceneManager.LoadScene(scenes[rand]);
         RemoveElement<String>(ref scenes, rand);
@@ -80,7 +82,7 @@ public class ExamManager : MonoBehaviour
 
     public void EndExams()
     {
-        PersistentManager.Instance.isPaused = true;
+        GameStateManager.IsPaused = true;
         accuracyText.text = "Accuracy: " + (totalAccuracy / totalProcedures * 100).ToString("F2") + "%";
         mistakesText.text = "Mistakes: " + totalMistake;
         movesText.text = "Moves: " + totalMoves;

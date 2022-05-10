@@ -92,15 +92,15 @@ public class MenuManager : MonoBehaviour
 
         backdrop = backstoryPanel.GetComponentInChildren<RawImage>();
 
-        if (PersistentManager.Instance.isExam || PersistentManager.Instance.isSurvival)
+        if (GameStateManager.IsExam || GameStateManager.IsSurvival)
         {
-            PersistentManager.Instance.isExam = false;
-            PersistentManager.Instance.isSurvival = false;
+            GameStateManager.IsExam = false;
+            GameStateManager.IsSurvival = false;
             OpenMainMenu();
         }
-        else if (PersistentManager.Instance.isPlaying)
+        else if (GameStateManager.IsPlaying)
         {
-            PersistentManager.Instance.isPlaying = false;
+            GameStateManager.IsPlaying = false;
             OpenTrainingMenu();
         }
     }

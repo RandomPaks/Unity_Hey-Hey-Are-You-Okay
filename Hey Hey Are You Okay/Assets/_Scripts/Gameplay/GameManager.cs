@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.SetVolume("Ticking", 0.1f);
         AudioManager.Instance.Play("Ticking");
 
-        PersistentManager.Instance.isPlaying = true;
+        GameStateManager.IsPlaying = true;
         StartCoroutine(LateStart(0.1f));
     }
 

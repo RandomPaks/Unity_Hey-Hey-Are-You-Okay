@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        if (PersistentManager.Instance.isExam || PersistentManager.Instance.isSurvival)
+        if (GameStateManager.IsExam || GameStateManager.IsSurvival)
         {
             lobbyButtonImage.sprite = lobbyButtonSprite;
         }
@@ -71,12 +71,12 @@ public class UIManager : MonoBehaviour
 
     public void OnLoadScene(string scene)
     {
-        if (PersistentManager.Instance.isExam)
+        if (GameStateManager.IsExam)
         {
             ExamManager.Instance.ResetExams();
             ExamManager.Instance.StartProcedure();
         }
-        else if (PersistentManager.Instance.isSurvival)
+        else if (GameStateManager.IsSurvival)
         {
             SurvivalManager.Instance.ResetSurvival();
             SurvivalManager.Instance.StartProcedure();
@@ -90,11 +90,11 @@ public class UIManager : MonoBehaviour
     public void OnLobbyButton()
     {
         SceneManager.LoadScene("MainMenu");
-        if (PersistentManager.Instance.isExam)
+        if (GameStateManager.IsExam)
         {
             Destroy(ExamManager.Instance.gameObject);
         }
-        else if (PersistentManager.Instance.isSurvival)
+        else if (GameStateManager.IsSurvival)
         {
             Destroy(SurvivalManager.Instance.gameObject);
         }
@@ -102,15 +102,15 @@ public class UIManager : MonoBehaviour
 
     public void OnPauseButton()
     {
-        if(!PersistentManager.Instance.isPaused)
+        if(!GameStateManager.IsPaused)
         {
             _endPanel.SetActive(true);
-            PersistentManager.Instance.isPaused = true;
+            GameStateManager.IsPaused = true;
         }
         else
         {
             _endPanel.SetActive(false);
-            PersistentManager.Instance.isPaused = false;
+            GameStateManager.IsPaused = false;
         }
     }
 }

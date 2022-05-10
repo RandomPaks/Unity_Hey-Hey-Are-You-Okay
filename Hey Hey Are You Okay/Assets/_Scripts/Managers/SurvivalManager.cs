@@ -27,8 +27,8 @@ public class SurvivalManager : MonoBehaviour
 
     void Start()
     {
-        PersistentManager.Instance.isPlaying = true;
-        PersistentManager.Instance.isSurvival = true;
+        GameStateManager.IsPlaying = true;
+        GameStateManager.IsSurvival = true;
         AudioManager.Instance.Play("Ticking");
         StartCoroutine(LateStart(0.1f));
     }
@@ -39,7 +39,7 @@ public class SurvivalManager : MonoBehaviour
         {
             EndSurvival();
         }
-        else if (!PersistentManager.Instance.isPaused)
+        else if (!GameStateManager.IsPaused)
         {
             timer -= Time.deltaTime;
             totalTime += Time.deltaTime;
@@ -71,7 +71,7 @@ public class SurvivalManager : MonoBehaviour
 
     public void StartProcedure()
     {
-        PersistentManager.Instance.isPaused = false;
+        GameStateManager.IsPaused = false;
         int rand = UnityEngine.Random.Range(0, scenes.Length);
         SceneManager.LoadScene(scenes[rand]);
         timer = 30.0f;
@@ -79,7 +79,7 @@ public class SurvivalManager : MonoBehaviour
 
     public void EndSurvival()
     {
-        PersistentManager.Instance.isPaused = true;
+        GameStateManager.IsPaused = true;
         if(proceduresCompleted == 0)
         {
             accuracyText.text = "Accuracy Rate is 0.00%";
