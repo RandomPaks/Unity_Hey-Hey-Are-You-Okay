@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour
     public GameObject ducktorPanel;
     public GameObject backstoryPanel;
 
-    public List<GameObject> menus = new List<GameObject>();
+    List<GameObject> menus = new List<GameObject>();
 
     int isTutorialDone;
     [Header("Setting up the Tutorial")]

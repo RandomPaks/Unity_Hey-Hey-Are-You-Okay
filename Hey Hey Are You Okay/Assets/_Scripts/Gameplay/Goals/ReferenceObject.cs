@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReferenceObject : MonoBehaviour
 {
-    public SwipeGoal2 splineObjects;
+    public SwipeGoal splineObjects;
     public ReferenceObject goal;
     public ReferenceObject mistake;
     public ReferenceObject mistake2;

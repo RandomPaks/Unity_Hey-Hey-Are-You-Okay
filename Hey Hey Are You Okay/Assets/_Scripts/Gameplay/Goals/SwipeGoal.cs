@@ -2,7 +2,7 @@
 using UnityEngine;
 using Lines;
 
-public class SwipeGoal2 : MonoBehaviour
+public class SwipeGoal : MonoBehaviour
 {
 	public BezierSpline spline;
 	public int frequency;

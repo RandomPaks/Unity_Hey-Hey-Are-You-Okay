@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void MakeMistake()
     {
+        StartCoroutine(UIManager.Instance.ShakeTextEventBG());
         currentTool.OnForceEndDrag();
         currentTool = null;
 

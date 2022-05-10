@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoldGoal2 : MonoBehaviour
+public class HoldGoal : MonoBehaviour
 {
     [SerializeField] ToolEnum goalTool;
     [SerializeField] string eventToPlay;

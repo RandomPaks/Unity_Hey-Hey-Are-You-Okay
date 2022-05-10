@@ -9,15 +9,19 @@ public class UIManager : MonoBehaviour
 
     public ProgressBar ProgressBar;
 
+    [Space(10)]
+    [SerializeField] private Image _vignetteBG;
+
+    [Header("Dialogue")]
     public GameObject TextEventBGObject;
     public Text TextEventText;
 
-    [SerializeField] private Image _vignetteBG;
-
+    [Header("Pause Menu")]
     [SerializeField] private GameObject _pausePanel;
     [SerializeField] private Image lobbyButtonImage;
     [SerializeField] private Sprite lobbyButtonSprite;
 
+    [Header("End Menu")]
     [SerializeField] private GameObject _endPanel;
 
     private void Awake()
@@ -53,7 +57,7 @@ public class UIManager : MonoBehaviour
         StartCoroutine(FadeInEndPanel());
     }
 
-    IEnumerator FadeInEndPanel()
+    private IEnumerator FadeInEndPanel()
     {
         Color curColor = new Color(1, 1, 1, 0);
         Image[] EndPanelImages = _endPanel.GetComponentsInChildren<Image>();
@@ -66,6 +70,22 @@ public class UIManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public IEnumerator ShakeTextEventBG()
+    {
+        Vector3 startPos = TextEventBGObject.transform.position;
+        float timer = 0f;
+
+        while (timer < 0.15f)
+        {
+            timer += Time.deltaTime;
+            TextEventBGObject.transform.position = startPos + (Random.insideUnitSphere * 15);
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        TextEventBGObject.transform.position = startPos;
+        yield return null;
     }
 
     public void OnLoadScene(string scene)
@@ -103,12 +123,12 @@ public class UIManager : MonoBehaviour
     {
         if(!GameStateManager.IsPaused)
         {
-            _endPanel.SetActive(true);
+            _pausePanel.SetActive(true);
             GameStateManager.IsPaused = true;
         }
         else
         {
-            _endPanel.SetActive(false);
+            _pausePanel.SetActive(false);
             GameStateManager.IsPaused = false;
         }
     }
