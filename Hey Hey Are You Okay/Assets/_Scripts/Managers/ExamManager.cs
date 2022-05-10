@@ -28,7 +28,6 @@ public class ExamManager : MonoBehaviour
 
     void Start()
     {
-        GameStateManager.IsPlaying = true;
         GameStateManager.IsExam = true;
         StartCoroutine(LateStart(0.1f));
     }

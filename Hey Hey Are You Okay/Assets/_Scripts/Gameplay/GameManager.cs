@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.SetVolume("Ticking", 0.1f);
         AudioManager.Instance.Play("Ticking");
 
-        GameStateManager.IsPlaying = true;
+        if(!GameStateManager.IsExam && !GameStateManager.IsSurvival)
+        {
+            GameStateManager.IsTraining = true;
+        }
         StartCoroutine(LateStart(0.1f));
     }
 

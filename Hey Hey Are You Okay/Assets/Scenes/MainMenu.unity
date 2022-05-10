@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 45553367}
   - component: {fileID: 45553366}
   m_Layer: 0
-  m_Name: PersistentManager
+  m_Name: GameStateManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -981,10 +981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c034f3cfb23376845933745995bad802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaying: 0
-  isExam: 0
-  isSurvival: 0
-  isPaused: 0
 --- !u!4 &45553367
 Transform:
   m_ObjectHideFlags: 0

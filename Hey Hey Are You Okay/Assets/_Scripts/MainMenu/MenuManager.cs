@@ -20,8 +20,15 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance { get; private set; }
 
-    public GameObject mainPanel, optionsPanel, trainingPanel, examPanel, survivalPanel, ducktorPanel, backstoryPanel;
-    List<GameObject> menus = new List<GameObject>();
+    public GameObject mainPanel;
+    public GameObject optionsPanel;
+    public GameObject trainingPanel;
+    public GameObject examPanel;
+    public GameObject survivalPanel;
+    public GameObject ducktorPanel;
+    public GameObject backstoryPanel;
+
+    public List<GameObject> menus = new List<GameObject>();
 
     int isTutorialDone;
     [Header("Setting up the Tutorial")]
@@ -98,9 +105,9 @@ public class MenuManager : MonoBehaviour
             GameStateManager.IsSurvival = false;
             OpenMainMenu();
         }
-        else if (GameStateManager.IsPlaying)
+        else if (GameStateManager.IsTraining)
         {
-            GameStateManager.IsPlaying = false;
+            GameStateManager.IsTraining = false;
             OpenTrainingMenu();
         }
     }

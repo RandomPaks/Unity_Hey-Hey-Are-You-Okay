@@ -26,7 +26,6 @@ public class SurvivalManager : MonoBehaviour
 
     void Start()
     {
-        GameStateManager.IsPlaying = true;
         GameStateManager.IsSurvival = true;
         StartCoroutine(LateStart(0.1f));
     }
