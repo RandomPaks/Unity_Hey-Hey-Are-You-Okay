@@ -12,9 +12,7 @@ public class Dialogue
 
 public class TextEvent : AEventSequence
 {
-    [SerializeField] Text textBox;
     [SerializeField] Dialogue[] dialogues;
-    [SerializeField] GameObject textBG;
 
     void Start()
     {
@@ -26,13 +24,13 @@ public class TextEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
-        textBG.SetActive(true);
+        UIManager.Instance.TextEventBGObject.SetActive(true);
         StartCoroutine(SetText());
     }
 
     public override void OnFinishEvent()
     {
-        textBG.SetActive(false);
+        UIManager.Instance.TextEventBGObject.SetActive(false);
         base.OnFinishEvent();
     }
 
@@ -40,10 +38,10 @@ public class TextEvent : AEventSequence
     {
         foreach(Dialogue dialogue in dialogues)
         {
-            textBox.text = dialogue.text;
+            UIManager.Instance.TextEventText.text = dialogue.text;
             yield return new WaitForSeconds(dialogue.secs);
         }
-        textBox.text = "";
+        UIManager.Instance.TextEventText.text = "";
         OnFinishEvent();
     }
 }

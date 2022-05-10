@@ -473,7 +473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: 'For injuries to joints, bones, and muscles, always remember the acronym
       R.I.C.E.! R.I.C.E. stands for Rest, Immobilize, Cold, and Elevate! First, make
@@ -481,7 +480,6 @@ MonoBehaviour:
 
 '
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!4 &224279804
 Transform:
   m_ObjectHideFlags: 0
@@ -571,7 +569,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  endPanel: {fileID: 1685593641}
   key: TutFractureCompleted
 --- !u!4 &251398171
 Transform:
@@ -586,6 +583,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 945063333}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &300740921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300740923}
+  - component: {fileID: 300740922}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &300740922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300740921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095cb2cbec207243aafad1f597d0e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProgressBar: {fileID: 816394080}
+  TextEventBGObject: {fileID: 1622111331}
+  TextEventText: {fileID: 1658178342}
+  EndPanel: {fileID: 1685593641}
+  _vignetteBG: {fileID: 92461940}
+--- !u!4 &300740923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300740921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313866608
 GameObject:
@@ -618,12 +663,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: After making sure the splint is secure and the fracture is immobilized,
       use a cold compress if available to reduce swelling and pain.
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!4 &313866610
 Transform:
   m_ObjectHideFlags: 0
@@ -1416,7 +1459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: 'Next, immobilize the injury. Make sure you support the injured part and
       splint the injury in the way you found it. We can use a tree branch to splint
@@ -1425,7 +1467,6 @@ MonoBehaviour:
 
 '
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!1 &633350054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,13 +2244,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: "To secure the splint, use a soft material (e.g. a triangular bandage,
       a pillowcase, or a blanket). In this case, we can use a panyo. Tie a panyo
       around each joint on each end of the fractured bone.\r"
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!1 &945063331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,7 +3999,7 @@ GameObject:
   - component: {fileID: 1622111334}
   - component: {fileID: 1622111333}
   m_Layer: 5
-  m_Name: BGText
+  m_Name: BGHelpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4186,7 +4225,7 @@ GameObject:
   - component: {fileID: 1685593644}
   - component: {fileID: 1685593643}
   m_Layer: 5
-  m_Name: BG_End
+  m_Name: BGEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4705,13 +4744,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: 'Elevate the injury only if it does not cause more pain.
 
 '
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!4 &1863535859
 Transform:
   m_ObjectHideFlags: 0
@@ -5026,11 +5063,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 251398170}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: Procedure Success!
     secs: 3
-  textBG: {fileID: 1622111331}
 --- !u!1 &1986385347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,7 +5147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progress: 0
-  progressBar: {fileID: 816394080}
   helpText: {fileID: 1658178341}
   currentTool: {fileID: 0}
   accuracy: 1

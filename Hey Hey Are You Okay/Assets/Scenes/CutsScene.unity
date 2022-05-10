@@ -386,11 +386,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: Run the cut through distilled, moving water and pat it dry.
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!4 &224279804
 Transform:
   m_ObjectHideFlags: 0
@@ -436,12 +434,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: Apply a band-aid over the wound, making sure that the cut is covered by
       the central part of the band-aid.
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!4 &242162987
 Transform:
   m_ObjectHideFlags: 0
@@ -531,7 +527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  endPanel: {fileID: 1685593641}
   key: TutCutsCompleted
 --- !u!4 &251398171
 Transform:
@@ -2049,11 +2044,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: Disinfect the cut by applying povidone-iodine.
     secs: 100
-  textBG: {fileID: 1622111331}
 --- !u!4 &1013269384
 Transform:
   m_ObjectHideFlags: 0
@@ -2430,6 +2423,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 945063333}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1172458223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172458225}
+  - component: {fileID: 1172458224}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1172458224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172458223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095cb2cbec207243aafad1f597d0e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProgressBar: {fileID: 816394080}
+  TextEventBGObject: {fileID: 1622111331}
+  TextEventText: {fileID: 1658178342}
+  EndPanel: {fileID: 1685593641}
+  _vignetteBG: {fileID: 1459444594}
+--- !u!4 &1172458225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172458223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1196384844
 GameObject:
@@ -3658,7 +3699,7 @@ GameObject:
   - component: {fileID: 1622111334}
   - component: {fileID: 1622111333}
   m_Layer: 5
-  m_Name: BGText
+  m_Name: BGHelpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3897,7 +3938,7 @@ GameObject:
   - component: {fileID: 1685593644}
   - component: {fileID: 1685593643}
   m_Layer: 5
-  m_Name: BG_End
+  m_Name: BGEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4631,7 +4672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progress: 0
-  progressBar: {fileID: 816394080}
   helpText: {fileID: 1658178341}
   currentTool: {fileID: 0}
   accuracy: 1
@@ -4680,11 +4720,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 251398170}
-  textBox: {fileID: 1658178342}
   dialogues:
   - text: Procedure Success!
     secs: 3
-  textBG: {fileID: 1622111331}
 --- !u!4 &2131932065
 Transform:
   m_ObjectHideFlags: 0

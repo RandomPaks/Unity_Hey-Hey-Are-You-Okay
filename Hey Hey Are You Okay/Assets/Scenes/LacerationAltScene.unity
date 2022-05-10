@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 316713422}
   - component: {fileID: 316713421}
   m_Layer: 5
-  m_Name: BGText
+  m_Name: BGHelpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1057,7 +1057,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progress: 0
-  progressBar: {fileID: 1731643343}
   helpText: {fileID: 1206930248}
   currentTool: {fileID: 0}
   accuracy: 1
@@ -1366,7 +1365,7 @@ GameObject:
   - component: {fileID: 544757717}
   - component: {fileID: 544757716}
   m_Layer: 5
-  m_Name: BG_End
+  m_Name: BGEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1595,13 +1594,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1206930249}
   dialogues:
   - text: Wrap the lacerated area with the proper bandage, making sure that it is
       not too tight that it stops circulation and not too loose that it does not
       prevent bleeding.
     secs: 100
-  textBG: {fileID: 316713419}
 --- !u!1 &743220449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,11 +2391,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1206930249}
   dialogues:
   - text: Call for medical assistance.
     secs: 100
-  textBG: {fileID: 316713419}
 --- !u!1 &1141352524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,11 +3061,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 1630783532}
-  textBox: {fileID: 1206930249}
   dialogues:
   - text: Procedure Success!
     secs: 3
-  textBG: {fileID: 316713419}
 --- !u!1 &1496466646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,11 +3200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  textBox: {fileID: 1206930249}
   dialogues:
   - text: Apply pressure on the wound, with any type of cloth to address the bleeding.
     secs: 100
-  textBG: {fileID: 316713419}
 --- !u!4 &1505389306
 Transform:
   m_ObjectHideFlags: 0
@@ -3456,7 +3447,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   nextEvent: {fileID: 0}
-  endPanel: {fileID: 544757714}
   key: TutLacerationAltCompleted
 --- !u!1 &1691697532
 GameObject:
@@ -4473,6 +4463,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022709323}
   m_CullTransparentMesh: 0
+--- !u!1 &2067433878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2067433880}
+  - component: {fileID: 2067433879}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2067433879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067433878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095cb2cbec207243aafad1f597d0e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProgressBar: {fileID: 1731643343}
+  TextEventBGObject: {fileID: 316713419}
+  TextEventText: {fileID: 1206930249}
+  EndPanel: {fileID: 544757714}
+  _vignetteBG: {fileID: 821861718}
+--- !u!4 &2067433880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067433878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652493528925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3510414406398023793, guid: 533268bbb302d4647b500625033ac911,

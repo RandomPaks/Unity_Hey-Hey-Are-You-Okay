@@ -7,42 +7,63 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
-    public static ProgressBar ProgressBar;
+    public ProgressBar ProgressBar;
 
-    public static GameObject TextEventBGObject;
-    public static Text TextEventText;
+    public GameObject TextEventBGObject;
+    public Text TextEventText;
 
-    public static GameObject EndPanel;
-
-    [SerializeField] private static Image _vignetteBG;
+    [SerializeField] private GameObject EndPanel;
+    [SerializeField] private Image _vignetteBG;
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
+        {
             Destroy(gameObject);
+        }
         else
+        {
             Instance = this;
+        }
     }
 
-    public static void SetAlphaVignette(float value)
+    public void SetAlphaVignette(float value)
     {
         Color color = Color.white;
         color.a = value;
         _vignetteBG.color = color;
     }
 
-    public static IEnumerator FadeInEndPanel()
+    public void StartEndEvent()
     {
-        Color curColor = EndPanel.GetComponent<Image>().color;
+        EndPanel.SetActive(true);
+        StartCoroutine(FadeInEndPanel());
+    }
+
+    IEnumerator FadeInEndPanel()
+    {
+        //Color curColor = EndPanel.GetComponent<Image>().color;
+        //while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
+        //{
+        //    curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
+        //    foreach (Transform child in EndPanel.transform)
+        //    {
+        //        if (child.TryGetComponent(out Image image))
+        //        {
+        //            image.color = curColor;
+        //        }
+        //    }
+        //    yield return null;
+        //}
+
+        Color curColor = new Color(1, 1, 1, 0);
+        List<Image> EndPanelImages = new List<Image>(EndPanel.GetComponentsInChildren<Image>());
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
-            foreach (Transform child in EndPanel.transform)
+            foreach (Image image in EndPanelImages)
             {
-                if (child.TryGetComponent(out Image image))
-                {
-                    image.color = curColor;
-                }
+                image.color = curColor;
             }
             yield return null;
         }

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class EndEvent : AEventSequence
 {
-    [SerializeField] GameObject endPanel;
     [SerializeField] string key;
 
     void Start()
@@ -19,8 +18,7 @@ public class EndEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
-        StartCoroutine(FadeInBG());
-        endPanel.SetActive(true);
+        UIManager.Instance.StartEndEvent();
         Debug.Log("Total Accuracy: " + GameManager.Instance.accuracy);
         SaveManager.Instance.PlayerFinishLevel(key);
     }
@@ -28,20 +26,5 @@ public class EndEvent : AEventSequence
     public override void OnFinishEvent()
     {
         base.OnFinishEvent();
-    }
-
-    IEnumerator FadeInBG()
-    {
-        Color curColor = endPanel.GetComponent<Image>().color;
-        while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
-        {
-            curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
-            foreach (Transform child in endPanel.transform)
-            {
-                if (child.TryGetComponent(out Image imageComponent))
-                    imageComponent.color = curColor;
-            }
-            yield return null;
-        }
     }
 }

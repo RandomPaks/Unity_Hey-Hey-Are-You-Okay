@@ -50,8 +50,8 @@ public class SurvivalManager : MonoBehaviour
         AudioManager.Instance.SetVolume("Ticking", tickingVolume);
 
         colorValue = 1.0f - (timer / 30);
-        if (VignetteColorSwitch.Instance != null)
-            VignetteColorSwitch.Instance.SetAlphaVignette(colorValue);
+        if (UIManager.Instance != null)
+            UIManager.Instance.SetAlphaVignette(colorValue);
     }
 
     IEnumerator LateStart(float waitTime)
