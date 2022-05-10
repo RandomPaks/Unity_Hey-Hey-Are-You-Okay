@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,7 +28,6 @@ public class SurvivalManager : MonoBehaviour
     {
         GameStateManager.IsPlaying = true;
         GameStateManager.IsSurvival = true;
-        AudioManager.Instance.Play("Ticking");
         StartCoroutine(LateStart(0.1f));
     }
 
@@ -94,7 +92,7 @@ public class SurvivalManager : MonoBehaviour
 
         endPanel.SetActive(true);
 
-        StartCoroutine(FadeInBG());
+        StartCoroutine(FadeInEndPanel());
     }
 
     public void EndProcedure()
@@ -113,28 +111,31 @@ public class SurvivalManager : MonoBehaviour
         endPanel.SetActive(false);
     }
 
-    IEnumerator FadeInBG()
+    IEnumerator FadeInEndPanel()
     {
-        Color curColor = endPanel.GetComponent<Image>().color;
-        curColor.a = 0;
-        foreach (Transform child in endPanel.transform)
+        Color curColor = new Color(1, 1, 1, 0);
+        Image[] EndPanelImages = endPanel.GetComponentsInChildren<Image>();
+        Text[] EndPanelText = endPanel.GetComponentsInChildren<Text>();
+
+        foreach (Image image in EndPanelImages)
         {
-            if (child.TryGetComponent<Image>(out Image imageComponent))
-                imageComponent.color = curColor;
-            if (child.TryGetComponent<Text>(out Text textComponent))
-                textComponent.color = new Vector4(0, 0, 0, curColor.a);
+            image.color = curColor;
+        }
+        foreach (Text text in EndPanelText)
+        {
+            text.color = new Vector4(0, 0, 0, curColor.a);
         }
 
         while (Mathf.Abs(curColor.a - 1.0f) > 0.001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
-            foreach (Transform child in endPanel.transform)
+            foreach (Image image in EndPanelImages)
             {
-                if (child.TryGetComponent<Image>(out Image imageComponent))
-                    imageComponent.color = curColor;
-
-                if (child.TryGetComponent<Text>(out Text textComponent))
-                    textComponent.color = new Vector4(0, 0, 0, curColor.a);
+                image.color = curColor;
+            }
+            foreach (Text text in EndPanelText)
+            {
+                text.color = new Vector4(0, 0, 0, curColor.a);
             }
             yield return null;
         }

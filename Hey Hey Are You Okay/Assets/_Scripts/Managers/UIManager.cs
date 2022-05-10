@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -57,7 +56,7 @@ public class UIManager : MonoBehaviour
     IEnumerator FadeInEndPanel()
     {
         Color curColor = new Color(1, 1, 1, 0);
-        List<Image> EndPanelImages = new List<Image>(_endPanel.GetComponentsInChildren<Image>());
+        Image[] EndPanelImages = _endPanel.GetComponentsInChildren<Image>();
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
