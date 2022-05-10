@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         else
         {
             progress = 0;
-            currentTool.OnForceEndDrag();
+            currentTool.ForceEndDrag();
             currentTool = null;
 
             totalCorrect++;
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     public void MakeMistake()
     {
         StartCoroutine(UIManager.Instance.ShakeTextEventBG());
-        currentTool.OnForceEndDrag();
+        currentTool.ForceEndDrag();
         currentTool = null;
 
         totalMistake++;
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
 
         if (isLastSwipe)
         {
-            currentTool.OnForceEndDrag();
+            currentTool.ForceEndDrag();
             currentTool = null;
         }
 

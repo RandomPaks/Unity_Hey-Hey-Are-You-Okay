@@ -45,7 +45,7 @@ public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler
         gameObject.transform.position = startPosition;
     }
 
-    public void OnForceEndDrag()
+    public void ForceEndDrag()
     {
         if (lastPointerData != null)
         {

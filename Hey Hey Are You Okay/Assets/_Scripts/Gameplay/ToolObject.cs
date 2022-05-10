@@ -6,11 +6,11 @@ public class ToolObject : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Goal")
+        if (other.CompareTag("Goal"))
         {
             other.GetComponent<ReferenceObject>().OnTriggerGoal();
         }
-        else if(other.tag == "Mistake")
+        else if(other.CompareTag("Mistake"))
         {
             other.GetComponent<ReferenceObject>().OnTriggerMistake();
         }
