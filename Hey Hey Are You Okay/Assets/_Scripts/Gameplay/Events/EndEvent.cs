@@ -38,7 +38,7 @@ public class EndEvent : AEventSequence
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
             foreach (Transform child in endPanel.transform)
             {
-                if (child.TryGetComponent<Image>(out Image imageComponent))
+                if (child.TryGetComponent(out Image imageComponent))
                     imageComponent.color = curColor;
             }
             yield return null;
