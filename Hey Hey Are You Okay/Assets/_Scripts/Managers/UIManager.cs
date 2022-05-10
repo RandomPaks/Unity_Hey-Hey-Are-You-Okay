@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     [Header("End Menu")]
     [SerializeField] private GameObject _endPanel;
 
+    private string _currentScene;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -38,6 +40,8 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        _currentScene = SceneManager.GetActiveScene().name;
+
         if (GameStateManager.IsExam || GameStateManager.IsSurvival)
         {
             lobbyButtonImage.sprite = lobbyButtonSprite;
@@ -88,7 +92,7 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
-    public void OnLoadScene(string scene)
+    public void OnReplayButton()
     {
         if (GameStateManager.IsExam)
         {
@@ -102,7 +106,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(_currentScene);
         }
     }
 

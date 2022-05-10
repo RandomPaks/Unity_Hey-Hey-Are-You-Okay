@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        GameStateManager.IsPaused = false;
         AudioManager.Instance.Stop("BGM");
         AudioManager.Instance.SetVolume("Ticking", 0.1f);
         AudioManager.Instance.Play("Ticking");
