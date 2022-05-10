@@ -9,12 +9,7 @@ public class ProgressBar : MonoBehaviour
     public Image mask;
     public Image fill;
 
-    void Update()
-    {
-        GetCurrentFill();
-    }
-
-    void GetCurrentFill()
+    public void UpdateProgressBar()
     {
         float currentOffset = current - minimum;
         float maximumOffset = maximum - minimum;
@@ -22,23 +17,8 @@ public class ProgressBar : MonoBehaviour
         mask.fillAmount = fillAmount;
     }
 
-    public void AddCurrentFill(float progress)
-    {
-        current += progress;
-    }
-
-    public void EmptyCurrentFill()
-    {
-        current = 0;
-    }
-
     public void SetCurrentFill(float progress)
     {
         current = progress;
-    }
-
-    public void SetMax(float maxProgress)
-    {
-        maximum = maxProgress;
     }
 }

@@ -39,11 +39,6 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.TextEventText.gameObject.SetActive(true);
     }
 
-    void Update()
-    {
-        UIManager.Instance.ProgressBar.SetCurrentFill(progress);
-    }
-
     bool isTaskDone => progress >= 100;
 
     public void Progress(string name, float increment = 0.5f)
@@ -70,6 +65,9 @@ public class GameManager : MonoBehaviour
 
             EventManager.Instance.PlayEvent(name);
         }
+
+        UIManager.Instance.ProgressBar.SetCurrentFill(progress);
+        UIManager.Instance.ProgressBar.UpdateProgressBar();
     }
 
     public void MakeMistake()
