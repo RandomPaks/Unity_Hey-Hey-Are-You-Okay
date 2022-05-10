@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class UIManager : MonoBehaviour
     public GameObject TextEventBGObject;
     public Text TextEventText;
 
-    [SerializeField] private GameObject EndPanel;
     [SerializeField] private Image _vignetteBG;
 
+    [SerializeField] private GameObject _pausePanel;
     [SerializeField] private Image lobbyButtonImage;
     [SerializeField] private Sprite lobbyButtonSprite;
+
+    [SerializeField] private GameObject _endPanel;
 
     private void Awake()
     {
@@ -47,28 +50,14 @@ public class UIManager : MonoBehaviour
 
     public void StartEndEvent()
     {
-        EndPanel.SetActive(true);
+        _endPanel.SetActive(true);
         StartCoroutine(FadeInEndPanel());
     }
 
     IEnumerator FadeInEndPanel()
     {
-        //Color curColor = EndPanel.GetComponent<Image>().color;
-        //while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
-        //{
-        //    curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
-        //    foreach (Transform child in EndPanel.transform)
-        //    {
-        //        if (child.TryGetComponent(out Image image))
-        //        {
-        //            image.color = curColor;
-        //        }
-        //    }
-        //    yield return null;
-        //}
-
         Color curColor = new Color(1, 1, 1, 0);
-        List<Image> EndPanelImages = new List<Image>(EndPanel.GetComponentsInChildren<Image>());
+        List<Image> EndPanelImages = new List<Image>(_endPanel.GetComponentsInChildren<Image>());
         while (Mathf.Abs(curColor.a - 1.0f) > 0.0001f)
         {
             curColor.a = Mathf.Lerp(curColor.a, 1.0f, 1.5f * Time.deltaTime);
@@ -77,6 +66,51 @@ public class UIManager : MonoBehaviour
                 image.color = curColor;
             }
             yield return null;
+        }
+    }
+
+    public void OnLoadScene(string scene)
+    {
+        if (PersistentManager.Instance.isExam)
+        {
+            ExamManager.Instance.ResetExams();
+            ExamManager.Instance.StartProcedure();
+        }
+        else if (PersistentManager.Instance.isSurvival)
+        {
+            SurvivalManager.Instance.ResetSurvival();
+            SurvivalManager.Instance.StartProcedure();
+        }
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
+    }
+
+    public void OnLobbyButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+        if (PersistentManager.Instance.isExam)
+        {
+            Destroy(ExamManager.Instance.gameObject);
+        }
+        else if (PersistentManager.Instance.isSurvival)
+        {
+            Destroy(SurvivalManager.Instance.gameObject);
+        }
+    }
+
+    public void OnPauseButton()
+    {
+        if(!PersistentManager.Instance.isPaused)
+        {
+            _endPanel.SetActive(true);
+            PersistentManager.Instance.isPaused = true;
+        }
+        else
+        {
+            _endPanel.SetActive(false);
+            PersistentManager.Instance.isPaused = false;
         }
     }
 }

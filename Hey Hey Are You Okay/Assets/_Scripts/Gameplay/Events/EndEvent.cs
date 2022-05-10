@@ -18,8 +18,8 @@ public class EndEvent : AEventSequence
 
     public override void OnPlayEvent()
     {
-        UIManager.Instance.StartEndEvent();
         Debug.Log("Total Accuracy: " + GameManager.Instance.accuracy);
+        UIManager.Instance.StartEndEvent();
         SaveManager.Instance.PlayerFinishLevel(key);
     }
 

@@ -355,7 +355,6 @@ GameObject:
   - component: {fileID: 4134776282377565583}
   - component: {fileID: 4134776282377565582}
   - component: {fileID: 4134776282377565569}
-  - component: {fileID: 4134776282377565568}
   m_Layer: 5
   m_Name: Replay
   m_TagString: Untagged
@@ -462,9 +461,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4134776282377565568}
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 4196305200011316012}
+        m_MethodName: OnReplayButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -486,18 +485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onClickSound: Tap
---- !u!114 &4134776282377565568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4134776282377565570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4196305200011316010
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +538,8 @@ MonoBehaviour:
   - BurnsAltScene
   - FractureScene
   - FractureAltScene
+  - StrainScene
+  - DislocationScene
   totalMistake: 0
   totalMoves: 0
   endPanel: {fileID: 7234434357441359273}
@@ -575,7 +564,6 @@ GameObject:
   - component: {fileID: 5990430531184716629}
   - component: {fileID: 5990430531184716628}
   - component: {fileID: 5990430531184716627}
-  - component: {fileID: 5990430531184716626}
   m_Layer: 5
   m_Name: Lobby
   m_TagString: Untagged
@@ -682,8 +670,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5990430531184716626}
-        m_MethodName: LoadMainMenu
+      - m_Target: {fileID: 4196305200011316012}
+        m_MethodName: OnLobbyButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -706,18 +694,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onClickSound: Tap
---- !u!114 &5990430531184716626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5990430531184716624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a935d287933ce2c45adc80d6ca21313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6754997790331773884
 GameObject:
   m_ObjectHideFlags: 0

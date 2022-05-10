@@ -139,4 +139,16 @@ public class SurvivalManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void OnReplayButton()
+    {
+        ResetSurvival();
+        StartProcedure();
+    }
+
+    public void OnLobbyButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Destroy(gameObject);
+    }
 }

@@ -153,4 +153,16 @@ public class ExamManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void OnReplayButton()
+    {
+        ResetExams();
+        StartProcedure();
+    }
+
+    public void OnLobbyButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Destroy(gameObject);
+    }
 }
