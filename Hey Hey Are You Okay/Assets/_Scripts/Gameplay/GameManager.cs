@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [HideInInspector] public float progress = 0f;
-    [SerializeField] GameObject helpText;
     public ToolDrag currentTool;
     float totalCorrect = 0, totalMistake = 0, totalMoves = 0;
     public float accuracy = 1;
@@ -33,7 +32,7 @@ public class GameManager : MonoBehaviour
     IEnumerator LateStart(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        helpText.SetActive(true);
+        UIManager.Instance.TextEventText.gameObject.SetActive(true);
     }
 
     void Update()
@@ -41,11 +40,11 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ProgressBar.SetCurrentFill(progress);
     }
 
-    bool IsTaskDone => progress >= 100;
+    bool isTaskDone => progress >= 100;
 
     public void Progress(string name, float increment = 0.5f)
     {
-        if (!IsTaskDone)
+        if (!isTaskDone)
         {
             progress += increment;
         }

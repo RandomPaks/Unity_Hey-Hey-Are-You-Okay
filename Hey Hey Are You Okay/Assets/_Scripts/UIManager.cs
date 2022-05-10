@@ -15,6 +15,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject EndPanel;
     [SerializeField] private Image _vignetteBG;
 
+    [SerializeField] private Image lobbyButtonImage;
+    [SerializeField] private Sprite lobbyButtonSprite;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -24,6 +27,14 @@ public class UIManager : MonoBehaviour
         else
         {
             Instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        if (PersistentManager.Instance.isExam || PersistentManager.Instance.isSurvival)
+        {
+            lobbyButtonImage.sprite = lobbyButtonSprite;
         }
     }
 
