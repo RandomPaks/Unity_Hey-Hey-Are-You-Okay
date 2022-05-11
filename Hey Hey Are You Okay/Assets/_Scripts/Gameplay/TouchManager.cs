@@ -26,8 +26,7 @@ public class TouchManager : MonoBehaviour
             Vector3 far = Camera.main.ScreenToWorldPoint(mousePosFar);
             Vector3 near = Camera.main.ScreenToWorldPoint(mousePosNear);
 
-            RaycastHit hit;
-            if (Physics.Raycast(near, far - near, out hit, Camera.main.farClipPlane, layerMask))
+            if (Physics.Raycast(near, far - near, out RaycastHit hit, Camera.main.farClipPlane, layerMask))
             {
                 Vector3 collide = Vector3.Normalize(far - near) * hit.distance;
                 Debug.DrawRay(near, collide, Color.green);

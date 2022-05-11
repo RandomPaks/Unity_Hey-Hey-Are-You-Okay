@@ -25,20 +25,20 @@ public class SwipeGoal : MonoBehaviour
 		float stepSize = 1f / frequency;
 		for (int p = 0; p < frequency; p++)
 		{
-			Transform item = Instantiate(goal) as Transform;
+			Transform item = Instantiate(goal);
 			Vector3 position = spline.GetPoint(p * stepSize);
 			item.transform.localPosition = position;
 			item.transform.parent = transform;
 			ReferenceObject referenceObjectGoal = item.gameObject.AddComponent<ReferenceObject>();
 			references.Add(item);
 
-			item = Instantiate(mistake) as Transform;
+			item = Instantiate(mistake);
 			item.transform.localPosition = position + offsetPosition;
 			item.transform.parent = transform;
 			ReferenceObject referenceObjectMistake = item.gameObject.AddComponent<ReferenceObject>();
 			references.Add(item);
 
-			item = Instantiate(mistake) as Transform;
+			item = Instantiate(mistake);
 			item.transform.localPosition = position - offsetPosition;
 			item.transform.parent = transform;
 			ReferenceObject referenceObjectMistake2 = item.gameObject.AddComponent<ReferenceObject>();
