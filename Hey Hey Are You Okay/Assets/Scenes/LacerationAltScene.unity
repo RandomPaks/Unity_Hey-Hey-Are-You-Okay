@@ -1958,7 +1958,7 @@ MonoBehaviour:
   goalTool: 5
   eventToPlay: Bandage3ToPhone
   progressSpeed: 10
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1549339774
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2457,7 +2457,7 @@ MonoBehaviour:
   goalTool: 1
   eventToPlay: BloodToTowel
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1819332044
 SphereCollider:
   m_ObjectHideFlags: 0

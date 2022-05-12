@@ -898,7 +898,7 @@ MonoBehaviour:
   goalTool: 2
   eventToPlay: DryToIodine
   progressSpeed: 0.5
-  isProgressing: 0
+  isGoalRub: 1
 --- !u!135 &647457352
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   goalTool: 0
   eventToPlay: BloodyToWater
   progressSpeed: 0.5
-  isProgressing: 0
+  isGoalRub: 1
 --- !u!135 &700473006
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2865,7 +2865,7 @@ MonoBehaviour:
   goalTool: 3
   eventToPlay: BandAidFinish
   progressSpeed: 0.5
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1926299992
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -629,7 +629,7 @@ MonoBehaviour:
   goalTool: 7
   eventToPlay: TowelToOintment
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 1
 --- !u!135 &403652153
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   goalTool: 5
   eventToPlay: OintmentToCall
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &515240470
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1713,7 +1713,7 @@ MonoBehaviour:
   goalTool: 6
   eventToPlay: WetToTowel
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 1
 --- !u!135 &1158348761
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2467,7 +2467,7 @@ MonoBehaviour:
   goalTool: 0
   eventToPlay: BurnToWet
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 1
 --- !u!135 &1402445052
 SphereCollider:
   m_ObjectHideFlags: 0
