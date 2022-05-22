@@ -4,5 +4,38 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9a55a0993db436e4490db3939b5fa23a
+  - enabled: 1
+    path: Assets/Scenes/CutsScene.unity
+    guid: 8ed0d34fa7880434fa4287dd3e3c8875
+  - enabled: 1
+    path: Assets/Scenes/LacerationScene.unity
+    guid: bda7694fb01339346b2f8e5a18f6b6a2
+  - enabled: 1
+    path: Assets/Scenes/BurnsScene.unity
+    guid: 45315feab3e77d24398702ad2fc4920a
+  - enabled: 1
+    path: Assets/Scenes/CutsAltScene.unity
+    guid: f3e4bc7d1ea8d104989fd9eb21854d59
+  - enabled: 1
+    path: Assets/Scenes/LacerationAltScene.unity
+    guid: b673e70355bb26546bcb8faf971c549a
+  - enabled: 1
+    path: Assets/Scenes/BurnsAltScene.unity
+    guid: 6cc9beda813326c4cbffcb9d66167493
+  - enabled: 1
+    path: Assets/Scenes/FractureScene.unity
+    guid: 471b489b05e827b41b69b6568b4b61db
+  - enabled: 1
+    path: Assets/Scenes/FractureAltScene.unity
+    guid: 647171ea922e13647888994371988887
+  - enabled: 1
+    path: Assets/Scenes/StrainScene.unity
+    guid: c2dcc58954744fa4c835fd244c870e2a
+  - enabled: 1
+    path: Assets/Scenes/DislocationScene.unity
+    guid: fe142c8464adb304f938226b69567b97
   m_configObjects: {}
