@@ -1,6 +1,5 @@
-﻿using System.Collections;
+﻿using Sound;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EndEvent : AEventSequence
 {
@@ -8,6 +7,8 @@ public class EndEvent : AEventSequence
 
     void Start()
     {
+        AudioManager.Instance.Play("MissionComplete");
+
         if (ExamManager.Instance != null)
             ExamManager.Instance.EndProcedure();
         else if (SurvivalManager.Instance != null)

@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
             totalCorrect++;
             totalMoves++;
 
+            AudioManager.Instance.Play("Correct");
+
             if (ExamManager.Instance != null)
             {
                 ExamManager.Instance.totalMoves++;
@@ -79,7 +81,9 @@ public class GameManager : MonoBehaviour
         totalMistake++;
         totalMoves++;
 
-        if(ExamManager.Instance != null)
+        AudioManager.Instance.Play("Mistake");
+
+        if (ExamManager.Instance != null)
         {
             ExamManager.Instance.totalMistake++;
             ExamManager.Instance.totalMoves++;

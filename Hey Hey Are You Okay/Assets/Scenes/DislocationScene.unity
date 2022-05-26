@@ -222,7 +222,7 @@ MonoBehaviour:
   goalTool: 12
   eventToPlay: Elevate
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &34943308
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1118,8 +1118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 171.2, y: -67.8}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 344.7, y: -138.2}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &568426835
 MonoBehaviour:
@@ -1351,7 +1351,7 @@ MonoBehaviour:
   goalTool: 11
   eventToPlay: Icepack
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &727283515
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2466,7 +2466,7 @@ MonoBehaviour:
   goalTool: 5
   eventToPlay: Phone
   progressSpeed: 10
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1322346922
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   goalTool: 13
   eventToPlay: Rest
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1614748507
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3752,7 +3752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  nextEvent: {fileID: 251398170}
+  nextEvent: {fileID: 0}
   dialogues:
   - text: 'Call the Philippine National Emergency Hotline 911 immediately so that
       help is on the way.
