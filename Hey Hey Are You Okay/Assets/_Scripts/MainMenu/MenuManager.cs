@@ -71,6 +71,10 @@ public class MenuManager : MonoBehaviour
     {
         AudioManager.Instance.Play("BGM");
         AudioManager.Instance.Stop("Ticking");
+        AudioManager.Instance.Stop("BGMTraining");
+        AudioManager.Instance.Stop("BGMTraining2");
+        AudioManager.Instance.Stop("BGMSpecial");
+        AudioManager.Instance.Stop("BGMSpecial2");
 
         if (!PlayerPrefs.HasKey("TutorialMenus"))
         {

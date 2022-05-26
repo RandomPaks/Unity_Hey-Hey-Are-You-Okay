@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
     {
         GameStateManager.IsPaused = false;
         AudioManager.Instance.Stop("BGM");
-        AudioManager.Instance.SetVolume("Ticking", 0.1f);
-        AudioManager.Instance.Play("Ticking");
 
-        if(!GameStateManager.IsExam && !GameStateManager.IsSurvival)
+        if (!GameStateManager.IsExam && !GameStateManager.IsSurvival)
         {
             GameStateManager.IsTraining = true;
+            if (Random.Range(0, 2) == 0) AudioManager.Instance.Play("BGMTraining");
+            else AudioManager.Instance.Play("BGMTraining2");
         }
         StartCoroutine(LateStart(0.1f));
     }

@@ -22,11 +22,18 @@ public class SurvivalManager : MonoBehaviour
         else
             Instance = this;
         DontDestroyOnLoad(this);
+
     }
 
     void Start()
     {
         GameStateManager.IsSurvival = true;
+        AudioManager.Instance.SetVolume("Ticking", 0.1f);
+        AudioManager.Instance.Play("Ticking");
+        
+        if (Random.Range(0, 2) == 0) AudioManager.Instance.Play("BGMSpecial");
+        else AudioManager.Instance.Play("BGMSpecial2");
+
         StartCoroutine(LateStart(0.1f));
     }
 

@@ -14903,6 +14903,30 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: BGMTraining
+    clip: {fileID: 8300000, guid: f5e9bf564b079a242b9be15b858e74bc, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGMTraining2
+    clip: {fileID: 8300000, guid: d8585c1fb6a1648438b779f30207162d, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGMSpecial
+    clip: {fileID: 8300000, guid: d6898ac19c5f89d4b95e52df705c1c55, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGMSpecial2
+    clip: {fileID: 8300000, guid: 8caf21dddd6216d448b3c98f8807d30c, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &1475364591
 GameObject:
   m_ObjectHideFlags: 0
@@ -19844,7 +19868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 336, y: -24.160034}
+  m_AnchoredPosition: {x: 336, y: -24.160156}
   m_SizeDelta: {x: 0, y: 457.60474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040008457

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Sound;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,11 +25,16 @@ public class ExamManager : MonoBehaviour
         else
             Instance = this;
         DontDestroyOnLoad(this);
+
     }
 
     void Start()
     {
         GameStateManager.IsExam = true;
+
+        if (UnityEngine.Random.Range(0, 2) == 0) AudioManager.Instance.Play("BGMSpecial");
+        else AudioManager.Instance.Play("BGMSpecial2");
+
         StartCoroutine(LateStart(0.1f));
     }
 
