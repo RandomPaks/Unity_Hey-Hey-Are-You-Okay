@@ -41,7 +41,6 @@ public class ToolDrag : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         _toolSpeed = (transform.position - lastPosition).magnitude;
         lastPosition = transform.position;
-        Debug.Log(_toolSpeed);
     }
 
     public void OnDrag(PointerEventData eventData)

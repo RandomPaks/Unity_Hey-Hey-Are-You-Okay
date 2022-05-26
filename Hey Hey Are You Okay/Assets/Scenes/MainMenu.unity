@@ -4564,7 +4564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8b38343bbfb3a4baecc642b04719a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onClickSound: Tap
+  onClickSound: StartButton
 --- !u!1 &416750897
 GameObject:
   m_ObjectHideFlags: 0
@@ -14851,7 +14851,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Tap
     clip: {fileID: 8300000, guid: 23a111e346c82384a95a114e063c4a56, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -14902,6 +14902,54 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: BGMTraining
+    clip: {fileID: 8300000, guid: f5e9bf564b079a242b9be15b858e74bc, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGMTraining2
+    clip: {fileID: 8300000, guid: d8585c1fb6a1648438b779f30207162d, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGMSpecial
+    clip: {fileID: 8300000, guid: d6898ac19c5f89d4b95e52df705c1c55, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGMSpecial2
+    clip: {fileID: 8300000, guid: 8caf21dddd6216d448b3c98f8807d30c, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Correct
+    clip: {fileID: 8300000, guid: ac560c6ac9d548e4785692a77fb5650f, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Mistake
+    clip: {fileID: 8300000, guid: 10dd4da12f76ff34c81e0f465698f70f, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StartButton
+    clip: {fileID: 8300000, guid: b97cebdaf0231394889d77a5cc1006d7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MissionComplete
+    clip: {fileID: 8300000, guid: bdaf93e5bd53cb4408a3208f6aa839b3, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1 &1475364591
 GameObject:
@@ -19844,7 +19892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 336, y: -24.160034}
+  m_AnchoredPosition: {x: 336, y: -24.160156}
   m_SizeDelta: {x: 0, y: 457.60474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040008457

@@ -841,9 +841,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Wrap the lacerated area with the proper bandage, making sure that it is
-      not too tight that it stops circulation and not too loose that it does not
-      prevent bleeding.
+  - text: Follow the lines and wrap the lacerated area with the bandage, making sure
+      that it is not too tight that it stops circulation, and not too loose that
+      it does not prevent bleeding.
     secs: 100
 --- !u!1 &743220449
 GameObject:
@@ -1892,7 +1892,8 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Apply pressure on the wound, with any type of cloth to address the bleeding.
+  - text: "Apply and hold pressure on the wound with any clean cloth to address the
+      bleeding.\r\nDrag the cloth icon and hold it over the wound to apply pressure!\r"
     secs: 100
 --- !u!4 &1505389306
 Transform:
