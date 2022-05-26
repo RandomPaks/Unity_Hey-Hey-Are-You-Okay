@@ -1905,7 +1905,7 @@ MonoBehaviour:
   name: c
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Apply wet compress to the affected area.
+  - text: Apply the wet compress to the burned area.
     secs: 100
 --- !u!4 &1217938251
 Transform:
@@ -2256,7 +2256,8 @@ MonoBehaviour:
   name: a
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Run the burn wound through distilled, moving water.
+  - text: Run the burn wound through clean, moving water to cool down the burn area.
+      Drag the faucet icon and move it around the area to cool it down.
     secs: 100
 --- !u!1 &1330835226
 GameObject:

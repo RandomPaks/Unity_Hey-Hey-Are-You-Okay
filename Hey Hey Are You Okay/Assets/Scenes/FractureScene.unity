@@ -294,7 +294,7 @@ MonoBehaviour:
   goalTool: 9
   eventToPlay: Branch
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &108085091
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -387,11 +387,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: 'For injuries to joints, bones, and muscles, always remember the acronym
-      R.I.C.E.! R.I.C.E. stands for Rest, Immobilize, Cold, and Elevate! First, make
-      sure the patient is at rest and in a safe area for first aid.
-
-'
+  - text: For injuries to joints, bones, and muscles, think of the acronym R.I.C.E.!
+      It stands for Rest, Immobilize, Cold, and  Elevate! First make sure the patient
+      is resting. Drag the chair icon to rest our patient.
     secs: 100
 --- !u!4 &224279804
 Transform:
@@ -529,8 +527,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: After making sure the splint is secure and the fracture is immobilized,
-      use a cold compress if available to reduce swelling and pain.
+  - text: 'Next in RICE is C. Cold Compress. After making sure the splint is secure
+      and the fracture is immobilized, use a cold compress if available to reduce
+      swelling and pain. '
     secs: 100
 --- !u!4 &313866610
 Transform:
@@ -1157,12 +1156,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: 'Next, immobilize the injury. Make sure you support the injured part and
-      splint the injury in the way you found it. We can use a tree branch to splint
-      the arm. Since a fracture is a bone injury, align the splint with the joints
-      on either side of the bone.
-
-'
+  - text: Next in RICE is I. immobilize the injury. Make sure you support the injured
+      area with a splint in the way you found it. We can use the tree branch as a
+      splint. Drag the branch to the area to support it.
     secs: 100
 --- !u!1 &644720337
 GameObject:
@@ -1462,9 +1458,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: "To secure the splint, use a soft material (e.g. a triangular bandage,
-      a pillowcase, or a blanket). In this case, we can use a panyo. Tie a panyo
-      around each joint on each end of the fractured bone.\r"
+  - text: To secure the splint, use any soft and clean material to wrap the splint
+      around the limb and tie it in place. Follow the guide and use the handkerchief
+      to secure the splint!
     secs: 100
 --- !u!1 &945063331
 GameObject:
@@ -2057,7 +2053,7 @@ MonoBehaviour:
   goalTool: 11
   eventToPlay: IcePack
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1103674338
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2756,7 +2752,7 @@ MonoBehaviour:
   goalTool: 13
   eventToPlay: Rest
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1614748507
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3108,7 +3104,7 @@ MonoBehaviour:
   goalTool: 12
   eventToPlay: Elevate
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1809769475
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3201,9 +3197,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: 'Elevate the injury only if it does not cause more pain.
-
-'
+  - text: "Last in RICE is E. Elevate the injury 6 inches above the heart level when
+      they are lying down. This would help reduce swelling. Use your hand to help
+      elevate the patient\u2019s limb."
     secs: 100
 --- !u!4 &1863535859
 Transform:

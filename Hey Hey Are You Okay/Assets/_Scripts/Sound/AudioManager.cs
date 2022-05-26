@@ -101,8 +101,7 @@ namespace Sound
                 return false;
             }
 
-            if (a.source.isPlaying) return true;
-            return false;
+            return a.source.isPlaying;
         }
     }
 }

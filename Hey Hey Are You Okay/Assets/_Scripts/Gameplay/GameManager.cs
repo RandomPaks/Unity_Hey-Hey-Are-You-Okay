@@ -27,8 +27,12 @@ public class GameManager : MonoBehaviour
         if (!GameStateManager.IsExam && !GameStateManager.IsSurvival)
         {
             GameStateManager.IsTraining = true;
-            if (Random.Range(0, 2) == 0) AudioManager.Instance.Play("BGMTraining");
-            else AudioManager.Instance.Play("BGMTraining2");
+
+            if(!AudioManager.Instance.IsPlaying("BGMTraining") && !AudioManager.Instance.IsPlaying("BGMTraining2"))
+            {
+                if (Random.Range(0, 2) == 0) AudioManager.Instance.Play("BGMTraining");
+                else AudioManager.Instance.Play("BGMTraining2");
+            }
         }
         StartCoroutine(LateStart(0.1f));
     }

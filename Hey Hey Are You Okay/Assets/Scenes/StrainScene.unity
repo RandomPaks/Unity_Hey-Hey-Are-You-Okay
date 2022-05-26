@@ -171,7 +171,7 @@ MonoBehaviour:
   goalTool: 12
   eventToPlay: Elevate
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &34943308
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -387,11 +387,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: "For injuries to joints, bones, and muscles, always remember the acronym
-      R.I.C.E.! R.I.C.E. stands for Rest, Immobilize, Cold, and Elevate! First, make
-      sure the patient is at rest and in a safe area for first aid. To immobilize
-      the injury and prevent further pain, have the patient rest themselves on an
-      area such as a couch.\r"
+  - text: For injuries to joints, bones, and muscles, think of the acronym R.I.C.E.!
+      It stands for Rest, Immobilize, Cold, and  Elevate! First make sure the patient
+      is resting. Drag the chair icon to rest our patient.
     secs: 100
 --- !u!4 &224279804
 Transform:
@@ -543,8 +541,9 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: "After making sure the patient is rested and the strain is immobilized,
-      use a cold compress if available to reduce swelling and pain.\r"
+  - text: After making sure the patient is rested and the strain is immobilized,
+      use cold compress to reduce swelling and pain! Bring the ice pack to the area
+      of injury.
     secs: 100
 --- !u!1 &418464684
 GameObject:
@@ -596,7 +595,7 @@ MonoBehaviour:
   goalTool: 5
   eventToPlay: Phone
   progressSpeed: 10
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &418464687
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1205,7 +1204,7 @@ MonoBehaviour:
   goalTool: 11
   eventToPlay: Icepack
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &727283515
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2043,7 +2042,7 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: "Elevate the injury only if it does not cause more pain.\r"
+  - text: Elevate the injury only if it does not cause more pain.
     secs: 100
 --- !u!1001 &1579424764
 PrefabInstance:
@@ -2398,7 +2397,7 @@ MonoBehaviour:
   goalTool: 13
   eventToPlay: Rest
   progressSpeed: 2
-  isProgressing: 0
+  isGoalRub: 0
 --- !u!135 &1614748507
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3136,8 +3135,8 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Call the Philippine National Emergency Hotline 911 immediately so that
-      help is on the way.
+  - text: Call the Philippine National Emergency Hotline 911 immediately so help
+      is on the way.
     secs: 100
 --- !u!4 &2131932065
 Transform:

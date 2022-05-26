@@ -387,7 +387,7 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Run the cut through distilled, moving water and pat it dry.
+  - text: Drag the faucet icon and move it around the infected area to wash the cut!
     secs: 100
 --- !u!4 &224279804
 Transform:
@@ -435,8 +435,8 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Apply a band-aid over the wound, making sure that the cut is covered by
-      the central part of the band-aid.
+  - text: 'Apply a band-aid  over the wound, making sure that the cut is covered
+      by the central part of the band-aid. '
     secs: 100
 --- !u!4 &242162987
 Transform:
@@ -450,7 +450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945063333}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242203978
 GameObject:
@@ -540,7 +540,56 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945063333}
-  m_RootOrder: 8
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &298632945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298632947}
+  - component: {fileID: 298632946}
+  m_Layer: 0
+  m_Name: Text 1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &298632946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298632945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b72a21954b08b4aaf756d29724b616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  nextEvent: {fileID: 0}
+  dialogues:
+  - text: Use a clean dry cloth and pat dry the water off. Drag the cloth icon on
+      the wet surface to dry the area.
+    secs: 100
+--- !u!4 &298632947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298632945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 945063333}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &409848994
 GameObject:
@@ -878,12 +927,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: BloodyToWater
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 298632946}
   oldHand: {fileID: 1044243473}
   newHand: {fileID: 1869622923}
   oldHitbox: {fileID: 1614748504}
   newHitbox: {fileID: 409848994}
-  cancelTextEvent: {fileID: 0}
+  cancelTextEvent: {fileID: 224279802}
   soundEvent: WaterDrop
 --- !u!4 &644720339
 Transform:
@@ -1039,6 +1088,7 @@ Transform:
   m_Children:
   - {fileID: 224279804}
   - {fileID: 644720339}
+  - {fileID: 298632947}
   - {fileID: 1218479748}
   - {fileID: 1013269384}
   - {fileID: 1091486936}
@@ -1159,7 +1209,8 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 0}
   dialogues:
-  - text: Disinfect the cut by applying povidone-iodine.
+  - text: Disinfect the cut by applying an antiseptic ( povidone - iodine ) solution.
+      Keep spreading the solution and move it outwards from the wound.
     secs: 100
 --- !u!4 &1013269384
 Transform:
@@ -1173,7 +1224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945063333}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027076484
 GameObject:
@@ -1536,7 +1587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945063333}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1196384844
 GameObject:
@@ -1741,7 +1792,7 @@ MonoBehaviour:
   newHand: {fileID: 1440595446}
   oldHitbox: {fileID: 409848994}
   newHitbox: {fileID: 1483100388}
-  cancelTextEvent: {fileID: 224279802}
+  cancelTextEvent: {fileID: 298632945}
   soundEvent: Cloth1
 --- !u!4 &1218479748
 Transform:
@@ -1755,7 +1806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945063333}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282896090
 GameObject:
@@ -1806,7 +1857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945063333}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358768382
 GameObject:
@@ -2702,7 +2753,7 @@ MonoBehaviour:
   name: 
   nextEvent: {fileID: 251398170}
   dialogues:
-  - text: Procedure Success!
+  - text: Procedure success!
     secs: 3
 --- !u!4 &2131932065
 Transform:
@@ -2716,7 +2767,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945063333}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &728273993349110976
 MonoBehaviour:
