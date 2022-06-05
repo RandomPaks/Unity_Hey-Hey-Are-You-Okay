@@ -7,7 +7,9 @@ public class BackgroundMove : MonoBehaviour
 {
     RectTransform rect;
     float x;
-    [SerializeField] float xTeleport, speed = 50.0f;
+    [SerializeField] float xTeleport;
+    [SerializeField] float speed = 50.0f;
+    [SerializeField] float xThreshold = -765f;
 
     void Awake()
     {
@@ -25,7 +27,7 @@ public class BackgroundMove : MonoBehaviour
         x -= Time.deltaTime * speed;
         rect.anchoredPosition = new Vector2(x, 0);
 
-        if(x <= -769)
+        if(x <= xThreshold)
         {
             x = xTeleport;
         }
