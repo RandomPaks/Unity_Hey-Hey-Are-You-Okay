@@ -8,7 +8,7 @@ public class BackgroundMove : MonoBehaviour
     RectTransform rect;
     float x;
     [SerializeField] float xTeleport;
-    [SerializeField] float speed = 50.0f;
+    public float speed = 50.0f;
     [SerializeField] float xThreshold = -765f;
 
     void Awake()

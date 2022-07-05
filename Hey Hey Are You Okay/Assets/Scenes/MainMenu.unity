@@ -6170,6 +6170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: 4
+  isBackgroundSlow: 0
+  mainBackgroundsMove: []
 --- !u!222 &450509049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12024,6 +12026,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: 2
+  isBackgroundSlow: 0
+  mainBackgroundsMove: []
 --- !u!222 &855171502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15552,6 +15556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: 3
+  isBackgroundSlow: 0
+  mainBackgroundsMove: []
 --- !u!222 &1186236463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19502,6 +19508,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: 0
+  isBackgroundSlow: 0
+  mainBackgroundsMove:
+  - {fileID: 1916860496}
+  - {fileID: 1506865277}
+  - {fileID: 1049990368}
 --- !u!222 &1575741444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25164,6 +25175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: 6
+  isBackgroundSlow: 1
+  mainBackgroundsMove:
+  - {fileID: 1916860496}
+  - {fileID: 1506865277}
+  - {fileID: 1049990368}
 --- !u!222 &1992754540
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25314,6 +25330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: 5
+  isBackgroundSlow: 0
+  mainBackgroundsMove: []
 --- !u!1 &2006430506
 GameObject:
   m_ObjectHideFlags: 0
@@ -26412,6 +26430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: 1
+  isBackgroundSlow: 0
+  mainBackgroundsMove: []
 --- !u!222 &2058445940
 CanvasRenderer:
   m_ObjectHideFlags: 0
